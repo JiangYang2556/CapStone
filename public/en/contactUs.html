@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Contact Us 联系我们</title>
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <style>
+
+        #contact_main {
+            float: left;
+            width: 35vw;
+            height: 20vw;
+
+            position: fixed;
+            top: 12vw;
+            left: 12vw;
+            overflow-wrap: break-word;
+        }
+
+        #contact_title {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #contact_subtitle {
+            line-height: 40px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #contact_data {
+            margin-top: 15vw;
+            line-height: 15px;
+        }
+        .contact_data_title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 27px;
+        }
+        .contact_call {
+            float: left;
+            margin-right: 8vw;
+            margin-top: 2vw;
+        }
+        #contact_data p {
+            color: #808080;
+            font-size: 0.8rem;
+        }
+
+        #contact_back {
+            position: fixed;
+            top: -470px;
+            left: 30%;
+            transform: rotate(-18deg);
+            z-index: -1;
+        }
+        #map_mask_frame {
+            position: fixed;
+            top: -272px;
+            left: calc(48% + 19px);
+            transform: rotate(-9deg);
+        }
+        #map_clip_path {
+            position: fixed;
+        }
+
+        .svg-clipped {
+            -webkit-clip-path: url(#map_clip);
+            clip-path: url(#map_clip);
+        }
+        .map_pos {
+            position: fixed;
+            top: 0;
+            left: 48%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="global_part">
+            <nav>
+                <svg id="menu_icon" width="56px" height="56px">
+                    <g id="menu_icon_outer">
+                        <circle cx="26" cy="26" r="23" stroke="#96B432" stroke-width="6" />
+                    </g>
+                    <g id="menu_icon_inner">
+                        <circle cx="26" cy="26" r="20.5" fill="#96B432" />
+                        <path transform="translate(4, 12) scale(0.025)" clip-path="url(#SVGID_2_)" fill="#ffffff" d="M304.615,194.604c6.264-11.452,22.063-20.818,35.114-20.818H1418.87
+		                    c13.051,0,29.082,9.239,35.621,20.533l92.015,158.842c6.539,11.294,6.512,29.756-0.074,41.027l-177.48,304.08
+		                    c-6.576,11.271-17.314,11.253-23.854-0.037l-176.387-304.59c-6.539-11.294-22.565-20.533-35.616-20.533H706.069
+		                    c-13.051,0-18.376,9.239-11.83,20.533l297.922,514.192c6.549,11.289,22.58,20.53,35.631,20.53h182.342
+		                    c13.051,0,18.552,9.339,12.222,20.752l-16.462,29.687c-6.331,11.412-22.186,20.749-35.236,20.749H584.739
+		                    c-13.051,0-29.11-9.228-35.684-20.499L213.504,403.537c-6.572-11.271-6.824-29.865-0.563-41.317L304.615,194.604z" />
+                    </g>
+                </svg>
+            </nav>
+            <div id="logo">
+                <svg width="92px" height="74px">
+                    <path transform="scale(0.045)" clip-path="url(#SVGID_2_)" fill="#96B432" d="M304.615,194.604c6.264-11.452,22.063-20.818,35.114-20.818H1418.87
+		                c13.051,0,29.082,9.239,35.621,20.533l92.015,158.842c6.539,11.294,6.512,29.756-0.074,41.027l-177.48,304.08
+		                c-6.576,11.271-17.314,11.253-23.854-0.037l-176.387-304.59c-6.539-11.294-22.565-20.533-35.616-20.533H706.069
+		                c-13.051,0-18.376,9.239-11.83,20.533l297.922,514.192c6.549,11.289,22.58,20.53,35.631,20.53h182.342
+		                c13.051,0,18.552,9.339,12.222,20.752l-16.462,29.687c-6.331,11.412-22.186,20.749-35.236,20.749H584.739
+		                c-13.051,0-29.11-9.228-35.684-20.499L213.504,403.537c-6.572-11.271-6.824-29.865-0.563-41.317L304.615,194.604z" />
+                    <text x="0" y="68" id="svg_1" font-size="20" font-weight="700" font-family="&#x27;PingFang-SC-Medium'" fill="#96B432">CAPSTONE</text>
+                </svg>
+            </div>
+            <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
+        </div>
+
+        <div id="contact_background">
+            <svg id="contact_back" class="hide_body" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="1300px" height="1250px" xml:space="preserve">
+                <path transform="scale(3) translate(-6, -15)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+            </svg>
+            <svg id="map_mask_frame" class="hide_body" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="1300px" height="1250px" xml:space="preserve">
+                <path transform="scale(2.1) translate(0, -15)" stroke="#ffffff" stroke-width="8" fill="#808080" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+            </svg>
+            <svg class="map_pos hide_body" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="1300px" height="1250px" xml:space="preserve">
+                <defs>
+                    <clipPath id="map_clip">
+                        <path id="map_clip_path" transform="scale(2.05) rotate(-9) translate(-18, -93)" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                    </clipPath>
+                </defs>
+                <image class='svg-clipped hide_body' xlink:href='./images/mask/map.png' width='800' height='630' />
+            </svg>
+        </div>
+
+        <div id="contact_main">
+            <div id="contact_title">CONTACT US</div>
+            <div id="contact_subtitle">联系我们</div>
+            <div id="contact_data">
+                <div class="contact_data_title">公司位置</div>
+                <p>143421, beijing, yangguang district, akakahkcbkLHSHCLHSLACANLJSDOdahldhaldhqlxsns,csjhcjcwcb</p>
+                <div class="contact_call">
+                    <div class="contact_data_title">电话</div>
+                    <p>+860-6666 6666</p>
+                </div>
+                <div class="contact_call">
+                    <div class="contact_data_title">邮件</div>
+                    <p>work@example.com</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--menu window-->
+    <div id="menu_window" hidden>
+        <div id="menu_back" class="rotate_show">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="1200px" height="1200px" xml:space="preserve">
+            <path transform="scale(3) translate(-6, -15)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+            </svg>
+        </div>
+        <div id="menu_content">
+            <div id="close_menu" class="move_show">
+                <a href="#"><img src="./icons/close_icon.png" alt="close menu" width="35" height="35" /></a>
+            </div>
+            <div id="nav_menu" class="js-nav-active">
+                <ul class="nav-main">
+                    <li>
+                        <a href="main.html">
+                            HOME
+                            <span class="nav_cn">首页</span>
+                            <div class="nav_description">Help you introduce our business and main product news</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product01.html">
+                            PRODUCT
+                            <span class="nav_cn">产品中心</span>
+                        </a>
+                        <div class="nav_description">
+                            <a href="product01.html">中超风云</a> |
+                            <a href="product02.html">五大联赛日文版</a> |
+                            <a href="product03.html">勇夺世界杯</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">
+                            ABOUT US
+                            <span class="nav_cn">关于我们</span>
+                            <div class="nav_description">You can download our product in app store</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contactUs.html">
+                            CONTACT US
+                            <span class="nav_cn">联系我们</span>
+                            <div class="nav_description">Help you introduce our business and main product news</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+
+        $("#menu_icon").click(function () {
+            $("#menu_window").prop("hidden", false);
+            
+            $(".hide_body").addClass("back_hide");
+        });
+        $("#close_menu").click(function () {
+            $("#menu_content").addClass("move_hide");
+            $("#menu_back").addClass("rotate_hide");
+            window.setTimeout(next, 1000);
+
+            $(".hide_body").removeClass("back_hide");
+        });
+        function next() {
+            $("#menu_window").prop("hidden", true);
+            $("#menu_content").removeClass("move_hide");
+            $("#menu_back").removeClass("rotate_hide");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .circle-nav {
+        position: relative;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .circle-nav {
+        width: 60.102vh;
+        height: 60.102vh;
+    }
+        .img {
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+           left: 100px;
+            top: 100px;
+            background-size: cover;
+            background-position: center;
+            display: block;
+            -webkit-animation: circle-slide-zoom 16s linear infinite alternate;
+            animation: circle-slide-zoom 16s linear infinite alternate;
+            transition: opacity .8s ease-in-out;
+        }
+        .founders_photo {
+            position: absolute;
+            z-index: 1;
+            top: 100px;
+            left: 600px;
+            background-size: cover;
+            background-position: center;
+            display: block;
+        }
+
+.ie .circle-nav-slides .circle-nav-slide-img .img {
+    -webkit-animation: circle-slide-zoom-ie 16s linear infinite alternate;
+    animation: circle-slide-zoom-ie 16s linear infinite alternate;
+}
+
+@-webkit-keyframes circle-slide-zoom-ie {
+    from {
+        zoom: 1;
+    }
+
+    to {
+        zoom: 1.18;
+    }
+}
+
+@keyframes circle-slide-zoom-ie {
+    from {
+        zoom: 1;
+    }
+
+    to {
+        zoom: 1.18;
+    }
+}
+
+
+#aaa {
+    transform-origin: center;
+            -webkit-animation: circle-slide-zoom 16s linear infinite alternate;
+            animation: circle-slide-zoom 16s linear infinite alternate;
+            transition: opacity .8s ease-in-out;
+
+}
+
+
+@-webkit-keyframes circle-slide-zoom {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes circle-slide-zoom {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="circle-nav">
+        <span class="img" style="background-image: url(./images/founders/ceo.png)"></span>
+    </div>
+    <svg class="founders_photo" width="500" height="500">
+        <image id="aaa" xlink:href="./images/founders/ceo.png" x="0" y="0" width="500" height="500" />
+    </svg>
+
+</body>
+</html>
