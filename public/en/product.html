@@ -1,0 +1,705 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/menu.css">
+
+    <style>
+        .product_penta_pos {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+        @media all and (orientation:portrait) {
+            .scaling-svg-product-container {
+              position: relative; 
+              height: 15vh; 
+              width: 210vw; 
+              padding: 0;
+              left: -100vw;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-svg-product-container {
+                position: relative; 
+                height: 0; 
+                width: 100vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        .scaling-svg-product {
+          position: absolute; 
+          height: 100%; 
+          width: 100%; 
+          left: 0; 
+          top:0;
+        }
+
+        .global_part {
+            z-index: 99;
+        }
+
+        @media all and (orientation:portrait) {
+            .product_main {
+                position: fixed;
+                width: 65vw;
+                left: 10vw;
+
+                height: 50vh;
+                top: 30vh;
+            }
+        }
+        @media all and (orientation:landscape) {
+            .product_main {
+                position: fixed;
+                left: 14vw;
+                top: 9vh;
+
+                width: 50vw;
+                height: 50vw;
+            }
+        }
+
+        .product_header {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+        .product_name {
+            margin-top: 1vw;
+        }
+
+        .download {
+            float: right;
+            margin-top: 2vw;
+            cursor: pointer;
+        }
+
+        .productVideo {
+            width: 100%    !important;
+            height: auto   !important;
+            margin-top: 1vh;
+        }
+
+
+        @media all and (orientation:portrait) {
+            .product_sidemenu {
+                top: 15vh;
+                left: 65vw;
+                height: 30vw;
+            }
+        }
+        @media all and (orientation:landscape) {
+            .product_sidemenu {
+                top: 5vw;
+                left: 78vw;
+                height: 15vw;
+            }
+        }
+
+        .product_sidemenu {
+            position: fixed;
+            cursor: pointer;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            font-size: 1.1rem;
+            width: 14vw;
+            overflow-wrap: break-word;
+        }
+
+        .product_sidemenu a {
+            color: #000;
+        }
+        .product_sidemenu a:hover {
+            color: #96B432;
+            fill: #96B432;
+        }
+
+        #product02_side {
+            position: relative;
+            left: 40px;
+            top: 45px;
+        }
+        .side_item {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+        }
+        .side_item span + span {
+             margin-left: 10px;
+        }
+
+        #product03_side {
+            position: relative;
+            left: 78px;
+            top: 65px;
+        }
+
+        .page_show {
+            -webkit-animation: page_show_ani 2s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+            animation: page_show_ani 2s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+            opacity: 0;
+        }
+        @-webkit-keyframes page_show_ani {
+            from {opacity: 0;}
+            to {opacity: 1;} 
+        }
+        @keyframes page_show_ani {
+            from {opacity: 0;}
+            to {opacity: 1;} 
+        }
+
+        .right_arrow_pos {
+            position: fixed;
+            left: 66vw;
+            top: 48vh;
+            cursor: pointer;
+        }
+        .left_arrow_pos {
+            position: fixed;
+            left: 8vw;
+            top: 48vh;
+            cursor: pointer;
+        }
+        @media all and (orientation:portrait) {
+            .scaling-arrow-container {
+              position: relative; 
+              width: 3vh; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-arrow-container {
+                position: relative; 
+                height: 0; 
+                width: 7vh; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+
+        .hide {
+            position: fixed;
+            top: -100px;
+        }
+
+        .download_buttons {
+            float: left;
+        }
+        .erweima {
+            float: right;
+        }
+        .noTitleStuff .ui-dialog-titlebar {display:none}
+        .dialog_close {
+            font-size: 1.5em;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="global_part">
+
+            <figure>
+                <div class="menulist_icon_pos">
+                    <div class="scaling-menulist_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="menu_icon">
+                            <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 200 200" xml:space="preserve">
+                            <circle cx="100" cy="100" r="98" />
+                            <g transform="scale(0.8) translate(60 60)">
+                            <circle cx="24.879" cy="64" r="10.059" style="fill:#fff;" />
+                            <circle cx="24.878" cy="100.09" r="10.059" style="fill:#fff;" />
+                            <circle cx="24.879" cy="27.91" r="10.058" style="fill:#fff;" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="27.91" y2="27.91" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="64" y2="64" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="100.09" y2="100.09" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <div class="return_icon_pos">
+                    <div class="scaling-return_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <a href="main.html">
+                            <div id="return_icon">
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 50 50" xml:space="preserve">
+                                <circle cx="25" cy="25" r="24" />
+                                <polyline fill="#FFFFFF" transform="scale(0.8) translate(10 13)" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </figure>
+
+            <figure>
+                <div class="logo_icon_pos" hidden>
+                    <div class="scaling-logo_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div>
+                            <svg class="scaling-svg" viewBox="0 0 380 300">
+                                <g transform="translate(-130 -280)">
+                                    <path fill="#97B53C" d="M169.643,560.865c-2.92,2.92-6.357,4.375-10.313,4.375c-3.96,0-7.397-1.455-10.313-4.375
+		                                c-5.21-5.205-7.813-13.33-7.813-24.375c0-12.915,2.813-22.188,8.438-27.813c2.915-2.915,6.25-4.375,10-4.375
+		                                c3.955,0,7.08,1.147,9.375,3.438c4.375,4.375,6.455,10.313,6.25,17.813h-6.875c-0.21-6.665-1.46-11.143-3.75-13.438
+		                                c-1.25-1.25-2.92-1.875-5-1.875c-1.875,0-3.545,0.732-5,2.188c-4.17,4.17-6.25,11.982-6.25,23.438c0,10,1.768,16.772,5.313,20.313
+		                                c1.665,1.67,3.54,2.5,5.625,2.5c1.875,0,3.643-0.83,5.313-2.5c2.08-2.08,3.228-6.875,3.438-14.375h7.5
+		                                C174.955,551.178,172.973,557.535,169.643,560.865z" />
+                                    <path fill="#97B53C" d="M186.83,565.24h-7.5l15.625-60.938h6.25l15.625,60.938h-7.5l-4.375-17.813h-13.75L186.83,565.24z
+		                                 M198.393,520.865h-0.625l-5,20.625h10.625L198.393,520.865z" />
+                                    <path fill="#97B53C" d="M250.58,508.678c3.125,3.125,4.688,7.5,4.688,13.125s-1.563,10-4.688,13.125
+		                                c-2.92,2.92-6.875,4.375-11.875,4.375h-9.063v25.938h-7.188v-60.938h16.25C243.705,504.303,247.66,505.763,250.58,508.678z
+		                                 M229.643,510.24v23.125h7.188c3.75,0,6.665-1.04,8.75-3.125c1.875-1.875,2.813-4.688,2.813-8.438s-0.938-6.563-2.813-8.438
+		                                c-2.085-2.08-5-3.125-8.75-3.125H229.643z" />
+                                    <path fill="#97B53C" d="M287.455,536.49c4.791,2.71,7.188,6.67,7.188,11.875c0,5.21-1.563,9.375-4.688,12.5
+		                                c-2.92,2.92-6.982,4.375-12.187,4.375c-5,0-8.857-1.353-11.563-4.063c-3.335-3.33-5-7.29-5-11.875v-3.125h7.188v2.813
+		                                c0,3.335,0.83,5.835,2.5,7.5c1.665,1.67,3.75,2.5,6.25,2.5c3.33,0,5.83-0.83,7.5-2.5c1.875-1.875,2.813-4.268,2.813-7.188
+		                                c0-3.125-1.459-5.625-4.375-7.5c-5.209-3.33-10.107-6.875-14.687-10.625c-3.335-2.705-5.107-6.353-5.313-10.938
+		                                c-0.21-4.58,1.353-8.438,4.688-11.563c3.125-2.915,6.563-4.375,10.312-4.375c4.58,0,8.125,1.25,10.625,3.75
+		                                c3.125,3.125,4.58,7.5,4.375,13.125h-7.188c0.416-3.54-0.42-6.353-2.5-8.438c-1.459-1.455-3.232-2.188-5.313-2.188
+		                                c-2.084,0-3.857,0.732-5.312,2.188c-1.875,1.875-2.813,4.063-2.813,6.563c0,2.71,1.455,5.313,4.375,7.813
+		                                C278.705,530.865,283.08,533.99,287.455,536.49z" />
+                                    <path fill="#97B53C" d="M314.018,565.24v-27.5v-27.5H301.83v-5.938h32.188v5.938h-12.813v55H314.018z" />
+                                    <path fill="#97B53C" d="M375.268,534.615c0,13.125-2.295,21.982-6.875,26.563c-2.709,2.71-6.146,4.063-10.313,4.063
+		                                c-4.375,0-7.92-1.353-10.625-4.063c-4.584-4.58-6.875-13.438-6.875-26.563c0-12.915,2.291-21.665,6.875-26.25
+		                                c2.705-2.705,6.25-4.063,10.625-4.063c4.166,0,7.604,1.357,10.313,4.063C372.973,512.95,375.268,521.7,375.268,534.615z
+		                                 M347.768,534.615c0,11.875,1.354,19.17,4.063,21.875c1.875,1.875,3.955,2.813,6.25,2.813c2.08,0,4.063-0.938,5.938-2.813
+		                                c2.705-2.705,4.063-10,4.063-21.875c0-11.665-1.357-18.853-4.063-21.563c-1.875-1.875-3.857-2.813-5.938-2.813
+		                                c-2.295,0-4.375,0.938-6.25,2.813C349.121,515.763,347.768,522.95,347.768,534.615z" />
+                                    <path fill="#97B53C" d="M414.018,504.303v60.938h-8.75l-16.25-45.625h-0.313v45.625h-7.188v-60.938h8.75l16.25,45.625h0.313
+		                                v-45.625H414.018z" />
+                                    <path fill="#97B53C" d="M429.955,529.928h21.25v5.938h-21.25v23.438h24.688v5.938h-31.875v-60.938h30.313v5.938h-23.125V529.928z" />
+                                </g>
+                                <path transform="translate(-130, -260)" fill="#97B53C" d="M176.86,280.055c1.32-2.413,4.649-4.387,7.399-4.387h227.39c2.75,0,6.129,1.947,7.506,4.327l19.389,33.47
+	                                c1.379,2.38,1.373,6.27-0.016,8.645l-37.396,64.074c-1.387,2.375-3.648,2.371-5.027-0.008l-37.166-64.181
+	                                c-1.379-2.38-4.756-4.327-7.506-4.327h-89.98c-2.75,0-3.872,1.947-2.493,4.327l62.777,108.347c1.379,2.379,4.758,4.326,7.508,4.326
+	                                h38.422c2.75,0,3.908,1.969,2.574,4.373l-3.469,6.256c-1.334,2.404-4.674,4.371-7.424,4.371H235.886
+	                                c-2.75,0-6.134-1.943-7.519-4.318l-70.705-121.27c-1.385-2.375-1.438-6.293-0.119-8.706L176.86,280.055z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <ul class="lang-switch">
+
+                <li class="">
+                    <a href="../en/main.html">EN</a>
+                </li>
+                <li>|</li>
+                <li class="">
+                    <a href="../cn/main.html">简体中文</a>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
+            <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+        </div>
+
+        <div class="product_page">
+            <figure>
+                <div class="product_penta_pos hide_unit">
+                    <div class="scaling-svg-product-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <svg class="scaling-svg-product" viewBox="0 0 1300 1250">
+                            <g id="product_back" class="rotate_show">
+                                <path transform="scale(3.6) translate(28, -160) rotate(23)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                    c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                    c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </figure>
+
+            <div class="product_content">
+                <div id="product01" class="product_main hide_unit page_show">
+                    <div class="product_header">
+                        <div class="products">
+                            <h1>PRODUCTS</h1>
+                            <h2>产品中心</h2>
+                        </div>
+                        <div class="download" href="#" data-download="product01" download>
+                            <svg version="1.0" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="100" height="40" viewBox="0 0 100 40" xml:space="preserve">
+                            <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
+	                                    c0-6.626,5.372-11.999,11.999-11.999h63.992C97.09,29.945,102.462,35.317,102.462,41.943L102.462,41.943z" />
+                            <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>  
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <video class="productVideo" controls>
+                            <source src="../videos/intro.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h2 class="product_name">中超风云</h2>
+                    <div>
+                        <p>《中超风云》是由中超公司官方正版授权，拱顶石游戏历时两年打造的全新3D国民足球手游。精细建模，高度还原的数百位中超实名球星， 16支中超球队以及历史经典球队球迷横幅标语和看台装饰完美还原，震撼3D视觉比赛特效，全球领先的动作捕捉技术以及中超球星参与动作录制，让玩家体验亲临比赛现场般的操作感受!是一款真正为中国足球爱好者量身定制的高品质足球手游。</p>
+                    </div>
+
+                    <div class="right_arrow_pos">
+                        <div class="scaling-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="product02" class="product_main hide_unit page_show" hidden>
+                    <div class="product_header">
+                        <div class="products">
+                            <h1>PRODUCTS</h1>
+                            <h2>产品中心</h2>
+                        </div>
+                        <div class="download" data-download="product02" download>
+                            <svg version="1.0" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="100" height="40" viewBox="0 0 100 40" xml:space="preserve">
+                            <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
+	                                        c0-6.626,5.372-11.999,11.999-11.999h63.992C97.09,29.945,102.462,35.317,102.462,41.943L102.462,41.943z" />
+                            <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>  
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <video class="productVideo" controls>
+                            <source src="../videos/intro.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h2 class="product_name">Mobasaka Champion Manager</h2>
+                    <div>
+                        <p>The company specializes in designing modern projects in all segments of the real estate market with a significant unique component: architeture, design, state-of-the-art innovative building technologies.</p>
+                    </div>
+
+                    <div class="right_arrow_pos">
+                        <div class="scaling-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="left_arrow_pos">
+                        <div class="scaling-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="product03" class="product_main hide_unit page_show" hidden>
+                    <div class="product_header">
+                        <div class="products">
+                            <h1>PRODUCTS</h1>
+                            <h2>产品中心</h2>
+                        </div>
+                        <div class="download" data-download="product03" download>
+                            <svg version="1.0" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="100" height="40" viewBox="0 0 100 40" xml:space="preserve">
+                            <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
+	                                        c0-6.626,5.372-11.999,11.999-11.999h63.992C97.09,29.945,102.462,35.317,102.462,41.943L102.462,41.943z" />
+                            <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>  
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <video class="productVideo" controls>
+                            <source src="../videos/intro.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h2 class="product_name">中国队勇夺世界杯</h2>
+                    <div>
+                        <p>The company specializes in designing modern projects in all segments of the real estate market with a significant unique component: architeture, design, state-of-the-art innovative building technologies.</p>
+                    </div>
+
+                    <div class="left_arrow_pos">
+                        <div class="scaling-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!--side menu-->
+            <div class="product_sidemenu hide_unit page_show">
+                <div id="product01_side" class="side_item" data-pro-id="product01" style="color: #96b432; fill: #96B432;">
+                    <span>&#x26AB;</span>  <span>中超风云</span>
+                </div>
+                <div id="product02_side" class="side_item" data-pro-id="product02">
+                    <span>&#x26AB;</span>  <span>Mobasaka Champion Manager</span>
+                </div>
+                <div id="product03_side" class="side_item" data-pro-id="product03">
+                    <span>&#x26AB;</span>  <span>中国队勇夺世界杯</span>
+                </div>
+            </div>
+
+            <div class="download_part hide_unit">
+                <div id="dialog" style="display:none;">
+                    <div class="download_buttons">
+                        <div>
+                            <a id="ios_download" href="http://zciosaccount.capstones.cn/device/forcecoldupdate?did=appstore">
+                                <img class="android" src="../images/downloads/ios.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <a id="android_download" href="http://zcapkaccount.capstones.cn/device/forcecoldupdate?did=hoolai">
+                                <img class="ios" src="../images/downloads/android.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="dialog_close">&#x2612;</div>
+                    <img class="erweima" src="../images/downloads/zcfy-download.jpg">
+                </div>
+                <div class="hide">
+                    <a id="mobile_ios_download" href="http://zciosaccount.capstones.cn/device/forcecoldupdate?did=appstore">
+                        <div id="fake_ios_download">mobile_ios_download</div>
+                    </a>
+                    <a id="mobile_android_download" href="http://zcapkaccount.capstones.cn/device/forcecoldupdate?did=hoolai">
+                        <div id="fake_android_download">mobile_android_download</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--menu window-->
+    <div id="menu_window" hidden>
+        <figure>
+            <div class="penta_menuback_pos">
+                <div class="scaling-menuback-container"
+                     style="padding-bottom: 92% /* 100% * 55/60 */">
+                    <div>
+                        <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 1200 1200" xml:space="preserve">
+                        <g id="menu_back" class="rotate_show">
+                        <path transform="scale(3) translate(100, -97) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                                c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                                c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                        </g>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+        </figure>
+
+        <div id="menu_content">
+            <figure>
+                <div class="closeicon_pos">
+                    <div class="scaling-closeicon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="close_menu">
+                            <svg class="scaling-svg" viewBox="0 0 512 512">
+                                <g>
+                                    <circle cx="256" cy="256" r="253.44" />
+                                    <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
+                                        c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
+                                        C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
+                                    <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
+                                        c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
+                                        C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <div id="nav_menu" class="js-nav-active">
+                <ul class="nav-main">
+                    <li>
+                        <a href="main.html">
+                            HOME
+                            <span class="nav_cn">首页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="parent" href="product.html">
+                            PRODUCT
+                            <span class="nav_cn">产品中心</span>
+                        </a>
+                        <div class="nav_description">
+                            <a href="product.html#product01" class="pro_menu_item">中超风云</a> |
+                            <a href="product.html#product02" class="pro_menu_item">五大联赛日文版</a> |
+                            <a href="product.html#product03" class="pro_menu_item">勇夺世界杯</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">
+                            ABOUT US
+                            <span class="nav_cn">关于我们</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contactUs.html">
+                            CONTACT US
+                            <span class="nav_cn">联系我们</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact_info" hidden>
+                <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
+                <span><a href="tel:8 606 666 66 66">&#9743; +860-6666 6666</a></span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-2.2.2.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+
+        $(".download").click(function () {
+
+            if (navigator.userAgent.match(/Android/i))
+            {
+                $("#fake_android_download").trigger("click");
+
+            } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i))
+            {
+                $("#fake_ios_download").trigger("click");
+            } else {
+                $("#dialog").dialog({
+                    modal: true,
+                    resizable: false,
+                    width: 400,
+                    dialogClass: 'noTitleStuff',
+                });
+            }
+        });
+        $('.dialog_close').click(function () {
+            $("#dialog").dialog("close");
+        });
+
+
+        $("#product01").children(".right_arrow_pos").click(function () {
+            $("#product02_side").trigger("click");
+        });
+        $("#product02").children(".right_arrow_pos").click(function () {
+            $("#product03_side").trigger("click");
+        });
+        $("#product02").children(".left_arrow_pos").click(function () {
+            $("#product01_side").trigger("click");
+        });
+        $("#product03").children(".left_arrow_pos").click(function () {
+            $("#product02_side").trigger("click");
+        });
+
+        $(document).ready(function () {
+            console.log(window.location.href);
+            var url = window.location.href;
+            var arr = url.split("#");
+            var selected = arr[1];
+            $("#" + selected + "_side").css("color", "#96B432");
+            $("#" + selected + "_side").css("fill", "#96B432");
+            $("#" + selected + "_side").siblings().css("color", "#000");
+            $("#" + selected + "_side").siblings().css("fill", "#000");
+
+            $("#" + selected).prop("hidden", false);
+            $("#" + selected).siblings().prop("hidden", true);
+
+            window.setTimeout(delete_show, 2000);
+        });
+
+        function delete_show() {
+            $(".page_show").removeClass("page_show");
+        }
+
+        $(".pro_menu_item").click(function () {
+            $("#close_menu").trigger("click");
+            var hrefstring = $(this).prop("href");
+            var arr = hrefstring.split("#");
+            var str = arr[1];
+            $("#" + str + "_side").trigger("click");
+        });
+
+        $(".side_item").click(function () {
+            $(this).css("color", "#96B432");
+            $(this).css("fill", "#96B432");
+            $(this).siblings().css("color", "#000");
+            $(this).siblings().css("fill", "#000");
+
+            var str = $(this).data("pro-id");
+            $("#" + str).prop("hidden", false);
+            $("#" + str).siblings().prop("hidden", true);
+            /*
+            $("#binary_download").attr("href", "../downloads/" + str + "_binary.txt");
+            $("#ios_download").attr("href", "../downloads/" + str + "_ios.txt");
+            $("#android_download").attr("href", "../downloads/" + str + "_android.txt");
+            $("#mobile_ios_download").attr("href", "../downloads/" + str + "_ios.txt");
+            $("#mobile_android_download").attr("href", "../downloads/" + str + "_android.txt");
+            */
+        });
+
+        $("#menu_icon").click(function () {
+            $("#menu_window").prop("hidden", false);
+            $(".hide_unit").addClass("back_hide");
+
+            window.setTimeout(contact_show, 1000);
+        });
+
+        function contact_show() {
+            $(".contact_info").prop("hidden", false);
+        }
+
+        $("#close_menu").click(function () {
+            $("#close_menu").addClass("move_hide");
+            $("#nav_menu").addClass("move_hide");
+            $("#menu_back").addClass("rotate_hide");
+
+            $(".contact_info").prop("hidden", true);
+
+            window.setTimeout(next, 1000);
+
+            $(".hide_unit").removeClass("back_hide");
+        });
+
+        function next() {
+            $("#menu_window").prop("hidden", true);
+            $("#close_menu").removeClass("move_hide");
+            $("#nav_menu").removeClass("move_hide");
+            $("#menu_back").removeClass("rotate_hide");
+        }
+
+    </script>
+</body>
+</html>
