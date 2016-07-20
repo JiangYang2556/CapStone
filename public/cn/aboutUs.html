@@ -67,10 +67,6 @@
           top:0;
         }
 
-        #aboutus_title {
-            font-size: 3.3rem;
-            font-weight: 700;
-        }
         #aboutus_data {
             margin: 0 auto;
             margin-top: 46vh;
@@ -95,9 +91,6 @@
             -webkit-flex-direction: column;
         }
         #aboutus_subtitle {
-            line-height: 20px;
-            font-size: 1.5rem;
-            font-weight: 700;
             text-align:start;
         }
 
@@ -124,7 +117,7 @@
             }
         }
         .down_arrow_area {
-            position: fixed;
+            text-align: center;
             font-size: 0.8rem;
         }
 
@@ -151,6 +144,10 @@
                 opacity: 0.5; 
                 transform: scale(0.8);
             } 
+        }
+
+        p {
+            line-height: 1.5rem;
         }
     </style>
 </head>
@@ -257,7 +254,9 @@
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
-            <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->            
         </div>
 
         <div id="about_main">
@@ -277,12 +276,12 @@
             <div id="about_content" class="hide_unit">
                 <div id="aboutus_main_header">
                     <div class="aboutus_header_wrap hide_unit">
-                        <div id="aboutus_title">ABOUT US</div>
-                        <div id="aboutus_subtitle">关于我们</div>
+                        <h1>ABOUT US</h1>
+                        <h2 id="aboutus_subtitle">关于我们</h2>
                     </div>
                 </div>
                 <div id="aboutus_data">
-                    北京拱顶石科技有限公司，成立于2013年，致力于打造全球最具影响力的手机游戏公司，以足球文化为中心，为广大体育爱好者开发并运营模拟竞技型手机游戏，为球迷奉上各种类型足球游戏。公司推崇团结、友爱、拼搏、进取的快乐足球精神，倡导健康向上、共同进步的足球宗旨理念。我们相信，通过不断的推出高品质的原创手游，未来必将像我们公司名字一样，成为中国手游庞大市场体系中，那颗不可撼动的拱顶之石。
+                    <p>北京拱顶石科技有限公司，成立于2013年，致力于打造全球最具影响力的手机游戏公司，以足球文化为中心，为广大体育爱好者开发并运营模拟竞技型手机游戏，为球迷奉上各种类型足球游戏。公司推崇团结、友爱、拼搏、进取的快乐足球精神，倡导健康向上、共同进步的足球宗旨理念。我们相信，通过不断的推出高品质的原创手游，未来必将像我们公司名字一样，成为中国手游庞大市场体系中，那颗不可撼动的拱顶之石。</p>
                 </div>
                 <a href="development.html">
                     <div class="down_arrow_area_wrap">
@@ -357,14 +356,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product01.html">
+                        <a class="parent" href="product.html">
                             PRODUCT
                             <span class="nav_cn">产品中心</span>
                         </a>
                         <div class="nav_description">
-                            <a href="product01.html">中超风云</a> |
-                            <a href="product02.html">五大联赛日文版</a> |
-                            <a href="product03.html">勇夺世界杯</a>
+                            <a href="product.html#product01">中超风云</a> |
+                            <a href="product.html#product02">五大联赛日文版</a> |
+                            <a href="product.html#product03">勇夺世界杯</a>
                         </div>
                     </li>
                     <li>
@@ -382,8 +381,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
-                <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
-                <span><a href="tel:+86066666666">&#9743; +860-6666 6666</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
 

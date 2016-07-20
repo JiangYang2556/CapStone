@@ -31,7 +31,7 @@
             .scaling-svg-product-container {
                 position: relative; 
                 height: 0; 
-                width: 100vw; 
+                width: 90vw; 
                 padding: 0;
                 padding-bottom: 100%; 
                 /* over-ride this inline for aspect ratio other than square */
@@ -49,6 +49,15 @@
             z-index: 99;
         }
 
+        .right_arrow_pos {
+            position: fixed;
+            cursor: pointer;
+        }
+        .left_arrow_pos {
+            position: fixed;
+            cursor: pointer;
+        }
+
         @media all and (orientation:portrait) {
             .product_main {
                 position: fixed;
@@ -58,17 +67,49 @@
                 height: 50vh;
                 top: 30vh;
             }
+            .right_arrow_pos {
+                left: 77vw;
+                top: 50vh;
+            }
+            .left_arrow_pos {
+                left: 3vw;
+                top: 50vh;
+            }
+            .productVideo {
+                position: relative;
+                width: 65vw;
+                height: 36.5625vw;
+            }
         }
         @media all and (orientation:landscape) {
             .product_main {
                 position: fixed;
-                left: 14vw;
-                top: 9vh;
+                left: 13vw;
+                top: 8vh;
 
                 width: 48vw;
                 height: 50vw;
             }
-        }
+            .right_arrow_pos {
+                left: 63vw;
+                top: calc(23vw + 3vh);
+            }
+            .left_arrow_pos {
+                left: calc(6.5vw + 1vh);
+                top: calc(23vw + 3vh);
+            }
+            .productVideo {
+                position: relative;
+                width: 48vw;
+                height: 27vw;
+            }
+
+       }
+
+         p {
+            line-height: 1.5rem;
+            letter-spacing: 0;
+         }
 
         .product_header {
             display: -webkit-flex;
@@ -77,9 +118,12 @@
             flex-direction: row;
             -webkit-justify-content: space-between;
             justify-content: space-between;
+
+            margin-bottom: 0;
         }
         .product_name {
-            margin-top: 1vw;
+            margin-bottom: 0.5vw;
+            margin-top: 2.5vh;
         }
 
         .download_pos {
@@ -91,22 +135,15 @@
         .scaling-download-container {
             position: relative; 
             height: 0; 
-            width: 8vw; 
+            width: 7vw; 
             padding: 0;
             padding-bottom: 100%; 
         }
-        @media screen and (max-width:700px) {
+        @media all and (orientation:portrait) {
             .scaling-download-container {
-                width: 60px; 
+                width: 8vh; 
             }
         }
-
-        .productVideo {
-            width: 100%    !important;
-            height: 56.25%  !important;
-            margin-top: 1vh;
-        }
-
 
         @media all and (orientation:portrait) {
             .product_sidemenu {
@@ -118,7 +155,7 @@
         @media all and (orientation:landscape) {
             .product_sidemenu {
                 top: 5vw;
-                left: 78vw;
+                left: 72vw;
                 height: 15vw;
             }
         }
@@ -155,13 +192,13 @@
             flex-direction: row;
         }
         .side_item span + span {
-             margin-left: 10px;
+             margin-left: 11px;
         }
 
         #product03_side {
             position: relative;
             left: 78px;
-            top: 65px;
+            top: 68px;
         }
 
         .page_show {
@@ -178,18 +215,6 @@
             to {opacity: 1;} 
         }
 
-        .right_arrow_pos {
-            position: fixed;
-            left: 66vw;
-            top: 48vh;
-            cursor: pointer;
-        }
-        .left_arrow_pos {
-            position: fixed;
-            left: 8vw;
-            top: 48vh;
-            cursor: pointer;
-        }
         @media all and (orientation:portrait) {
             .scaling-arrow-container {
               position: relative; 
@@ -203,7 +228,7 @@
             .scaling-arrow-container {
                 position: relative; 
                 height: 0; 
-                width: 7vh; 
+                width: 6vh; 
                 padding: 0;
                 padding-bottom: 100%; 
                 /* over-ride this inline for aspect ratio other than square */
@@ -227,6 +252,17 @@
             float: right;
             cursor: pointer;
         }
+
+        .pro_img {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -331,7 +367,9 @@
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
-            <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->
         </div>
 
         <div class="product_page">
@@ -376,18 +414,8 @@
                     </div>
                     <h2 class="product_name">中超风云</h2>
                     <div>
-                        <p>《中超风云》是由中超公司官方正版授权，拱顶石游戏历时两年打造的全新3D国民足球手游。精细建模，高度还原的数百位中超实名球星， 16支中超球队以及历史经典球队球迷横幅标语和看台装饰完美还原，震撼3D视觉比赛特效，全球领先的动作捕捉。</p>
+                        <p>《中超风云》是由拱顶石游戏历时两年打造的全新3D国民足球手游。高度还原的数百位中超球星，16支中超球队以及经典球队球迷横幅标语完美还原，震撼3D比赛特效，领先的动作捕捉技术，全力真实还原球员技术动作，让玩家体验亲临比赛现场般的操作感受!是一款真正为中国足球爱好者量身定制的高品质足球手游。</p>
                     </div>
-
-                    <div class="right_arrow_pos">
-                        <div class="scaling-arrow-container"
-                             style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
-                            </svg>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div id="product02" class="product_main hide_unit page_show" hidden>
@@ -396,27 +424,36 @@
                             <h1>PRODUCTS</h1>
                             <h2>产品中心</h2>
                         </div>
-                        <div class="download" data-download="product02" download>
-                            <svg version="1.0" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                 width="100" height="40" viewBox="0 0 100 40" xml:space="preserve">
-                            <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
+                        <div class="download_pos" href="#" data-download="product02" download>
+                            <div class="scaling-download-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 100 40">
+                                    <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
 	                                        c0-6.626,5.372-11.999,11.999-11.999h63.992C97.09,29.945,102.462,35.317,102.462,41.943L102.462,41.943z" />
-                            <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>  
-                            </svg>
+                                    <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div>
-                        <video class="productVideo" controls>
-                            <source src="../videos/intro.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div id="product02_img" class="productVideo">
+                            <img id="pro2_img_1" class="pro_img" src="../images/product02/1.jpg" />
+                            <img id="pro2_img_2" class="pro_img" src="../images/product02/2.jpg" hidden/>
+                            <img id="pro2_img_3" class="pro_img" src="../images/product02/3.jpg" hidden/>
+                            <img id="pro2_img_4" class="pro_img" src="../images/product02/4.jpg" hidden/>
+                            <img id="pro2_img_5" class="pro_img" src="../images/product02/5.jpg" hidden/>
+                            <img id="pro2_img_6" class="pro_img" src="../images/product02/6.jpg" hidden/>
+                            <img id="pro2_img_7" class="pro_img" src="../images/product02/7.jpg" hidden/>
+                            <img id="pro2_img_8" class="pro_img" src="../images/product02/8.jpg" hidden/>
+                            <img id="pro2_img_9" class="pro_img" src="../images/product02/9.jpg" hidden/>
+                        </div>
                     </div>
                     <h2 class="product_name">Mobasaka Champion Manager</h2>
                     <div>
                         <p>The company specializes in designing modern projects in all segments of the real estate market with a significant unique component: architeture, design, state-of-the-art innovative building technologies.</p>
                     </div>
 
-                    <div class="right_arrow_pos">
+                    <div class="right_arrow_pos" data-pro-id="product02">
                         <div class="scaling-arrow-container"
                              style="padding-bottom: 92% /* 100% * 55/60 */">
                             <svg class="scaling-svg" viewBox="0 0 37 36.333">
@@ -424,7 +461,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="left_arrow_pos">
+                    <div class="left_arrow_pos" data-pro-id="product02" hidden>
                         <div class="scaling-arrow-container"
                              style="padding-bottom: 92% /* 100% * 55/60 */">
                             <svg class="scaling-svg" viewBox="0 0 37 36.333">
@@ -441,29 +478,49 @@
                             <h1>PRODUCTS</h1>
                             <h2>产品中心</h2>
                         </div>
-                        <div class="download" data-download="product03" download>
-                            <svg version="1.0" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                 width="100" height="40" viewBox="0 0 100 40" xml:space="preserve">
-                            <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
+                        <div class="download_pos" href="#" data-download="product01" download>
+                            <div class="scaling-download-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 100 40">
+                                    <path stroke="#000000" transform="translate(-10, -25)" d="M102.462,41.943c0,6.626-5.372,11.999-11.998,11.999H26.472c-6.626,0-11.999-5.372-11.999-11.999l0,0
 	                                        c0-6.626,5.372-11.999,11.999-11.999h63.992C97.09,29.945,102.462,35.317,102.462,41.943L102.462,41.943z" />
-                            <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>  
-                            </svg>
+                                    <text x="20" y="22" font-size="14" font-family="&#x27;PingFang-SC-Medium'" fill="#ffffff">下载产品</text>
+                                </svg>
+                            </div>
                         </div>
                     </div>
+
                     <div>
-                        <video class="productVideo" controls>
-                            <source src="../videos/intro.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div id="product03_img" class="productVideo">
+                            <img id="pro3_img_1" class="pro_img" src="../images/product03/1.jpg" />
+                            <img id="pro3_img_2" class="pro_img" src="../images/product03/2.jpg" hidden/>
+                            <img id="pro3_img_3" class="pro_img" src="../images/product03/3.jpg" hidden/>
+                            <img id="pro3_img_4" class="pro_img" src="../images/product03/4.jpg" hidden/>
+                            <img id="pro3_img_5" class="pro_img" src="../images/product03/5.jpg" hidden/>
+                            <img id="pro3_img_6" class="pro_img" src="../images/product03/6.jpg" hidden/>
+                            <img id="pro3_img_7" class="pro_img" src="../images/product03/7.jpg" hidden/>
+                            <img id="pro3_img_8" class="pro_img" src="../images/product03/8.jpg" hidden/>
+                            <img id="pro3_img_9" class="pro_img" src="../images/product03/9.jpg" hidden/>
+                            <img id="pro3_img_10" class="pro_img" src="../images/product03/10.jpg" hidden/>
+                            <img id="pro3_img_11" class="pro_img" src="../images/product03/11.jpg" hidden/>
+                        </div>
                     </div>
                     <h2 class="product_name">中国队勇夺世界杯</h2>
                     <div>
                         <p>The company specializes in designing modern projects in all segments of the real estate market with a significant unique component: architeture, design, state-of-the-art innovative building technologies.</p>
                     </div>
 
-                    <div class="left_arrow_pos">
+                    <div class="right_arrow_pos" data-pro-id="product03">
                         <div class="scaling-arrow-container"
                              style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="left_arrow_pos" data-pro-id="product03" hidden>
+                        <div class="scaling-arrow-container"
+                                style="padding-bottom: 92% /* 100% * 55/60 */">
                             <svg class="scaling-svg" viewBox="0 0 37 36.333">
                                 <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
                             </svg>
@@ -471,7 +528,6 @@
                     </div>
 
                 </div>
-
 
             </div>
             <!--side menu-->
@@ -592,8 +648,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
-                <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
-                <span><a href="tel:+8 606 666 66 66">&#9743; +860-6666 6666</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
 
@@ -603,7 +658,10 @@
     <script src="../js/jquery-ui.min.js"></script>
     <script>
 
-        $(".download").click(function () {
+        var pro02_img_selected, pro02_img_num;
+        var pro03_img_selected, pro03_img_num;
+
+        $(".download_pos").click(function () {
 
             if (navigator.userAgent.match(/Android/i))
             {
@@ -625,21 +683,55 @@
             $("#dialog").dialog("close");
         });
 
+        $("#product02").children(".left_arrow_pos").click(function () {
+            $("#product02_img").find("#pro2_img_" + pro02_img_selected).prop("hidden", true);
+            pro02_img_selected -= 1;
+            if (pro02_img_selected == pro02_img_num - 1)
+                $("#product02").children(".right_arrow_pos").prop("hidden", false);
 
-        $("#product01").children(".right_arrow_pos").click(function () {
-            $("#product02_side").trigger("click");
+            $("#product02_img").find("#pro2_img_" + pro02_img_selected).prop("hidden", false);
+            if (pro02_img_selected == 1)
+                $("#product02").children(".left_arrow_pos").prop("hidden", true);
         });
         $("#product02").children(".right_arrow_pos").click(function () {
-            $("#product03_side").trigger("click");
-        });
-        $("#product02").children(".left_arrow_pos").click(function () {
-            $("#product01_side").trigger("click");
+            $("#product02_img").find("#pro2_img_" + pro02_img_selected).prop("hidden", true);
+            
+            pro02_img_selected += 1;
+            if (pro02_img_selected == 2)
+                $("#product02").children(".left_arrow_pos").prop("hidden", false);
+
+            $("#product02_img").find("#pro2_img_" + pro02_img_selected).prop("hidden", false);
+            if (pro02_img_selected == pro02_img_num)
+                $("#product02").children(".right_arrow_pos").prop("hidden", true);
         });
         $("#product03").children(".left_arrow_pos").click(function () {
-            $("#product02_side").trigger("click");
+            $("#product03_img").find("#pro3_img_" + pro03_img_selected).prop("hidden", true);
+            pro03_img_selected -= 1;
+            if (pro03_img_selected == pro03_img_num - 1)
+                $("#product03").children(".right_arrow_pos").prop("hidden", false);
+
+            $("#product03_img").find("#pro3_img_" + pro03_img_selected).prop("hidden", false);
+            if (pro03_img_selected == 1)
+                $("#product03").children(".left_arrow_pos").prop("hidden", true);
+        });
+        $("#product03").children(".right_arrow_pos").click(function () {
+            $("#product03_img").find("#pro3_img_" + pro03_img_selected).prop("hidden", true);
+            pro03_img_selected += 1;
+            if (pro03_img_selected == 2)
+                $("#product03").children(".left_arrow_pos").prop("hidden", false);
+
+            $("#product03_img").find("#pro3_img_" + pro03_img_selected).prop("hidden", false);
+            if (pro03_img_selected == pro03_img_num)
+                $("#product03").children(".right_arrow_pos").prop("hidden", true);
         });
 
         $(document).ready(function () {
+
+            pro02_img_selected = 1;
+            pro03_img_selected = 1;
+            pro02_img_num = $("#product02_img").find(".pro_img").length;
+            pro03_img_num = $("#product03_img").find(".pro_img").length;
+
             console.log(window.location.href);
             var url = window.location.href;
             var arr = url.split("#");

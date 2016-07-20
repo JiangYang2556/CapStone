@@ -41,7 +41,7 @@
 
         .penta_pos {
             position: fixed;
-            right: 3vw;
+            right: 3.5vw;
             top: 19.8vh;
         }
         @media all and (orientation:portrait) {
@@ -59,48 +59,32 @@
                 right: 61vw;
             }
             #team .peta_edge {
-                top: calc(5vh + 60vw);
-                right: 50vw;
+                top: calc(13vh + 50vw);
+                right: 52vw;
+            }
+            .peta_edge {
+                height: 6vh !important;
             }
         }
         @media all and (orientation:landscape) {
             .scaling-svg-container {
                 position: relative; 
                 height:0; 
-                width: 64vh; 
+                width: 33vw; 
                 padding: 0;
                 padding-bottom: 100%; 
                 /* over-ride this inline for aspect ratio other than square */
             }
             #development .peta_edge {
-                top: 33vh;
-                right: calc(64vh + 2vw);
+                top: calc(10vw + 14vh);
+                right: 36vw;
             }
             #team .peta_edge {
-                top: 73vh;
-                right: calc(50vh + 3vw);
+                top: calc(26vw + 20vh);
+                right: 31vw;
             }
         }
-        .scaling-svg {
-          position: absolute; 
-          height: 100%; 
-          width: 100%; 
-          left: 0; 
-          top:0;
-        }
-
-
-        #up_arrow {
-            position: fixed;
-            top: 3vh;
-            left: calc(50vw - 20px);
-        }
-        #down_arrow {
-            position: fixed;
-            bottom: 3vh;
-            left: calc(50vw - 20px);
-        }
-
+        
         #development .peta_edge {
             position: fixed;
             color: #ffffff;
@@ -111,12 +95,11 @@
         }
         .peta_edge {
             width: 20vw;
-            height: 9.5vh;
+            height: 4.5vw;
             display: -webkit-flex;
             display: flex;
             -webkit-justify-content: flex-end;
             justify-content: flex-end;
-            overflow: hidden;
             cursor: pointer;
         }
         .peta_edge:hover {
@@ -128,12 +111,14 @@
         }
         .peta_edge_text .penta_item {
             font-size: 0.9rem;
+            font-weight: 700;
         }
         .peta_edge_text .penta_name {
             font-size: 1.5rem;
             font-weight: 700;
         }
         .penta_no {
+            font-size: 1rem;
             font-weight: 700;
         }
         .penta_circle {
@@ -144,6 +129,29 @@
             flex-direction: column;
             -webkit-justify-content: flex-end;
             justify-content: flex-end;
+        }
+
+        .up_arrow_wrap {
+            position: fixed;
+            top: 3vh;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .down_arrow_wrap {
+            position: fixed;
+            bottom: 3vh;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
         }
 
         @media all and (orientation:portrait) {
@@ -215,12 +223,15 @@
             to {opacity: 1;} 
         }
 
+        p {
+            line-height: 1.5rem;
+        }
     </style>
 </head>
 <body>
 
     <div id="main">
-        <div class="global_part">
+        <div class="global_part hide_unit">
 
             <figure>
                 <div class="menulist_icon_pos">
@@ -320,23 +331,29 @@
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
-            <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->
         </div>
 
         <div id="dev_main">
-            <div class="arrow hide_unit" >
-                <a href="aboutUs.html">
-                    <svg id="up_arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         width="40px" height="40px" xml:space="preserve">
-                    <polyline transform="scale(0.8)" fill="#808080" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
+            <div hide_unit">
+                <div class="up_arrow_wrap">
+                    <a href="aboutUs.html">
+                        <svg id="up_arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="40px" height="40px" xml:space="preserve">
+                        <polyline transform="scale(0.8)" fill="#808080" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
                     </svg>
-                </a>
-                <a href="team_intro.html">
-                    <svg id="down_arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         width="40px" height="40px" xml:space="preserve">
-                    <polyline transform="scale(0.8)" fill="#808080" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                    </a>
+                </div>
+                <div class="down_arrow_wrap">
+                    <a href="team_intro.html">
+                        <svg id="down_arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="40px" height="40px" xml:space="preserve">
+                        <polyline transform="scale(0.8)" fill="#808080" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
                     </svg>
-                </a>
+                    </a>
+                </div>
             </div>
 
 
@@ -384,9 +401,9 @@
                 <div id="development" class="penta_node" >
                     <div class="peta_edge hide_unit " data-img-id="dev_img">
                         <div class="peta_edge_text">
-                            <p class="penta_no">01</p>
-                            <p class="penta_item">公司发展</p>
-                            <p class="penta_name">DEVELOPMENT</p>
+                            <div class="penta_no">01</div>
+                            <div class="penta_item">公司发展</div>
+                            <div class="penta_name">DEVELOPMENT</div>
                         </div>
                         <div class="penta_circle">
                             <div class="selected">
@@ -401,19 +418,19 @@
                     <div class="intro_content hide_unit page_show">
                         <h1 class="title">DEVELOPMENT</h1>
                         <h2 class="sub_title">公司发展</h2>
-                        <div class="content_data">
+                        <p class="content_data">
                             公司自2013年起以足球为切入点，围绕看球、评球、踢球和玩球成功推出《全民足球经理》，下载量及收入列2014年体育手游行业前三。
                             2015年公司成为中超联赛首个官方授权手机游戏的开发商，推出Unity3D手游《中超风云》，为国内日趋火热的足球市场奉上一席盛宴。
                             2016年公司将与世界著名手游公司合作，拥有世界最著名的2000余位球星的肖像使用权，继续围绕足球开发推出更加刺激，更加精彩的足球手游。
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div id="team" class="penta_node">
                     <div class="peta_edge hide_unit page_show" data-img-id="team_img">
                         <div class="peta_edge_text">
-                            <p class="penta_no">02</p>
-                            <p class="penta_item">团队介绍</p>
-                            <p class="penta_name">TEAM</p>
+                            <div class="penta_no">02</div>
+                            <div class="penta_item">团队介绍</div>
+                            <div class="penta_name">TEAM</div>
                         </div>
                         <div class="penta_circle">
                             <div class="selected" hidden>
@@ -427,9 +444,9 @@
                     <div class="intro_content hide_unit" hidden>
                         <h1>TEAM</h1>
                         <h2>团队介绍</h2>
-                        <div class="content_data">
+                        <p class="content_data">
                             拱顶石由一群曾在知名游戏、互联网公司的核心人才和技术骨干带着对梦想的追求组成。我们年轻有朝气，奋发又上进，我们激情四射，满怀理想，我们也同样耐得住寂寞，愿意脚踏实地去圆梦。现在我们可能只是刚刚步入正轨的创业团队，也许有一天我们的故事也会被写成书，拍成电影。但今天我们只是一群简单的圆梦人，我们有着共同的梦想，我们共同去实现！
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -460,7 +477,7 @@
 
         <div id="menu_content">
             <figure>
-                <div class="closeicon_pos">
+                <div class="closeicon_pos" hidden>
                     <div class="scaling-closeicon-container"
                          style="padding-bottom: 92% /* 100% * 55/60 */">
                         <div id="close_menu">
@@ -513,8 +530,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
-                <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
-                <span><a href="tel:8 606 666 66 66">&#9743; +860-6666 6666</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
 
@@ -561,6 +577,7 @@
 
         function contact_show() {
             $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
         }
 
         $("#close_menu").click(function () {
@@ -569,6 +586,7 @@
             $("#menu_back").addClass("rotate_hide");
 
             $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
 
             window.setTimeout(next, 1000);
 

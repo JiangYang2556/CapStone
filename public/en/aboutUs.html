@@ -16,6 +16,17 @@
             top: 0vw;
             z-index: -1;
         }
+
+        .down_arrow_area_wrap {
+            position: fixed;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
         @media all and (orientation:portrait) {
             .scaling-svg-about-container {
               position: relative; 
@@ -25,17 +36,11 @@
               padding-bottom: 100%; 
               /* over-ride this inline for aspect ratio other than square */
             }
-            .down_arrow_area {
+            .down_arrow_area_wrap {
                 top: calc(40vh + 45vw);
-                left: 43vw;
             }
             #aboutus_data {
                 width: 80vw;
-            }
-        }
-        @media all and (orientation:portrait) and (min-width:400px) {
-            .down_arrow_area {
-                left: 46vw;
             }
         }
         @media all and (orientation:landscape) {
@@ -47,17 +52,11 @@
                 padding-bottom: 100%; 
                 /* over-ride this inline for aspect ratio other than square */
             }
-            .down_arrow_area {
+            .down_arrow_area_wrap {
                 top: 44vw;
-                left: 48vw;
             }
             #aboutus_data {
                 width: 50vw;
-            }
-        }
-        @media all and (orientation:landscape) and (max-width:800px) {
-            .down_arrow_area {
-                left: 46vw;
             }
         }
         .scaling-svg-about {
@@ -125,13 +124,13 @@
             }
         }
         .down_arrow_area {
-            position: fixed;
+            text-align: center;
             font-size: 0.8rem;
         }
 
         .down_arrow {
-            -webkit-animation: arrow_flicker 1.5s ease-in alternate infinite;
-            animation: arrow_flicker 1.5s ease-in alternate infinite;
+            -webkit-animation: arrow_flicker 1.5s ease-in-out alternate infinite;
+            animation: arrow_flicker 1.5s ease-in-out alternate infinite;
         }
         @-webkit-keyframes arrow_flicker {
             from {
@@ -139,8 +138,8 @@
                 transform: scale(1);
             }
             to {
-                opacity: 0; 
-                transform: scale(0.7);
+                opacity: 0.5; 
+                transform: scale(0.8);
             } 
         }
         @keyframes arrow_flicker {
@@ -149,15 +148,19 @@
                 transform: scale(1);
             }
             to {
-                opacity: 0; 
-                transform: scale(0.7);
+                opacity: 0.5; 
+                transform: scale(0.8);
             } 
+        }
+
+        p {
+            line-height: 1.5rem;
         }
     </style>
 </head>
 <body>
     <div id="main">
-        <div class="global_part">
+        <div class="global_part hide_unit">
 
             <figure>
                 <div class="menulist_icon_pos">
@@ -258,7 +261,9 @@
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
-            <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->            
         </div>
 
         <div id="about_main">
@@ -277,26 +282,28 @@
 
             <div id="about_content" class="hide_unit">
                 <div id="aboutus_main_header">
-                    <div class="aboutus_header_wrap">
-                        <div id="aboutus_title">ABOUT US</div>
-                        <div id="aboutus_subtitle">关于我们</div>
+                    <div class="aboutus_header_wrap hide_unit">
+                        <h1 id="aboutus_title">ABOUT US</h1>
+                        <h2 id="aboutus_subtitle">关于我们</h2>
                     </div>
                 </div>
                 <div id="aboutus_data">
-                    北京拱顶石科技有限公司，成立于2013年，致力于打造全球最具影响力的手机游戏公司，以足球文化为中心，为广大体育爱好者开发并运营模拟竞技型手机游戏，为球迷奉上各种类型足球游戏。公司推崇团结、友爱、拼搏、进取的快乐足球精神，倡导健康向上、共同进步的足球宗旨理念。我们相信，通过不断的推出高品质的原创手游，未来必将像我们公司名字一样，成为中国手游庞大市场体系中，那颗不可撼动的拱顶之石。
+                    <p>北京拱顶石科技有限公司，成立于2013年，致力于打造全球最具影响力的手机游戏公司，以足球文化为中心，为广大体育爱好者开发并运营模拟竞技型手机游戏，为球迷奉上各种类型足球游戏。公司推崇团结、友爱、拼搏、进取的快乐足球精神，倡导健康向上、共同进步的足球宗旨理念。我们相信，通过不断的推出高品质的原创手游，未来必将像我们公司名字一样，成为中国手游庞大市场体系中，那颗不可撼动的拱顶之石。</p>
                 </div>
                 <a href="development.html">
-                    <div class="down_arrow_area">
-                        <figure>
-                            <div class="scaling-down_arrow-container"
-                                    style="padding-bottom: 92% /* 100% * 55/60 */">
-                                <svg class="scaling-svg down_arrow" viewBox="0 0 48 48">
-                                    <circle cx="24" cy="24" r="22" fill="#96b432"></circle>
-                                    <polyline transform="scale(0.8) translate(12, 14)" fill="#ffffff" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
-                                </svg>
-                            </div>
-                        </figure>
-                        <p>更多介绍</p>
+                    <div class="down_arrow_area_wrap">
+                        <div class="down_arrow_area">
+                            <figure>
+                                <div class="scaling-down_arrow-container"
+                                     style="padding-bottom: 92% /* 100% * 55/60 */">
+                                    <svg class="scaling-svg down_arrow" viewBox="0 0 48 48">
+                                        <circle cx="24" cy="24" r="22" fill="#96b432"></circle>
+                                        <polyline transform="scale(0.8) translate(12, 14)" fill="#ffffff" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                                    </svg>
+                                </div>
+                            </figure>
+                            <p>更多介绍</p>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -328,7 +335,7 @@
 
         <div id="menu_content">
             <figure>
-                <div class="closeicon_pos">
+                <div class="closeicon_pos" hidden>
                     <div class="scaling-closeicon-container"
                          style="padding-bottom: 92% /* 100% * 55/60 */">
                         <div id="close_menu">
@@ -356,14 +363,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product01.html">
+                        <a class="parent" href="product.html">
                             PRODUCT
                             <span class="nav_cn">产品中心</span>
                         </a>
                         <div class="nav_description">
-                            <a href="product01.html">中超风云</a> |
-                            <a href="product02.html">五大联赛日文版</a> |
-                            <a href="product03.html">勇夺世界杯</a>
+                            <a href="product.html#product01">中超风云</a> |
+                            <a href="product.html#product02">五大联赛日文版</a> |
+                            <a href="product.html#product03">勇夺世界杯</a>
                         </div>
                     </li>
                     <li>
@@ -381,8 +388,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
-                <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
-                <span><a href="tel:8 606 666 66 66">&#9743; +860-6666 6666</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
 
@@ -402,6 +408,7 @@
 
         function contact_show() {
             $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
         }
 
         $("#close_menu").click(function () {
@@ -410,6 +417,7 @@
             $("#menu_back").addClass("rotate_hide");
 
             $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
 
             window.setTimeout(next, 1000);
 

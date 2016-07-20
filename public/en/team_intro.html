@@ -72,11 +72,26 @@
             position: absolute;
             top: 29vw;
             left: 13vw;
-            width: 36vw;
+            width: 32vw;
             overflow-wrap: break-word;
             float:left;
+            z-index: 3;
         }
 
+        .clip_pos {
+            z-index: 0;
+            position: absolute;
+            top: -7vw;
+            right: 3.4vw;
+        }
+        .scaling-clip-container {
+            position: relative; 
+            height:0; 
+            width: 71vw; 
+            padding: 0;
+            padding-bottom: 100%; 
+            /* over-ride this inline for aspect ratio other than square */
+        }
 
         .penta_pos {
             position: absolute;
@@ -84,26 +99,55 @@
             top: 11.3vw;
         }
 
-        .scaling-svg-container {
-            position: relative; 
-            height:0; 
+        .img_container {
+            z-index: -1;
+            position: absolute;
+            right: 22vw;
+            top: 10.5vw;
+            height:33vw; 
             width: 33vw; 
-            padding: 0;
-            padding-bottom: 100%; 
-            /* over-ride this inline for aspect ratio other than square */
+        }
+
+        .img_position {
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            height:33vw; 
+            width: 33vw; 
         }
 
         .founders_photo {
-            animation: large_small 12s linear alternate infinite;
-            -webkit-animation: large_small 12s linear alternate infinite;
+            position: absolute;
+            z-index: 1;
+            padding: 0;
+            height:33vw; 
+            width: 33vw; 
+            padding-bottom: 100%; 
+            background-position: center;
+            background-size: contain;
+            animation: large_small 8s ease-in-out alternate infinite;
+            -webkit-animation: large_small 8s linear ease-in-out infinite;
         }
         @keyframes large_small {
-            0%   {transform: scale(1);}
-            100%  {transform: scale(1.2);}
+            from {
+            -webkit-transform: scale(1);
+                    transform: scale(1); 
+            }
+            to {
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+            } 
         }
         @-webkit-keyframes large_small {
-            0%   {transform: scale(1);}
-            100%  {transform: scale(1.2);}
+            from {
+            -webkit-transform: scale(1);
+                    transform: scale(1); 
+            }
+            to {
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+            } 
         }
 
         .founder_item {
@@ -119,7 +163,7 @@
         .founder_item:nth-of-type(1) {
             position: absolute;
             left: 60vw;
-            bottom: 45.5vw;
+            bottom: 46.5vw;
         }
         .founder_item:nth-of-type(2) {
             position: absolute;
@@ -172,10 +216,9 @@
                 width: 12vw !important;
                 height: 12vw !important;
             }
-            .arrow {
+            .arrow_area {
                 top: 95vw !important;
                 left: 13vw !important;
-                width: 10vw !important;
             }
             #section2 .text {
                 top: 105vw !important;
@@ -216,7 +259,6 @@
         .staff_photo {
             display: block;
             width: 10vw;
-            height: 8vw;
 
             display: -webkit-box;
             display: -webkit-flex;
@@ -225,15 +267,13 @@
             -webkit-flex-direction: column;
             -ms-flex-direction: column;
             flex-direction: column;
-            -webkit-justify-content: space-between;
-            -ms-flex-pack: space-between;
-            justify-content: space-between;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
 
-            image-rendering: -moz-crisp-edges;         /* Firefox */
-            image-rendering:   -o-crisp-edges;         /* Opera */
-            image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-            image-rendering: crisp-edges;
-            -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+        }
+        .staff_photo div {
+            margin-bottom: 5px;
         }
         .black_and_white { 
             filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
@@ -260,29 +300,28 @@
             align-self:center;
         }
 
-        .arrow {
+        .arrow_area {
             position: absolute;
             top: 29vw;
             left: 52vw;
-            width: 6vw;
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
-            -webkit-justify-content: space-between;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
             -ms-flex-pack: justify;
-            justify-content: space-between;
         }
 
         #section2 .text {
             position: absolute;
-            top: 35vw;
+            top: 36vw;
             left: 52vw;
             width: 40vw;
             overflow-wrap: break-word;
         }
         #section2 header {
-            margin-bottom: 1vw;
+            margin-bottom: 2vw;
         }
         .team_item {
             font-size: 1rem;
@@ -293,28 +332,37 @@
         }
         .team_item:nth-of-type(1) {
             position: absolute;
-            top: 11vw;
-            left: 20vw;
+            bottom: 42vw;
+            left: 21vw;
+        }
+        @media screen and (orientation:portrait) {
+            #section2 {
+                overflow: hidden !important;
+                height: 130vw !important;
+            }
+            .team_item:nth-of-type(1) {
+                bottom: 116vw;
+            }
         }
         .team_item:nth-of-type(2) {
             position: absolute;
             top: 20vw;
-            left: 39vw;
+            left: 38vw;
         }
         .team_item:nth-of-type(3) {
             position: absolute;
-            top: 38vw;
-            left: 37vw;
+            top: 37vw;
+            left: 36.5vw;
         }
         .team_item:nth-of-type(4) {
             position: absolute;
-            top: 42vw;
+            top: 41.5vw;
             left: 19vw;
         }
         .team_item:nth-of-type(5) {
             position: absolute;
-            top: 26vw;
-            right: 89vw;
+            top: 26.5vw;
+            right: 88.5vw;
             text-align: right;
         }
         .team_item:hover {
@@ -615,11 +663,14 @@
             cursor: pointer;
         }
 
+        p {
+            line-height: 160%;
+        }
     </style>
 </head>
 <body>
     <div id="main">
-        <div class="global_part">
+        <div class="global_part hide_unit">
 
             <figure>
                 <div class="menulist_icon_pos">
@@ -642,6 +693,22 @@
                     </div>
                 </div>
             </figure>
+            <figure>
+                <div class="return_icon_pos">
+                    <div class="scaling-return_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <a href="aboutUs.html">
+                            <div id="return_icon">
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 50 50" xml:space="preserve">
+                                <circle cx="25" cy="25" r="24" />
+                                <polyline fill="#FFFFFF" transform="scale(0.8) translate(10 13)" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </figure>
 
         </div>
 
@@ -660,22 +727,47 @@
                         <h2>创始人介绍</h2>
                     </header>
                     <div class="founder_intro">
-                        <div id="ceo_intro" hidden>
-                            王高楠  CEO
+                        <p id="ceo_intro" hidden>
+                            王高楠  CEO。
                             拱顶石游戏创始人，“资源型”创业家，清华大学工学学士，加州大学伯克利分校硕士。热爱体育，热爱军事，擅长平面设计，对移动互联网领域有自己独到的见解和丰富的游戏策划经验。AAMA亚杰商会摇篮计划第九期学员，创业邦评选为2015年30岁以下创业新贵族。
-                        </div>
-                        <div id="cto_intro"  hidden>
-                            张煦  CTO
+                        </p>
+                        <p id="cto_intro"  hidden>
+                            张煦  CTO。
                             技术大神，超级玩家，曾就职完美世界引擎组，获清华大学学士及硕士学位。
-                        </div>
-                        <div id="partner_intro"  hidden>
-                            崔汉青  合伙人
+                        </p>
+                        <p id="partner_intro"  hidden>
+                            崔汉青  合伙人。
                             崔汉青，全栈工程师。本科时期两次代表武汉大学参加ACM/ICPC世界总决赛。曾就职于微软必应新闻团队，任研发主管。现致力于高效技术团队建设和足球游戏核心玩法研发。
-                        </div>
+                        </p>
                     </div>
                 </div>
 
                 <figure>
+                    <div class="clip_pos">
+                        <div class="scaling-clip-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 800 800">
+                                <g>
+                                    <path fill="#fff" d="M50,50 l0,700 l700,0 l0,-700z
+                                          M 304.681, 599.999 c -14, 0 -28.993 -10.925 -33.32 -24.277 L 208.437, 381.5
+	                                    c-4.326 -13.353, 1.401 -31.029, 12.727 -39.282 L 385.905, 222.184 c11.325 -8.252, 29.859 -8.252, 41.184, 0 l 164.741, 120.035
+	                                    c 11.327, 8.252, 17.054, 25.929, 12.727, 39.283 l -62.925, 194.221 C 537.306, 589.075, 522.312, 600, 508.312, 600 L 304.681, 599.999z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </figure>
+
+                <div class="img_container">
+                    <div class="img_position">
+                        <div class="founders_photo" style="background-color: #96b432;opacity:1;"></div>
+                        <div id="ceo" class="founders_photo" style="background-image:url(../images/founders/王高楠.jpg); opacity:0;"></div>
+                        <div id="cto" class="founders_photo" style="background-image:url(../images/founders/张煦.jpg); opacity:0;"></div>
+                        <div id="partner" class="founders_photo" style="background-image:url(../images/founders/崔汉青.jpg); opacity:0;"></div>
+                    </div>
+                </div>
+                <!--
+               <figure>
                     <div class="penta_pos">
                         <div class="scaling-svg-container"
                              style="padding-bottom: 92% /* 100% * 55/60 */">
@@ -697,7 +789,7 @@
                         </div>
                     </div>
                 </figure>
-
+                -->
                 <div>
                     <div class="founder_item" data-founder="ceo">
                         <div>CEO</div><div>王高楠</div>
@@ -728,11 +820,11 @@
                                     </clipPath>
                                 </defs>
                                 <g class="working_img">
-                                    <image id="scenario_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/scenario.jpg' width="450" height="450" />
-                                    <image id="technicians_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/technicians.jpg' width="450" height="450" opacity="0" />
-                                    <image id="art_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/art.JPG' width="450" height="450" opacity="0" />
-                                    <image id="business_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/business.JPG' width="450" height="450" opacity="0" />
-                                    <image id="function_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/function.jpg' width="450" height="450" opacity="0" />
+                                    <image id="scenario_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/策划组.JPG' width="450" height="450" />
+                                    <image id="technicians_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/技术组.jpg' width="450" height="450" opacity="0" />
+                                    <image id="art_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/美术组.JPG' width="450" height="450" opacity="0" />
+                                    <image id="business_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/商务运营.jpg' width="450" height="450" opacity="0" />
+                                    <image id="function_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/职能组.png' width="450" height="450" opacity="0" />
                                 </g>
                             </svg>
                         </div>
@@ -741,69 +833,71 @@
 
                 <ul class="teams">
                     <li class="team_item" data-team-type="scenario">
-                        <b>策划组</b><br>一句话简介
+                        <b>策划部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="佛祖（孟祥楠）" data-img-name="佛祖（孟祥楠）.jpg"></li>
-                            <li data-staff-name="韩聪" data-img-name="韩聪.jpg"></li>
-                            <li data-staff-name="刘舒洋" data-img-name="刘舒洋.jpg"></li>
-                            <li data-staff-name="刘寅" data-img-name="刘寅.jpg"></li>
-                            <li data-staff-name="王宝剑（王迎亚）" data-img-name="王宝剑（王迎亚）.jpg"></li>
-                            <li data-staff-name="张大锤（张宇）" data-img-name="张大锤（张宇）.jpg"></li>
-                            <li data-staff-name="长门（吴昊" data-img-name="长门（吴昊）.jpg"></li>
-                            <li data-staff-name="赵渐博" data-img-name="赵渐博.jpg"></li>
-                            <li data-staff-name="郑文杰" data-img-name="郑文杰.jpg"></li>
+                            <li data-staff-name="赵渐博" data-img-name="1赵渐博.jpg"></li>
+                            <li data-staff-name="佛祖" data-img-name="2佛祖（孟祥楠）.jpg"></li>
+                            <li data-staff-name="韩聪" data-img-name="3韩聪.jpg"></li>
+                            <li data-staff-name="刘舒洋" data-img-name="4刘舒洋.jpg"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="technicians">
-                        <b>技术组</b><br>一句话简介
+                        <b>技术研发部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="陈亚光" data-img-name="陈亚光.png"></li>
-                            <li data-staff-name="崔汉青" data-img-name="崔汉青.jpg"></li>
-                            <li data-staff-name="顾明" data-img-name="顾明.png"></li>
-                            <li data-staff-name="海涛（王鹏然）" data-img-name="海涛（王鹏然）.jpg"></li>
-                            <li data-staff-name="侯玉霜" data-img-name="侯玉霜.jpg"></li>
-                            <li data-staff-name="金毅" data-img-name="金毅.jpg"></li>
-                            <li data-staff-name="老司机" data-img-name="老司机.jpg"></li>
-                            <li data-staff-name="吕辰" data-img-name="吕辰.jpg"></li>
-                            <li data-staff-name="王坤亮" data-img-name="三里屯德罗西（王坤亮）.jpg"></li>
-                            <li data-staff-name="闪电（章敏）" data-img-name="闪电（章敏）.jpg"></li>
-                            <li data-staff-name="王彬" data-img-name="王彬.jpg"></li>
-                            <li data-staff-name="王玮" data-img-name="王玮.jpg"></li>
-                            <li data-staff-name="王卫军" data-img-name="王卫军.jpg"></li>
-                            <li data-staff-name="无情（吴清）" data-img-name="无情（吴清）.jpg"></li>
-                            <li data-staff-name="向磊" data-img-name="向磊.jpg"></li>
-                            <li data-staff-name="徐勇" data-img-name="徐勇.jpg"></li>
-                            <li data-staff-name="杨毓华" data-img-name="杨毓华.jpg"></li>
-                            <li data-staff-name="张煦" data-img-name="张煦.jpg"></li>
-                            <li data-staff-name="朱鹏宇" data-img-name="朱鹏宇.jpg"></li>
+                            <li data-staff-name="张煦" data-img-name="1张煦.jpg"></li>
+                            <li data-staff-name="崔汉青" data-img-name="2崔汉青.jpg"></li>
+                            <li data-staff-name="无情" data-img-name="3无情（吴清）.jpg"></li>
+                            <li data-staff-name="吕辰" data-img-name="4吕辰.jpg"></li>
+                            <li data-staff-name="老司机" data-img-name="5老司机.jpg"></li>
+                            <li data-staff-name="闪电" data-img-name="6闪电（章敏）.jpg"></li>
+                            <li data-staff-name="陈永涛" data-img-name="7陈永涛.jpg"></li>
+                            <li data-staff-name="顾明" data-img-name="8顾明.png"></li>
+                            <li data-staff-name="朱鹏宇" data-img-name="9朱鹏宇.jpg"></li>
+                            <li data-staff-name="三里屯德罗西" data-img-name="10三里屯德罗西（王坤亮）.jpg"></li>
+                            <li data-staff-name="海涛" data-img-name="11海涛（王鹏然）.jpg"></li>
+                            <li data-staff-name="王玮" data-img-name="12王玮.jpg"></li>
+                            <li data-staff-name="金毅" data-img-name="13金毅.jpg"></li>
+                            <li data-staff-name="杨毓华" data-img-name="14杨毓华.jpg"></li>
+                            <li data-staff-name="向磊" data-img-name="15向磊.jpg"></li>
+                            <li data-staff-name="徐勇" data-img-name="16徐勇.jpg"></li>
+                            <li data-staff-name="侯玉霜" data-img-name="17侯玉霜.jpg"></li>
+                            <li data-staff-name="陈亚光" data-img-name="18陈亚光.png"></li>
+                            <li data-staff-name="王卫军" data-img-name="19王卫军.jpg"></li>
+                            <li data-staff-name="王彬" data-img-name="20王彬.jpg"></li>
+                            <li data-staff-name="孙金成" data-img-name="21孙金成.jpg"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="art">
-                        <b>美术组</b><br>一句话简介
+                        <b>美术部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="jill（嵇志勤）" data-img-name="jill（嵇志勤）.jpg"></li>
-                            <li data-staff-name="安明飞" data-img-name="安明飞.jpg"></li>
-                            <li data-staff-name="姜小刀（姜培竹）" data-img-name="姜小刀（姜培竹）.jpg"></li>
-                            <li data-staff-name="梨子兔（李雪）" data-img-name="梨子兔（李雪）.jpg"></li>
-                            <li data-staff-name="李晶晶" data-img-name="李晶晶.png"></li>
-                            <li data-staff-name="刘奕扬" data-img-name="刘奕扬.jpg"></li>
-                            <li data-staff-name="钱老板（阿斯汉）" data-img-name="钱老板（阿斯汉）.jpg"></li>
-                            <li data-staff-name="夏尔（张鹤）" data-img-name="夏尔（张鹤）.jpg"></li>
-                            <li data-staff-name="宣扬" data-img-name="宣扬.jpg"></li>
+                            <li data-staff-name="李晶晶" data-img-name="1李晶晶.png"></li>
+                            <li data-staff-name="宣扬" data-img-name="2宣扬.jpg"></li>
+                            <li data-staff-name="钱老板" data-img-name="3钱老板（阿斯汉）.jpg"></li>
+                            <li data-staff-name="梨子兔" data-img-name="4梨子兔（李雪）.jpg"></li>
+                            <li data-staff-name="安明飞" data-img-name="5安明飞.jpg"></li>
+                            <li data-staff-name="夏尔" data-img-name="6夏尔（张鹤）.jpg"></li>
+                            <li data-staff-name="刘奕扬" data-img-name="7刘奕扬.jpg"></li>
+                            <li data-staff-name="jill" data-img-name="8jill（嵇志勤）.jpg"></li>
+                            <li data-staff-name="王岩" data-img-name="9王岩.png"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="business">
-                        <b>商务组</b><br>一句话简介
+                        <b>商务运营部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="黄菁菁" data-img-name="黄菁菁.jpg"></li>
+                            <li data-staff-name="黄菁菁" data-img-name="1黄菁菁.jpg"></li>
+                            <li data-staff-name="刘寅" data-img-name="2刘寅.jpg"></li>
+                            <li data-staff-name="长门" data-img-name="3长门（吴昊）.jpg"></li>
+                            <li data-staff-name="张大锤" data-img-name="4张大锤（张宇）.jpg"></li>
+                            <li data-staff-name="王宝剑" data-img-name="5王宝剑（王迎亚）.jpg"></li>
+                            <li data-staff-name="郑文杰" data-img-name="6郑文杰.jpg"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="function">
-                        <b>职能组</b><br>一句话简介
+                        <b>职能部门</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="黄吉平" data-img-name="黄吉平.jpg"></li>
-                            <li data-staff-name="王威" data-img-name="王威.jpg"></li>
-                            <li data-staff-name="小新（程亚鑫）" data-img-name="小新（程亚鑫）.jpg"></li>
+                            <li data-staff-name="黄吉平" data-img-name="1黄吉平.jpg"></li>
+                            <li data-staff-name="王威" data-img-name="2王威.jpg"></li>
+                            <li data-staff-name="小新" data-img-name="3小新（程亚鑫）.jpg"></li>
                         </ul>
                     </li>
                 </ul>
@@ -822,7 +916,7 @@
                         <div class="staff_photo black_and_white"></div>
                     </div>
                 </div>
-                <div class="arrow">
+                <div class="arrow_area">
                     <div class="up_arrow">
                         <div class="activate" hidden>
                             <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
@@ -853,14 +947,20 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="text">
-                    <header>
+                                                 
+                                                 
+                <div class="text">               
+                    <header>                     
                         <h1>STAFFS</h1>
                         <h2>企业成员介绍</h2>
                     </header>
-                    <p>The world's leading moble web developers.After completing this class, you'll have built a web application with a first-class mobile experience.</p>
+                    <div class="staff_intro">
+                        <p id="scenario_txt">逻辑缜密，脑洞无限。</p>
+                        <p id="technicians_txt" hidden>单纯朴实有智慧，聪明健谈有激情。</p>
+                        <p id="art_txt" hidden>用心创作，成就完美品质。</p>
+                        <p id="business_txt" hidden>运筹帷幄，决胜千里。</p>
+                        <p id="function_txt" hidden>严谨认真，博文约礼。</p>
+                    </div>
                 </div>
             </section>
 
@@ -887,7 +987,7 @@
                         <h1>VALUES</h1>
                         <h2>企业价值阐述</h2>
                     </header>
-                    <p>The world's leading moble web developers.After completing this class, you'll have built a web application.</p>
+                    <p></p>
                 </div>
                 <ul class="value_items">
                     <li class="value_item">
@@ -1007,7 +1107,7 @@
 
             <div id="menu_content">
                 <figure>
-                    <div class="closeicon_pos">
+                    <div class="closeicon_pos" hidden>
                         <div class="scaling-closeicon-container"
                              style="padding-bottom: 92% /* 100% * 55/60 */">
                             <div id="close_menu">
@@ -1060,8 +1160,7 @@
                     </ul>
                 </div>
                 <div class="contact_info" hidden>
-                    <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
-                    <span><a href="tel:8 606 666 66 66">&#9743; +860-6666 6666</a></span>
+                    <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
                 </div>
             </div>
 
@@ -1102,9 +1201,14 @@
             $(this).css("color", "#96b432");
             $(this).siblings().css("color", "#000");
             teamName = $(this).attr("data-team-type");
+
             var imgid = "#" + teamName + "_img";
             $(".working_img").find(imgid).css("opacity", "1");
             $(".working_img").find(imgid).siblings().css("opacity", "0");
+
+            var txtid = "#" + teamName + "_txt";
+            $(".staff_intro").find(txtid).prop("hidden", false);
+            $(".staff_intro").find(txtid).siblings().prop("hidden", true);
 
             staffNumber = $(this).find(".staff_photos li").length;
 
@@ -1174,24 +1278,19 @@
         }
 
         $(".founder_item")
-            .mouseover(function () {
+            .click(function () {
                 $(this).css("color", "#000");
                 $(this).siblings().css("color", "#808080");
 
                 var str = $(this).data('founder');
                 $("#" + str).css("opacity", "1");
+                $("#" + str).siblings().css("opacity", "0");
                 $("#" + str + "_intro").prop("hidden", false);
-            })
-            .mouseout(function () {
-                var str = $(this).data('founder');
-                $(this).css("color", "#808080");
-
-                $("#" + str).css("opacity", "0");
-                $("#" + str + "_intro").prop("hidden", true);
+                $("#" + str + "_intro").siblings().prop("hidden", true);
             });
 
         console.log(window.navigator.userAgent);
-
+        /*
         if (navigator.userAgent.search(/(MSIE|Trident)/i) != -1)
         {
             var elements = document.getElementsByClassName("founders_photo");
@@ -1235,7 +1334,7 @@
             $(".founders_photo").css("-webkit-transform-origin", "50% 50%");
         }
         
-
+        */
         $(".staff_photo")
             .mouseover(function () {
                 $(this).removeClass("black_and_white", false);
@@ -1253,6 +1352,7 @@
 
         function contact_show() {
             $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
         }
 
         $("#close_menu").click(function () {
@@ -1261,6 +1361,7 @@
             $("#menu_back").addClass("rotate_hide");
 
             $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
 
             window.setTimeout(next, 1000);
             $(".hide_unit").removeClass("back_hide");

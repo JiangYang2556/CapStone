@@ -104,7 +104,7 @@
         }
         .penta_name {
             color: #808080;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
         .penta_no {
@@ -130,15 +130,37 @@
         }
 
 
+        .sub_description {
+            background-color: #000;
+            width: 36vw;
+            height: calc(8vw + 10vh);
+            position: fixed;
+            top: 62vh;
+            left: 11vw;
+            color: white;
+            border-radius:2vw 2vw;
+        }
+        @media all and (orientation:portrait) {
+            .sub_description {
+                width: 55vw;
+                height: calc(8vw + 10vh);
+                top: 62vh;
+                left: 2vw;
+            }
+        }
 
         .banner {
+            position: relative;
+            top: 2.5vw;
+            left: 2vw;
+            bottom: 2vw;
+            right: 2vw;
+            overflow: hidden;
+
             display: -webkit-flex;
             display: flex;
             -webkit-flex-direction: column;
             flex-direction: column;
-            margin-top: 2vw;
-            margin-left: 2vw;
-            overflow: hidden;
 
             animation: appear_box 0.8s  cubic-bezier(.25,.74,.22,.99) forwards 1;
             -webkit-animation: appear_box 0.8s  cubic-bezier(.25,.74,.22,.99) forwards 1;
@@ -173,11 +195,10 @@
             font-size:1.8em;
         }
         .banner_body {
-            margin-top: 1vw;
-            font-size: 0.8rem;
             text-align: left;
             overflow-wrap: break-word;
-            margin-right: 1.5vw;
+            margin-right: 4vw;
+            margin-top: 1vw;
         }
 
         @keyframes appear_box {
@@ -189,24 +210,6 @@
             100%  {transform: translateY(0); opacity: 1;}
         }
 
-        .sub_description {
-            background-color: #000;
-            width: 38vw;
-            height: 25.5vh;
-            position: fixed;
-            top: 62vh;
-            left: 11vw;
-            color: white;
-            border-radius:2vw 2vw;
-        }
-        @media all and (orientation:portrait) {
-            .sub_description {
-                width: 55vw;
-                height: 30vw;
-                top: 62vh;
-                left: 2vw;
-            }
-        }
 
         .pro_img {
             cursor: pointer;
@@ -219,12 +222,13 @@
             font-size: 1.4rem;
             color: #000;
             font-weight: 600;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
     <div id="main">
-        <div class="global_part">
+        <div class="global_part hide_unit">
 
             <figure>
                 <div class="menuicon_pos">
@@ -312,7 +316,9 @@
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
-            <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->
         </div>
  
         <!--pentagon-->
@@ -345,24 +351,24 @@
 
             <div class="hide_unit unselected">
                 <div id="product1" class="peta_edge select_pro_item hide_unit" data-pro-id="product01">
-                    <p class="penta_no">01</p>
-                    <p class="penta_product">PRODUCT1</p>
-                    <p class="penta_name">中超风云</p>
+                    <div class="penta_no">01</div>
+                    <div class="penta_product">PRODUCT1</div>
+                    <div class="penta_name">中超风云</div>
                 </div>
                 <div id="product2" class="peta_edge select_pro_item hide_unit" data-pro-id="product02">
-                    <p class="penta_no">02</p>
-                    <p class="penta_product">PRODUCT2</p>
-                    <p class="penta_name">Mobasaka Champion Manager</p>
+                    <div class="penta_no">02</div>
+                    <div class="penta_product">PRODUCT2</div>
+                    <div class="penta_name">Mobasaka Champion Manager</div>
                 </div>
                 <div id="product3" class="peta_edge select_pro_item hide_unit" data-pro-id="product03">
-                    <p class="penta_no">03</p>
-                    <p class="penta_product">PRODUCT3</p>
-                    <p class="penta_name">中国队勇夺世界杯</p>
+                    <div class="penta_no">03</div>
+                    <div class="penta_product">PRODUCT3</div>
+                    <div class="penta_name">中国队勇夺世界杯</div>
                 </div>
                 <div id="product4" class="peta_edge hide_unit">
-                    <p class="penta_no">04</p>
-                    <p class="penta_product">MENU</p>
-                    <p class="penta_name">了解更多</p>
+                    <div class="penta_no">04</div>
+                    <div class="penta_product">MENU</div>
+                    <div class="penta_name">了解更多</div>
                 </div>
             </div>
             <div class="banner_part hide_unit">
@@ -442,7 +448,7 @@
 
         <div id="menu_content">
             <figure>
-                <div class="closeicon_pos">
+                <div class="closeicon_pos" hidden>
                     <div class="scaling-closeicon-container"
                             style="padding-bottom: 92% /* 100% * 55/60 */">
                         <div id="close_menu">
@@ -495,8 +501,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
-                <span><a href="mailto:work@example.com">&#9993; work@example.com</a></span>
-                <span><a href="tel:8 606 666 66 66">&#9743; +860-6666 6666</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
 
@@ -517,6 +522,8 @@
             $("#" + str + "_img").siblings().css("opacity", "0");
             $("#" + str + "_banner").prop("hidden", false);
             $("#" + str + "_banner").siblings().prop("hidden", true);
+
+            $(".point_text").prop("hidden", true);
         });
 
         $(".pro_img").click(function () {
@@ -527,6 +534,8 @@
         $("#product4").click(function () {
             $("#menu_window").prop("hidden", false);
             $(".hide_unit").addClass("back_hide");
+
+            window.setTimeout(contact_show, 1000);
         });
 
 
@@ -539,6 +548,7 @@
 
         function contact_show() {
             $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
         }
 
         $("#close_menu").click(function () {
@@ -547,6 +557,7 @@
             $("#menu_back").addClass("rotate_hide");
 
             $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
 
             window.setTimeout(next, 1000);
 
