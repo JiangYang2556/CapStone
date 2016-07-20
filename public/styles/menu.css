@@ -319,8 +319,8 @@ nav {
 }
 
 .rotate_show {
-    -webkit-animation: back_show 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-    animation: back_show 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+    -webkit-animation: back_show 0.7s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+    animation: back_show 0.7s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
 }
 @-webkit-keyframes back_show {
     from {
