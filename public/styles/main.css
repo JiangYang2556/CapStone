@@ -9,7 +9,6 @@ html {
 }
 
 
-
 @media screen and (min-width:1600px) and (max-width:1799px) {
     html {
         font-size: 120%;
@@ -22,9 +21,9 @@ html {
     }
 }
 
-@media screen and (min-width:480px) and (max-width:959px) {
+@media screen and (min-width:499px) and (max-width:959px) {
     html {
-        font-size: 80%;
+        font-size: 70%;
     }
     #menu_window #nav_menu ul li, h1 {
         font-size: 3.3rem;
@@ -33,15 +32,30 @@ html {
         font-size: 1.5rem;
     }
 }
-@media screen and (max-width:479px) {
+@media all and (max-width:499px) {
     html {
-        font-size: 50%;
+        font-size: 60%;
     }
     #menu_window #nav_menu ul li, h1 {
-        font-size: 4.5rem;
+        font-size: 3.6rem;
     }
     h2 {
         font-size: 2rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (orientation:landscape) and (max-height: 499px)  {
+    html {
+        font-size: 60%;
+    }
+    #menu_window #nav_menu ul li, h1 {
+        font-size: 2.6rem;
+    }
+    h2 {
+        font-size: 1.4rem;
     }
 }
 
@@ -74,12 +88,18 @@ html {
     }
 }
 
+
 p {
     font-size: 0.8rem;
     line-height: 1.5rem;
     letter-spacing: 0;
 }
 
+@media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    p {
+        font-size: 1rem;
+    }
+}
 
 body {
     margin: 0;
@@ -110,53 +130,6 @@ nav {
     float: left;
 }
 
-
-#loading {
-    opacity: 1;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #96B432;
-    z-index: 999;
-}
-#logo_splash {
-    opacity: 1;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -37px;
-    margin-left: -46px;
-    z-index:999;
--webkit-transform-origin: 50%;
-    transform-origin: 50%;
--webkit-animation: splash_effect 2s ease-in-out alternate infinite;
-    animation: splash_effect 2s ease-in-out alternate infinite;
-}
-@-webkit-keyframes splash_effect {
-    from {
-    -webkit-transform: scale(1);
-            transform: scale(1); 
-            opacity: 0.5;
-    }
-    to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-            opacity: 1;
-    } 
-}
-
-@keyframes splash_effect {
-    from {
-    -webkit-transform: scale(1);
-            transform: scale(1); 
-            opacity: 0.5;
-    }
-    to {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-            opacity: 1;
-    } 
-}
 
 
 #product_back {

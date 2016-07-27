@@ -59,13 +59,53 @@
             left: 11vw;
             top: -20vw;
         }
-        @media all and (orientation:portrait) {
+
+        .scaling-contactback {
+          position: absolute; 
+          height: 100%; 
+          width: 100%; 
+          left: 0; 
+          top:0;
+        }
+        .penta_contact_pos {
+            position: fixed;
+            left: 42vw;
+            top: -12vw;
+        }
+        @media all and (orientation:portrait) and (max-width:689px) {
             .scaling-contactback-container {
               position: relative; 
               height:0; 
-              width: 100vh;
-              left: -13vh;
-              top: 10vw;
+              width: 87vh;
+              left: -18vh;
+              top: 12vw;
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-contact-container {
+              position: relative; 
+              height:0; 
+              width: 70vh;
+              left: -12vh;
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:portrait) and (min-width:690px) {
+            .scaling-contactback-container {
+              position: relative; 
+              height:0; 
+              width: 100vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-contact-container {
+              position: relative; 
+              height:0; 
+              width: 70vw;
               padding: 0;
               padding-bottom: 100%; 
               /* over-ride this inline for aspect ratio other than square */
@@ -80,31 +120,6 @@
                 padding-bottom: 100%; 
                 /* over-ride this inline for aspect ratio other than square */
             }
-        }
-        .scaling-contactback {
-          position: absolute; 
-          height: 100%; 
-          width: 100%; 
-          left: 0; 
-          top:0;
-        }
-        .penta_contact_pos {
-            position: fixed;
-            left: 42vw;
-            top: -12vw;
-        }
-        @media all and (orientation:portrait) {
-            .scaling-contact-container {
-              position: relative; 
-              height:0; 
-              width: 80vh;
-              left: -10vh;
-              padding: 0;
-              padding-bottom: 100%; 
-              /* over-ride this inline for aspect ratio other than square */
-            }
-        }
-        @media all and (orientation:landscape) {
             .scaling-contact-container {
                 position: relative; 
                 height:0; 
@@ -211,7 +226,7 @@
                                                 c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
                                 </clipPath>
                             </defs>
-                            <image clip-path="url(#map_clip)" transform="translate(30 0)" xlink:href='../images/mask/地图灰.png' width='680' height='850' />
+                            <image clip-path="url(#map_clip)" transform="translate(30 0)" xlink:href='../images/map/地图.png' width='682' height='850' />
                         </svg>
                     </div>
                 </div>
@@ -242,13 +257,13 @@
                      style="padding-bottom: 92% /* 100% * 55/60 */">
                     <div>
                         <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             viewBox="0 0 1200 1200" xml:space="preserve">
-                        <g id="menu_back" class="rotate_show">
-                        <path transform="scale(3) translate(100, -97) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
-                                                c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
-                                                c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
-                        </g>
-                    </svg>
+                             viewBox="0 0 540 540" xml:space="preserve">
+                            <g id="menu_back" class="rotate_show">
+                            <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>

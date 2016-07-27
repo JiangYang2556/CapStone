@@ -25,10 +25,56 @@
         }
 
         html {
-            font-family:  黑体, SimHei, Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
             overflow-y: scroll;
+        }
+
+        @media only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+            html {
+                font-size: 100%;
+            }
+
+            #menu_window #nav_menu ul li, h1 {
+                font-size: 3.3rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+        }
+        @media only screen and (min-resolution: 192dpi) and (orientation:portrait), 
+            only screen and (min-resolution: 2dppx) and (orientation:portrait) {
+            html {
+                font-size: 120%;
+            }
+            #menu_window #nav_menu ul li {
+                font-size: 5rem;
+            }
+        }
+        @media only screen and (min-resolution: 192dpi) and (orientation:landscape), only screen and (min-resolution: 2dppx) and (orientation:landscape) {
+            .scaling-closeicon-container {
+                width: 60px; 
+            }
+            .scaling-menulist_icon-container {
+                width: 60px; 
+            }
+            .scaling-return_icon-container {
+                width: 60px; 
+            }
+            .return_icon_pos {
+                left: 90px;
+            }
+            .penta_menuback_pos {
+                position: fixed;
+                left: -18vw;
+                top: -20vw;
+            }
+            .scaling-menuback-container {
+                width: 160vw; 
+            }
         }
 
         article {
@@ -39,24 +85,36 @@
             margin-bottom: 2vw;
         }
 
+        #section1 .text {
+            position: absolute;
+            overflow-wrap: break-word;
+            float:left;
+            z-index: 3;
+        }
 
         @media screen and (orientation:portrait) {
-            html {
-                font-size: 50%;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
             #section1 .text {
-                left: 3vw !important;
-                width: 50vw !important;
-                overflow: hidden !important;
+                top: 29vw;
+                left: 13vw !important;
+                width: 35vw !important;
             }
         }
 
+        @media screen and (orientation:landscape) and (max-height: 599px) {
+            #section1 .text {
+                top: 18vw;
+                left: 13vw;
+                width: 32vw;
+            }
+        }
+
+        @media screen and (orientation:landscape) and (min-height: 600px) {
+            #section1 .text {
+                top: 29vw;
+                left: 13vw;
+                width: 32vw;
+            }
+        }
 
         * {
             box-sizing: border-box;
@@ -66,31 +124,24 @@
             position: relative;
             width: 100vw;
             height: 56vw;
-            overflow-y: hidden;
         }
-        #section1 .text {
-            position: absolute;
-            top: 29vw;
-            left: 13vw;
-            width: 32vw;
-            overflow-wrap: break-word;
-            float:left;
-            z-index: 3;
+        @media screen and (orientation:portrait) {
+            #section1 {
+                height: 65vw;
+            }
         }
 
-        .clip_pos {
-            z-index: 0;
+        .down_arrow_wrap {
+            display: none;
             position: absolute;
-            top: -7vw;
-            right: 3.4vw;
-        }
-        .scaling-clip-container {
-            position: relative; 
-            height:0; 
-            width: 71vw; 
-            padding: 0;
-            padding-bottom: 100%; 
-            /* over-ride this inline for aspect ratio other than square */
+            top: 98vh;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
         }
 
         .penta_pos {
@@ -99,36 +150,138 @@
             top: 11.3vw;
         }
 
-        .img_container {
-            z-index: -1;
-            position: absolute;
-            right: 22vw;
-            top: 10.5vw;
-            height:33vw; 
-            width: 33vw; 
+        .founder_item {
+            text-align: center;
+            cursor: pointer;
+            color: #808080;
+            font-size: 1.1rem;
+        }
+        .founder_item:hover {
+            color: #000 !important;
         }
 
-        .img_position {
-            display: block;
-            position: relative;
-            top: 0;
-            left: 0;
-            height:33vw; 
-            width: 33vw; 
+        @media screen and (orientation:landscape) {
+            .clip_pos {
+                z-index: 0;
+                position: absolute;
+                top: -7vw;
+                right: 3.4vw;
+            }
+
+            .scaling-clip-container {
+                position: relative;
+                height: 0;
+                width: 71vw;
+                padding: 0;
+                padding-bottom: 100%;
+                /* over-ride this inline for aspect ratio other than square */
+            }
+
+            .img_container {
+                z-index: -1;
+                position: absolute;
+                right: 22vw;
+                top: 10.5vw;
+                height: 33vw;
+                width: 33vw;
+            }
+
+            .img_position {
+                display: block;
+                position: relative;
+                top: 0;
+                left: 0;
+                height: 33vw;
+                width: 33vw;
+            }
+            .founders_photo {
+                position: absolute;
+                z-index: 1;
+                padding: 0;
+                height:33vw; 
+                width: 33vw; 
+                padding-bottom: 100%; 
+                background-position: center;
+                background-size: cover;
+                animation: large_small 8s ease-in-out alternate infinite;
+                -webkit-animation: large_small 8s linear ease-in-out infinite;
+            }
+            .founder_item:nth-of-type(1) {
+                position: absolute;
+                left: 59.5vw;
+                bottom: 46.5vw;
+            }
+            .founder_item:nth-of-type(2) {
+                position: absolute;
+                left: 79vw;
+                top: 22vw;
+            }
+            .founder_item:nth-of-type(3) {
+                position: absolute;
+                left: 73vw;
+                top: 41vw;
+            }
+        }
+        @media screen and (orientation:portrait) {
+            .clip_pos {
+                z-index: 0;
+                position: absolute;
+                top: -7vw;
+                right: -16vw;
+            }
+            .scaling-clip-container {
+                position: relative; 
+                height:0; 
+                width: 92vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .img_container {
+                z-index: -1;
+                position: absolute;
+                right: 8vw;
+                top: 15vw;
+                height:43vw; 
+                width: 43vw; 
+            }
+            .img_position {
+                position: relative;
+                top: 0;
+                left: 0;
+                height:43vw; 
+                width: 43vw; 
+            }
+            .founders_photo {
+                position: absolute;
+                z-index: 1;
+                padding: 0;
+                height:43vw; 
+                width: 43vw; 
+                padding-bottom: 100%; 
+                background-position: center;
+                background-size: cover;
+                animation: large_small 8s ease-in-out alternate infinite;
+                -webkit-animation: large_small 8s linear ease-in-out infinite;
+            }
+            .founder_item:nth-of-type(1) {
+                position: absolute;
+                left: 68vw;
+                bottom: 50vw;
+            }
+            .founder_item:nth-of-type(2) {
+                position: absolute;
+                right: 3vw;
+                top: 30vw;
+            }
+            .founder_item:nth-of-type(3) {
+                position: absolute;
+                left: 84vw;
+                top: 57vw;
+            }
         }
 
-        .founders_photo {
-            position: absolute;
-            z-index: 1;
-            padding: 0;
-            height:33vw; 
-            width: 33vw; 
-            padding-bottom: 100%; 
-            background-position: center;
-            background-size: contain;
-            animation: large_small 8s ease-in-out alternate infinite;
-            -webkit-animation: large_small 8s linear ease-in-out infinite;
-        }
+
         @keyframes large_small {
             from {
             -webkit-transform: scale(1);
@@ -150,31 +303,6 @@
             } 
         }
 
-        .founder_item {
-            text-align: center;
-            cursor: pointer;
-            color: #808080;
-            font-size: 1.1rem;
-        }
-        .founder_item:hover {
-            color: #000 !important;
-        }
-
-        .founder_item:nth-of-type(1) {
-            position: absolute;
-            left: 60vw;
-            bottom: 46.5vw;
-        }
-        .founder_item:nth-of-type(2) {
-            position: absolute;
-            left: 79vw;
-            top: 22vw;
-        }
-        .founder_item:nth-of-type(3) {
-            position: absolute;
-            left: 73vw;
-            top: 41vw;
-        }
 
         #section2 {
             position: relative;
@@ -182,50 +310,38 @@
             height: 56vw;
         }
 
-        .working_penta_pos {
-            position: absolute;
-            left: 11.5vw;
-            top: 15vw;
-        }
-
-        .scaling-svg-working-container {
-            position: relative; 
-            height:0; 
-            width: 27.5vw; 
-            padding: 0;
-            padding-bottom: 100%; 
-            /* over-ride this inline for aspect ratio other than square */
-        }
 
         @media screen and (orientation:portrait) {
-            #section2 {
-                overflow: hidden !important;
-                height: 130vw !important;
+            .scaling-svg-working-container {
+                position: relative; 
+                height:0; 
+                width: 45vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
             }
-            .staff_photo_area {
-                top: 55vw !important;
-                width: 80vw  !important;
-                left: 10vw !important;
-                height: 40vw !important;
-            }
-            .staff_photo {
-                width: 20vw !important;
-                height: 20vw !important;
-            }
-            .photo {
-                width: 12vw !important;
-                height: 12vw !important;
-            }
-            .arrow_area {
-                top: 95vw !important;
-                left: 13vw !important;
-            }
-            #section2 .text {
-                top: 105vw !important;
-                left: 13vw !important;
-                width: 60vw !important;
+            .working_penta_pos {
+                position: absolute;
+                left: 11.5vw;
+                top: 8vw;
             }
         }
+        @media screen and (orientation:landscape) {
+            .scaling-svg-working-container {
+                position: relative;
+                height: 0;
+                width: 27.5vw;
+                padding: 0;
+                padding-bottom: 100%;
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .working_penta_pos {
+                position: absolute;
+                left: 11.5vw;
+                top: 15vw;
+            }
+        }
+
 
         .staff_photo_area {
             position: absolute;
@@ -273,7 +389,7 @@
 
         }
         .staff_photo div {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         .black_and_white { 
             filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
@@ -283,10 +399,10 @@
         .photo {
             width: 5.8vw;
             height: 5.8vw;
-            border-radius: 50%;
+            border-radius: 100%;
 
             background-position: center;
-            background-size: contain;
+            background-size: cover;
             transform-origin: 50% 50%;
             -webkit-transform-origin: 50% 50%;
             -ms-transform-origin: 50% 50%;
@@ -313,6 +429,71 @@
             -ms-flex-pack: justify;
         }
 
+        @media screen and (orientation:portrait) {
+            .up_arrow + .down_arrow {
+                margin-left: 20px;
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            .staff_row {
+                position: absolute;
+                top: 58vw;
+                left: 10vw;
+                width: 80vw;
+                height: 22vw;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+            }
+            .left_arrow_pos {
+                position: absolute;
+                top: 62vw;
+                left: 5vw;
+            }
+            .right_arrow_pos {
+                position: absolute;
+                top: 61vw;
+                right: 5vw;
+            }
+            .staff_photo {
+                width: 20vw !important;
+                height: 22vw !important;
+            }
+            .photo {
+                width: 12vw !important;
+                height: 12vw !important;
+            }
+            .scaling-left-arrow-container {
+              position: relative; 
+              width: 6vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-right-arrow-container {
+              position: relative; 
+              width: 6vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .arrow_area {
+                top: 95vw !important;
+                left: 15vw !important;
+            }
+            #section2 .text {
+                top: 20vw !important;
+                left: 64vw !important;
+                width: 40vw !important;
+            }
+        }
+
+
         #section2 .text {
             position: absolute;
             top: 36vw;
@@ -335,15 +516,6 @@
             bottom: 42vw;
             left: 21vw;
         }
-        @media screen and (orientation:portrait) {
-            #section2 {
-                overflow: hidden !important;
-                height: 130vw !important;
-            }
-            .team_item:nth-of-type(1) {
-                bottom: 116vw;
-            }
-        }
         .team_item:nth-of-type(2) {
             position: absolute;
             top: 20vw;
@@ -364,6 +536,37 @@
             top: 26.5vw;
             right: 88.5vw;
             text-align: right;
+        }
+        @media screen and (orientation:portrait) {
+            #section2 {
+                overflow: hidden !important;
+                height: 100vw !important;
+            }
+            .team_item:nth-of-type(1) {
+                bottom: 93vw;
+                left: 25vw;
+            }
+            .team_item:nth-of-type(2) {
+                position: absolute;
+                top: 16vw;
+                left: 55vw;
+            }
+            .team_item:nth-of-type(3) {
+                position: absolute;
+                top: 40vw;
+                left: 54vw;
+            }
+            .team_item:nth-of-type(4) {
+                position: absolute;
+                top: 50vw;
+                left: 24vw;
+            }
+            .team_item:nth-of-type(5) {
+                position: absolute;
+                top: 26.5vw;
+                right: 88.5vw;
+                text-align: right;
+            }
         }
         .team_item:hover {
             color: #96B432 !important;
@@ -392,30 +595,52 @@
             #section3 .text {
                 position: absolute !important;
                 top: 18vw !important;
-                left: 3vw !important;
+                left: 13vw !important;
                 width: 40vw !important;
             }
             #section3 {
-                height: 62vw !important;
+                height: 90vw !important;
             }
         }
-        .value_penta_pos {
-            position: absolute;
-            left: 2vw;
-            top: -18.5vw;
-            z-index: -1;
-        }
         @media all and (orientation:portrait) {
+            .value_penta_pos {
+                position: absolute;
+                left: -9vw;
+                top: -22.5vw;
+                z-index: -1;
+            }
             .scaling-svg-value-container {
               position: relative; 
               height:0; 
-              width: 100vw; 
+              width: 120vw; 
               padding: 0;
               padding-bottom: 100%; 
               /* over-ride this inline for aspect ratio other than square */
             }
         }
-        @media all and (orientation:landscape) {
+        @media all and (orientation:landscape) and (max-width:1200px) {
+            .value_penta_pos {
+                position: absolute;
+                left: -2vw;
+                top: -20vw;
+                z-index: -1;
+            }
+            .scaling-svg-value-container {
+                position: relative; 
+                height:0; 
+                width: 106vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) and (min-width:1200px) {
+            .value_penta_pos {
+                position: absolute;
+                left: 2vw;
+                top: -18.5vw;
+                z-index: -1;
+            }
             .scaling-svg-value-container {
                 position: relative; 
                 height:0; 
@@ -458,22 +683,42 @@
             font-size: 1rem;
             margin-bottom: 5px;
         }
-        @media screen and (orientation:portrait) {
-            .value_item:nth-of-type(1) {
-                top: 5vw !important;
-                left: 57vw !important;
+        @media screen and (orientation:landscape) and (max-width:1200px) {
+          .value_item:nth-of-type(1) {
+                top: 0vw !important;
+                left: 49vw !important;
             }
             .value_item:nth-of-type(2) {
-                top: 21vw !important;
-                left: 70vw !important;
+                top: 13vw !important;
+                left: 69vw !important;
             }
             .value_item:nth-of-type(3) {
-                top: 37vw !important;
-                left: 65vw !important;
+                top: 31vw !important;
+                left: 67vw !important;
+                width: 18vw  !important;
             }
             .value_item:nth-of-type(4) {
                 top: 48vw !important;
-                left: 48vw !important;
+                left: 43vw !important;
+            }
+        }
+        @media screen and (orientation:portrait) {
+          .value_item:nth-of-type(1) {
+                top: -4vw !important;
+                left: 49vw !important;
+            }
+            .value_item:nth-of-type(2) {
+                top: 14vw !important;
+                left: 69vw !important;
+            }
+            .value_item:nth-of-type(3) {
+                top: 35vw !important;
+                left: 70vw !important;
+                width: 18vw  !important;
+            }
+            .value_item:nth-of-type(4) {
+                top: 54vw !important;
+                left: 43vw !important;
             }
         }
 
@@ -495,7 +740,7 @@
             #section4 .text {
                 position: absolute !important;
                 top: 5vw !important;
-                left: 5vw !important;
+                left: 13vw !important;
                 width: 80vw !important;
                 overflow-wrap: break-word !important;
             }
@@ -559,12 +804,17 @@
             border: 1px solid #808080;
 
             background-position: center;
-            background-size: 12vw;
+            background-size: 13vw;
             background-repeat: no-repeat;
         }
 
-        #section4 .flex-item:nth-of-type(3) {
+        #section4 .flex-item:nth-of-type(3),
+        #section5 .flex-item:nth-of-type(4) {
             background-size: 10vw;
+        }
+
+        #section5 .flex-item:nth-of-type(1) {
+            background-size: 8vw;
         }
 
         .flex-item {
@@ -665,6 +915,11 @@
 
         p {
             line-height: 160%;
+        }
+
+        .team_photo {
+            -webkit-transition: 1s all; 
+            transition: 1s all; 
         }
     </style>
 </head>
@@ -801,6 +1056,12 @@
                         <div>PARTNER</div><div>崔汉青</div>
                     </div>
                 </div>
+
+                <div class="down_arrow_wrap">
+                    <svg id="down_arrow" width="40px" height="40px">
+                        <polyline transform="scale(0.8)" fill="#d0d0d0" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                    </svg>
+                </div>
             </section>
 
             <section id="section2" class="hide_unit">
@@ -815,16 +1076,16 @@
                                 <defs>
                                     <clipPath id="working_mask" class="section2_clippos">
                                         <path transform="translate(-36, 53) rotate(-15)" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
-                                c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
-                                c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
                                     </clipPath>
                                 </defs>
-                                <g class="working_img">
-                                    <image id="scenario_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/策划组.JPG' width="450" height="450" />
-                                    <image id="technicians_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/技术组.jpg' width="450" height="450" opacity="0" />
-                                    <image id="art_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/美术组.JPG' width="450" height="450" opacity="0" />
-                                    <image id="business_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/商务运营.jpg' width="450" height="450" opacity="0" />
-                                    <image id="function_img" clip-path="url(#working_mask)" xlink:href='../images/team_staff/职能组.png' width="450" height="450" opacity="0" />
+                                <g class="working_img"  clip-path="url(#working_mask)">
+                                    <image id="scenario_img" class="team_photo" xlink:href='../images/team_staff/策划组.JPG' width="450" height="450" opacity="0"/>
+                                    <image id="technicians_img" class="team_photo"  xlink:href='../images/team_staff/技术组.jpg' width="450" height="450" />
+                                    <image id="art_img" class="team_photo" xlink:href='../images/team_staff/美术组.JPG' width="450" height="450" opacity="0"/>
+                                    <image id="business_img" class="team_photo" xlink:href='../images/team_staff/商务运营.jpg' width="450" height="450" opacity="0"/>
+                                    <image id="function_img" class="team_photo" xlink:href='../images/team_staff/职能组.png' width="450" height="450" opacity="0"/>
                                 </g>
                             </svg>
                         </div>
@@ -902,51 +1163,80 @@
                     </li>
                 </ul>
 
-                <div class="staff_photo_area">
-                    <div class="staff_row">
-                        <div class="staff_photo black_and_white"><div class="photo" style="background-image:url(../images/staffs/scenario/韩聪.jpg)"></div><div class="name">韩聪</div></div>
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                    </div>
-                    <div class="staff_row">
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                    </div>
-                </div>
-                <div class="arrow_area">
-                    <div class="up_arrow">
-                        <div class="activate" hidden>
-                            <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
-                            <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#96B432" fill="#fff" />
-                            <polyline transform="scale(0.8) translate(9.5, 8)" fill="#96B432" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
-                        </svg>
+                <div class="staff_photo_landscape_area">
+                    <div class="staff_photo_area">
+                        <div class="staff_row">
+                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo black_and_white"></div>
                         </div>
-                        <div class="inactivate">
-                            <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
-                            <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#d0d0d0" fill="#fff" />
-                            <polyline transform="scale(0.8) translate(9.5, 8)" fill="#d0d0d0" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
-                        </svg>
+                        <div class="staff_row">
+                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo black_and_white"></div>
                         </div>
                     </div>
 
-                    <div class="down_arrow">
-                        <div class="activate" hidden>
-                            <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
-                            <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#96B432" fill="#fff" />
-                            <polyline transform="scale(0.8) translate(9.5, 12)" fill="#96B432" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                    <div class="arrow_area">
+                        <div class="up_arrow">
+                            <div class="activate" hidden>
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#96B432" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 8)" fill="#96B432" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
                         </svg>
+                            </div>
+                            <div class="inactivate">
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#d0d0d0" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 8)" fill="#d0d0d0" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
+                        </svg>
+                            </div>
                         </div>
-                        <div class="inactivate">
-                            <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
-                            <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#d0d0d0" fill="#fff" />
-                            <polyline transform="scale(0.8) translate(9.5, 12)" fill="#d0d0d0" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+
+                        <div class="down_arrow">
+                            <div class="activate" hidden>
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#96B432" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 12)" fill="#96B432" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
                         </svg>
+                            </div>
+                            <div class="inactivate">
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#d0d0d0" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 12)" fill="#d0d0d0" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                        </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="staff_photo_portrait_area" hidden>
+                    <div class="left_arrow_pos">
+                        <div class="scaling-left-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#96b432" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="staff_row">
+                        <div class="staff_photo black_and_white"></div>
+                        <div class="staff_photo black_and_white"></div>
+                        <div class="staff_photo black_and_white"></div>
+                        <div class="staff_photo black_and_white"></div>
+                    </div>
+                    <div class="right_arrow_pos">
+                        <div class="scaling-right-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#96b432" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
                                                  
                                                  
                 <div class="text">               
@@ -1013,7 +1303,7 @@
                     </header>
                 </div>
                 <div class="flex-container">
-                    <div class="flex-item" style="background-image: url(../images/logos/胡莱logo.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/胡莱.png)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/体育之窗logo.png)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/中超logo.png)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/mobcast.png)"></div>
@@ -1030,10 +1320,10 @@
                     </header>
                 </div>
                 <div class="flex-container">
+                    <div class="flex-item" style="background-image: url(../images/logos/微影.jpg)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/红杉资本.png)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/亚杰商会.png)"></div>
-                    <div class="flex-item">优格资本</div>
-                    <div class="flex-item">微影资本</div>
+                    <div class="flex-item" style="background-image: url(../images/logos/优格.jpg)"></div>
                 </div>
 
                 <figure>
@@ -1093,13 +1383,13 @@
                          style="padding-bottom: 92% /* 100% * 55/60 */">
                         <div>
                             <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                 viewBox="0 0 1200 1200" xml:space="preserve">
-                            <g id="menu_back" class="rotate_show">
-                            <path transform="scale(3) translate(100, -97) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                 viewBox="0 0 540 540" xml:space="preserve">
+                                <g id="menu_back" class="rotate_show">
+                                <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
                                                 c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
                                                 c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
-                        </g>
-                    </svg>
+                                </g>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -1171,11 +1461,13 @@
     <script src="../js/jquery-ui.min.js"></script>
 
     <script>
-        var staffNumber, teamName;
+        var staffNumber, teamName, curTeamNo;
         var staffNames = [];
         var staffPhotos = [];
-        var showingGroupNo;
-        var groupNumber;
+        var showingGroupNo, portShowingGroupNo;
+        var groupNumber, portGroupNumber;
+        var curOrientation;
+        var down_arrow_pos;
 
         /*
         $(window).resize(function () {
@@ -1186,6 +1478,12 @@
             $("#animation_path").attr("transform", newattr);
         });
         */
+        $(window).scroll(function () {
+            $("#down_arrow").css("opacity", "0");
+            if ($(window).scrollTop() == 0)
+                $("#down_arrow").css("opacity", "1");
+        });
+
         $(document).ready(function () {
             /*
             var move_x = Math.round($(window).width() / 100 * 45.5);
@@ -1194,8 +1492,73 @@
             var newattr = "scale(1.11) translate(-5, -12) translate(" + move_x + "," + move_y + ")";
             $("#animation_path").attr("transform", newattr);
             */
-            $(".teams .team_item:nth-child(1)").trigger("click");
+            down_arrow_pos = $(window).height() - 35;
+            $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
+            detectOrientation();
+
+            if (curOrientation == "portrait")
+            {
+                $(".staff_photo_portrait_area").prop("hidden", false);
+                $(".staff_photo_landscape_area").prop("hidden", true);
+            }
+
+            $(".teams .team_item:nth-child(2)").trigger("click");
+
+            window.addEventListener("resize", function () {
+                down_arrow_pos = $(window).height() - 35;
+                $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
+
+                if (detectOrientationChange()) {
+                    if (curOrientation == 'portrait') {
+                        $(".staff_photo_portrait_area").prop("hidden", false);
+                        $(".staff_photo_landscape_area").prop("hidden", true);
+                    } else {
+                        $(".staff_photo_portrait_area").prop("hidden", true);
+                        $(".staff_photo_landscape_area").prop("hidden", false);
+                    }
+                }
+            });
         });
+
+        function detectOrientation() {
+           /*
+            if ($(window).width() <= $(window).height())
+            {
+                curOrientation = "portrait";
+                return;
+            }
+            curOrientation = "landscape";
+            return;
+            */
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                curOrientation = "portrait";
+                return;
+            }
+            curOrientation = "landscape";
+            return;
+        }
+
+        function detectOrientationChange() {
+            var preOrientation = curOrientation;
+            detectOrientation();
+            if (preOrientation != curOrientation)
+                return true;
+            return false;
+        }
+
+        function getTeamNo() {
+            if (teamName == "scenario")
+                curTeamNo = 1;
+            if (teamName == "technicians")
+                curTeamNo = 2;
+            if (teamName == "art")
+                curTeamNo = 3;
+            if (teamName == "business")
+                curTeamNo = 4;
+            if (teamName == "function")
+                curTeamNo = 5;
+            return;
+        }
 
         $(".team_item").click(function () {
             $(this).css("color", "#96b432");
@@ -1203,6 +1566,8 @@
             teamName = $(this).attr("data-team-type");
 
             var imgid = "#" + teamName + "_img";
+//            $(".working_img").find(imgid).attr("transform", "scale(1)");
+//            $(".working_img").find(imgid).siblings().attr("transform", "scale(0.1)");
             $(".working_img").find(imgid).css("opacity", "1");
             $(".working_img").find(imgid).siblings().css("opacity", "0");
 
@@ -1222,10 +1587,21 @@
             if (staffNumber > 8) {
                 groupNumber = Math.ceil(staffNumber / 8);
             }
+
+            portGroupNumber = 1;
+            if (staffNumber > 4) {
+                portGroupNumber = Math.ceil(staffNumber / 4);
+            }
+
             showingGroupNo = 0;
+            portShowingGroupNo = 0;
+
             console.log(groupNumber);
             AddShowData();
             SetArrow();
+
+            AddPortShowData();
+            PortSetArrow();
         });
 
         $(".up_arrow .activate").click(function () {
@@ -1244,6 +1620,31 @@
             var text = '';
             var i = 8 * showingGroupNo;
             $(".staff_photo_area").find(".staff_photo").each(function () {
+                if (i < staffPhotos.length)
+                    text = "<div class='photo' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
+                else
+                    text = '';
+                $(this).html(text);
+                i++;
+            });
+        }
+
+        $(".left_arrow_pos").click(function () {
+            portShowingGroupNo -= 1;
+            AddPortShowData();
+            PortSetArrow();
+        });
+
+        $(".right_arrow_pos").click(function () {
+            portShowingGroupNo += 1;
+            AddPortShowData();
+            PortSetArrow();
+        });
+
+        function AddPortShowData() {
+            var text = '';
+            var i = 4 * portShowingGroupNo;
+            $(".staff_photo_portrait_area").find(".staff_photo").each(function () {
                 if (i < staffPhotos.length)
                     text = "<div class='photo' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
                 else
@@ -1274,6 +1675,26 @@
             } else {
                 $(".down_arrow .activate").prop("hidden", true);
                 $(".down_arrow .inactivate").prop("hidden", false);
+            }
+        }
+
+        function PortSetArrow() {
+            var leftArrowActive = false;
+            var rightArrowActive = false;
+            if (portShowingGroupNo > 0)
+                leftArrowActive = true;
+            if (portShowingGroupNo < portGroupNumber - 1)
+                rightArrowActive = true;
+
+            if (leftArrowActive == true) {
+                $(".left_arrow_pos").prop("hidden", false);
+            } else {
+                $(".left_arrow_pos").prop("hidden", true);
+            }
+            if (rightArrowActive == true) {
+                $(".right_arrow_pos").prop("hidden", false);
+            } else {
+                $(".right_arrow_pos").prop("hidden", true);
             }
         }
 

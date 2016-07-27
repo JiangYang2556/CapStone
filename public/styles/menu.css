@@ -30,8 +30,6 @@ nav {
     font-size: 1rem;
     font-weight: 400;
     position: fixed;
-    top: 8vh;
-    left: 50vw;
     color: #000;
 }
 
@@ -57,29 +55,39 @@ nav {
     left: 3.2vw;
 }
 
+.return_icon_pos {
+    position: fixed;
+    top: 5.5vh;
+    left: calc(3.2vw + 5.5vh + 0.8vw);
+}
+
+.logo_icon_pos {
+    position: fixed;
+    top: 4.5vh;
+    right: 2.7vw;
+}
+
+
 @media all and (orientation:portrait) {
     .contact_info {
+        position: fixed;
         top: 3vh;
         right: 15vw;
     }
 }
-@media all and (orientation:landscape) and (max-width:980px) {
+@media all and (orientation:landscape) and (max-height:499px) {
     .contact_info {
+        position: fixed;
         top: 5vh;
-        right: 15vw;
+        right: 10vw;
     }
 }
-@media all and (orientation:landscape) and (min-width:980px) {
+@media all and (orientation:landscape) and (min-height:500px) {
     .contact_info {
+        position: fixed;
         top: 8vh;
         right: 22vw;
     }
-}
-
-.return_icon_pos {
-    position: fixed;
-    top: 5.5vh;
-    left: calc(3.2vw + 5vh + 0.8vw);
 }
 
 @media all and (orientation:portrait) {
@@ -92,19 +100,6 @@ nav {
         padding-bottom: 100%; 
         /* over-ride this inline for aspect ratio other than square */
     }
-}
-@media all and (orientation:landscape) {
-    .scaling-menuicon-container {
-        position: relative; 
-        height:0; 
-        width: 9vh; 
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
-}
-
-@media all and (orientation:portrait) {
     .scaling-closeicon-container {
         position: relative; 
         height:0; 
@@ -114,8 +109,126 @@ nav {
         padding-bottom: 100%; 
         /* over-ride this inline for aspect ratio other than square */
     }
+    .scaling-menulist_icon-container {
+        position: relative; 
+        height:0; 
+        width: 6vh;
+        top: -2vh;
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .scaling-return_icon-container {
+        position: relative; 
+        height:0; 
+        width: 6vh;
+        top: -2vh;
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .scaling-logo_icon-container {
+        position: relative; 
+        height:0; 
+        width: 8vh; 
+        top: -2vh;
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .penta_menuback_pos {
+        position: fixed;
+        top: -5vh;
+        right: calc(-30vw - 40vh);
+    }
+    .scaling-menuback-container {
+        position: relative; 
+        height:0; 
+        width: 180vh; 
+        top: 0;
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
 }
-@media all and (orientation:landscape) {
+@media all and (orientation:landscape) and (max-height: 499px)  {
+    .menulist_icon_pos {
+        position: fixed;
+        top: 5.5vh;
+        left: 20px;
+    }
+    .return_icon_pos {
+        position: fixed;
+        top: 5.5vh;
+        left: 60px;
+    }
+    .scaling-menuicon-container {
+        position: relative; 
+        height:0; 
+        width: 8vw; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .scaling-closeicon-container {
+        position: relative; 
+        height:0; 
+        top: 0;
+        width: 32px; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .scaling-menulist_icon-container {
+        position: relative; 
+        height:0; 
+        top: 0;
+        width: 32px; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .scaling-return_icon-container {
+        position: relative; 
+        height:0; 
+        top: 0;
+        width: 32px; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .scaling-logo_icon-container {
+        position: relative; 
+        height:0; 
+        width: 10vw; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .penta_menuback_pos {
+        position: fixed;
+        left: -18vw;
+        top: -10vw;
+    }
+    .scaling-menuback-container {
+        position: relative; 
+        height:0; 
+        top: 0vw;
+        width: 130vw; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+}
+@media all and (orientation:landscape) and (min-height: 500px) {
+    .scaling-menuicon-container {
+        position: relative; 
+        height:0; 
+        width: 9vh; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
     .scaling-closeicon-container {
         position: relative; 
         height:0; 
@@ -125,20 +238,6 @@ nav {
         padding-bottom: 100%; 
         /* over-ride this inline for aspect ratio other than square */
     }
-}
-
-@media all and (orientation:portrait) {
-    .scaling-menulist_icon-container {
-        position: relative; 
-        height:0; 
-        width: 6vh;
-        top: -2vh;
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
-}
-@media all and (orientation:landscape) {
     .scaling-menulist_icon-container {
         position: relative; 
         height:0; 
@@ -148,20 +247,6 @@ nav {
         padding-bottom: 100%; 
         /* over-ride this inline for aspect ratio other than square */
     }
-}
-
-@media all and (orientation:portrait) {
-    .scaling-return_icon-container {
-        position: relative; 
-        height:0; 
-        width: 6vh;
-        top: -2vh;
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
-}
-@media all and (orientation:landscape) {
     .scaling-return_icon-container {
         position: relative; 
         height:0; 
@@ -171,6 +256,29 @@ nav {
         padding-bottom: 100%; 
         /* over-ride this inline for aspect ratio other than square */
     }
+    .scaling-logo_icon-container {
+        position: relative; 
+        height:0; 
+        width: 12vh; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+    .penta_menuback_pos {
+        position: fixed;
+        left: -28vw;
+        top: -8vw;
+    }
+    .scaling-menuback-container {
+        position: relative; 
+        height:0; 
+        width: 120vw; 
+        padding: 0;
+        padding-bottom: 100%; 
+        /* over-ride this inline for aspect ratio other than square */
+    }
+}
+@media only screen and (min-resolution: 192dpi) and (orientation:landscape), only screen and (min-resolution: 2dppx) and (orientation:landscape) {
 }
 
 #menu_icon_outer {
@@ -244,65 +352,6 @@ nav {
         transform: scale(1.23);
         opacity: 1;
     } 
-}
-
-.logo_icon_pos {
-    position: fixed;
-    top: 4.5vh;
-    right: 2.7vw;
-}
-
-@media all and (orientation:portrait) {
-    .scaling-logo_icon-container {
-        position: relative; 
-        height:0; 
-        width: 8vh; 
-        top: -2vh;
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
-}
-@media all and (orientation:landscape) {
-    .scaling-logo_icon-container {
-        position: relative; 
-        height:0; 
-        width: 12vh; 
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
-}
-
-
-.penta_menuback_pos {
-    position: fixed;
-    left: -33vw;
-    top: -12vw;
-}
-
-@media all and (orientation:portrait) {
-    .scaling-menuback-container {
-        position: relative; 
-        height:0; 
-        width: 150vh; 
-        left: -60vh;
-        top: -10vh;
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
-}
-@media all and (orientation:landscape) {
-    .scaling-menuback-container {
-        position: relative; 
-        height:0; 
-        top: 10vh;
-        width: 90vw; 
-        padding: 0;
-        padding-bottom: 100%; 
-        /* over-ride this inline for aspect ratio other than square */
-    }
 }
 
 .scaling-svg {
@@ -608,8 +657,17 @@ nav {
             margin-left: 10px;
         }
 }
-@media all and (orientation:landscape) {
+
+@media all and (orientation:landscape) and (min-height: 499px) {
     .lang-switch {
         top: 50%;
+        right: 0px;
+    }
+}
+
+@media all and (orientation:landscape) and (max-height: 499px)  {
+    .lang-switch {
+        top: 50%;
+        right: -1vw;
     }
 }
