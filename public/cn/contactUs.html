@@ -1,9 +1,11 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="wap-font-scale" content="no">
+
     <title>Contact Us 联系我们</title>
     <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
@@ -15,7 +17,7 @@
             #contact_main {
                 width: 80vw;
                 height: 20vw;
-                top: 55vh;
+                top: 55%;
                 left: 10vw;
            }
         }
@@ -23,7 +25,7 @@
             #contact_main {
                 width: 35vw;
                 height: 20vw;
-                top: 30vh;
+                top: 30%;
                 left: 12vw;
            }
         }
@@ -31,23 +33,31 @@
         #contact_main h1 {
             margin-left: -2px;
         }
+
         #contact_main {
-            float: left;
             position: fixed;
             overflow-wrap: break-word;
         }
 
         #contact_data {
-            margin-top: 15vw;
+            margin-top: 8vw;
         }
         .contact_data_title {
             font-size: 1.2rem;
             font-weight: 700;
         }
+        .contact_call_wrap {
+            margin-top: 1.5vw;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .contact_zhaopin {
+            margin-top: 1.5vw;
+        }
         .contact_call {
             float: left;
-            margin-right: 8vw;
-            margin-top: 2vw;
+            margin-right: 4vw;
         }
         #contact_data p {
             color: #808080;
@@ -185,11 +195,11 @@
             <ul class="lang-switch">
 
                 <li class="">
-                    <a href="../en/main.html">EN</a>
+                    <a href="../en/contactUs.html">EN</a>
                 </li>
                 <li>|</li>
                 <li class="">
-                    <a href="../cn/main.html">简体中文</a>
+                    <a href="../cn/contactUs.html">简体中文</a>
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
@@ -226,7 +236,7 @@
                                                 c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
                                 </clipPath>
                             </defs>
-                            <image clip-path="url(#map_clip)" transform="translate(30 0)" xlink:href='../images/map/地图.png' width='682' height='850' />
+                            <image clip-path="url(#map_clip)" transform="translate(30 0)" xlink:href='../images/map/ditu.png' width='682' height='850' />
                         </svg>
                     </div>
                 </div>
@@ -237,11 +247,23 @@
             <h1>CONTACT US</h1>
             <h2>联系我们</h2>
             <div id="contact_data">
-                <div class="contact_data_title">公司位置</div>
-                <p>北京市朝阳区工体北路工人体育场21看台</p>
-                <div class="contact_call">
-                    <div class="contact_data_title">电话</div>
-                    <p><a href="tel:01057170710">&#9743; 010-57170710</a></p>
+                <div>
+                    <div class="contact_data_title">公司位置</div>
+                    <p>北京市朝阳区工体北路工人体育场21看台</p>
+                </div>
+                <div class="contact_call_wrap">
+                    <div class="contact_call">
+                        <div class="contact_data_title">电话</div>
+                        <p><a href="tel:01057170710">&#9743; 010-57170710</a></p>
+                    </div>
+                    <div class="contact_call">
+                        <div class="contact_data_title">邮件</div>
+                        <p><a href="mailto:w@capstonegaming.com">w@capstonegaming.com</a></p>
+                    </div>
+                </div>
+                <div class="contact_zhaopin">
+                    <div class="contact_data_title">加入我们</div>
+                    <p>本公司常年招聘开发、测试、美术、策划、商务等职位，<br /> 有意者请发送简历至hr@capstonegaming.com </p>
                 </div>
             </div>
         </div>
@@ -305,8 +327,8 @@
                         </a>
                         <div class="nav_description">
                             <a href="product.html#product01">中超风云</a> |
-                            <a href="product.html#product02">五大联赛日文版</a> |
-                            <a href="product.html#product03">勇夺世界杯</a>
+                            <a href="product.html#product02">モバサカChampionManager</a> |
+                            <a href="product.html#product03">中国队勇夺世界杯</a>
                         </div>
                     </li>
                     <li>
@@ -324,6 +346,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
+                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
                 <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>

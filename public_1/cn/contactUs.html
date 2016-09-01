@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="wap-font-scale" content="no">
+
+    <title>Contact Us 联系我们</title>
+    <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/menu.css">
+
+    <style>
+
+        @media all and (orientation:portrait) {
+            #contact_main {
+                width: 80vw;
+                height: 20vw;
+                top: 55%;
+                left: 10vw;
+           }
+        }
+        @media all and (orientation:landscape) {
+            #contact_main {
+                width: 35vw;
+                height: 20vw;
+                top: 30%;
+                left: 12vw;
+           }
+        }
+
+        #contact_main h1 {
+            margin-left: -2px;
+        }
+
+        #contact_main {
+            position: fixed;
+            overflow-wrap: break-word;
+        }
+
+        #contact_data {
+            margin-top: 8vw;
+        }
+        .contact_data_title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .contact_call_wrap {
+            margin-top: 1.5vw;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .contact_zhaopin {
+            margin-top: 1.5vw;
+        }
+        .contact_call {
+            float: left;
+            margin-right: 4vw;
+        }
+        #contact_data p {
+            color: #808080;
+            font-size: 0.9rem;
+        }
+
+        .penta_contactback_pos {
+            position: fixed;
+            left: 11vw;
+            top: -20vw;
+        }
+
+        .scaling-contactback {
+          position: absolute; 
+          height: 100%; 
+          width: 100%; 
+          left: 0; 
+          top:0;
+        }
+        .penta_contact_pos {
+            position: fixed;
+            left: 42vw;
+            top: -12vw;
+        }
+        @media all and (orientation:portrait) and (max-width:689px) {
+            .scaling-contactback-container {
+              position: relative; 
+              height:0; 
+              width: 87vh;
+              left: -18vh;
+              top: 12vw;
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-contact-container {
+              position: relative; 
+              height:0; 
+              width: 70vh;
+              left: -12vh;
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:portrait) and (min-width:690px) {
+            .scaling-contactback-container {
+              position: relative; 
+              height:0; 
+              width: 100vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-contact-container {
+              position: relative; 
+              height:0; 
+              width: 70vw;
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-contactback-container {
+                position: relative; 
+                height:0; 
+                width: 100vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-contact-container {
+                position: relative; 
+                height:0; 
+                width: 70vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        .scaling-contact {
+          position: absolute; 
+          height: 100%; 
+          width: 100%; 
+          left: 0; 
+          top:0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="global_part hide_unit">
+
+            <figure>
+                <div class="menulist_icon_pos">
+                    <div class="scaling-menulist_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="menu_icon">
+                            <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 200 200" xml:space="preserve">
+                            <circle cx="100" cy="100" r="98" />
+                            <g transform="scale(0.8) translate(60 60)">
+                            <circle cx="24.879" cy="64" r="10.059" style="fill:#fff;" />
+                            <circle cx="24.878" cy="100.09" r="10.059" style="fill:#fff;" />
+                            <circle cx="24.879" cy="27.91" r="10.058" style="fill:#fff;" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="27.91" y2="27.91" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="64" y2="64" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="100.09" y2="100.09" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <div class="return_icon_pos">
+                    <div class="scaling-return_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <a href="main.html">
+                            <div id="return_icon">
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 50 50" xml:space="preserve">
+                                <circle cx="25" cy="25" r="24" />
+                                <polyline fill="#FFFFFF" transform="scale(0.8) translate(10 13)" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </figure>
+
+            <ul class="lang-switch">
+
+                <li class="">
+                    <a href="../en/contactUs.html">EN</a>
+                </li>
+                <li>|</li>
+                <li class="">
+                    <a href="../cn/contactUs.html">简体中文</a>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->
+        </div>
+
+        <div id="contact_background">
+            <figure>
+                <div class="penta_contactback_pos hide_unit">
+                    <div class="scaling-contactback-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <svg class="scaling-contactback" viewBox="0 0 1320 1250">
+                            <path transform="scale(3.2) rotate(-18)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                        </svg>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <div class="penta_contact_pos hide_unit">
+                    <div class="scaling-contact-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <svg class="scaling-contact" viewBox="0 0 830 830">
+                            <path transform="scale(2.1) rotate(-9) translate(-20, -15)" stroke="#ffffff" stroke-width="10" fill="#808080" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                            <defs>
+                                <clipPath id="map_clip">
+                                    <path transform="scale(2.06) rotate(-9) translate(-31, -13)" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                                c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                                c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                </clipPath>
+                            </defs>
+                            <image clip-path="url(#map_clip)" transform="translate(30 0)" xlink:href='../images/map/ditu.png' width='682' height='850' />
+                        </svg>
+                    </div>
+                </div>
+            </figure>
+        </div>
+
+        <div id="contact_main" class="hide_unit">
+            <h1>CONTACT US</h1>
+            <h2>联系我们</h2>
+            <div id="contact_data">
+                <div>
+                    <div class="contact_data_title">公司位置</div>
+                    <p>北京市朝阳区工体北路工人体育场21看台</p>
+                </div>
+                <div class="contact_call_wrap">
+                    <div class="contact_call">
+                        <div class="contact_data_title">电话</div>
+                        <p><a href="tel:01057170710">&#9743; 010-57170710</a></p>
+                    </div>
+                    <div class="contact_call">
+                        <div class="contact_data_title">邮件</div>
+                        <p><a href="mailto:w@capstonegaming.com">w@capstonegaming.com</a></p>
+                    </div>
+                </div>
+                <div class="contact_zhaopin">
+                    <div class="contact_data_title">加入我们</div>
+                    <p>本公司常年招聘开发、测试、美术、策划、商务等职位，<br /> 有意者请发送简历至hr@capstonegaming.com </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!--menu window-->
+    <div id="menu_window" hidden>
+        <figure>
+            <div class="penta_menuback_pos">
+                <div class="scaling-menuback-container"
+                     style="padding-bottom: 92% /* 100% * 55/60 */">
+                    <div>
+                        <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 540 540" xml:space="preserve">
+                            <g id="menu_back" class="rotate_show">
+                            <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </figure>
+
+        <div id="menu_content">
+            <figure>
+                <div class="closeicon_pos" hidden>
+                    <div class="scaling-closeicon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="close_menu">
+                            <svg class="scaling-svg" viewBox="0 0 512 512">
+                                <g>
+                                    <circle cx="256" cy="256" r="253.44" />
+                                    <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
+                                        c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
+                                        C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
+                                    <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
+                                        c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
+                                        C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <div id="nav_menu" class="js-nav-active">
+                <ul class="nav-main">
+                    <li>
+                        <a href="main.html">
+                            HOME
+                            <span class="nav_cn">首页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="parent" href="product.html">
+                            PRODUCT
+                            <span class="nav_cn">产品中心</span>
+                        </a>
+                        <div class="nav_description">
+                            <a href="product.html#product01">中超风云</a> |
+                            <a href="product.html#product02">モバサカChampionManager</a> |
+                            <a href="product.html#product03">中国队勇夺世界杯</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">
+                            ABOUT US
+                            <span class="nav_cn">关于我们</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contactUs.html">
+                            CONTACT US
+                            <span class="nav_cn">联系我们</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact_info" hidden>
+                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-2.2.2.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+
+        $("#menu_icon").click(function () {
+            $("#menu_window").prop("hidden", false);
+            $(".hide_unit").addClass("back_hide");
+
+            window.setTimeout(contact_show, 1000);
+        });
+
+        function contact_show() {
+            $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
+        }
+
+        $("#close_menu").click(function () {
+            $("#close_menu").addClass("move_hide");
+            $("#nav_menu").addClass("move_hide");
+            $("#menu_back").addClass("rotate_hide");
+
+            $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
+
+            window.setTimeout(next, 1000);
+
+            $(".hide_unit").removeClass("back_hide");
+        });
+        function next() {
+            $("#menu_window").prop("hidden", true);
+            $("#close_menu").removeClass("move_hide");
+            $("#nav_menu").removeClass("move_hide");
+            $("#menu_back").removeClass("rotate_hide");
+        }
+
+    </script>
+</body>
+</html>

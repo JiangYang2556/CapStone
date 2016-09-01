@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="wap-font-scale" content="no">
+
+    <title>About Us 关于我们</title>
+    <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/menu.css">
+
+    <style>
+        .about_penta_pos {
+            position: fixed;
+            left: 0;
+            top: 0vw;
+            z-index: -1;
+        }
+
+        .down_arrow_area_wrap {
+            position: fixed;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .down_arrow_wrap {
+            position: relative;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        @media all and (orientation:portrait) {
+            .scaling-svg-about-container {
+              position: relative; 
+              height:70vh; 
+              width: 100vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .down_arrow_area_wrap {
+                top: calc(44vh + 45vw);
+            }
+            #aboutus_data {
+                width: 80vw;
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-svg-about-container {
+                position: relative; 
+                height:0; 
+                width: 100vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .down_arrow_area_wrap {
+                top: 44vw;
+            }
+            #aboutus_data {
+                width: 50vw;
+            }
+        }
+        .scaling-svg-about {
+          position: absolute; 
+          height: 100%; 
+          width: 100%; 
+          left: 0; 
+          top:0;
+        }
+
+        #aboutus_data {
+            margin: 0 auto;
+            margin-top: 46vh;
+            overflow-wrap: break-word;
+        }
+        #aboutus_main_header {
+            position: fixed;
+            top: 28vh;
+            width: 100%;
+            text-align:center;
+        }
+
+        @media all and (orientation:portrait) {
+            .scaling-down_arrow-container {
+                position: relative; 
+                height:0; 
+                width: 7vh;
+                top: -2vh;
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-down_arrow-container {
+                position: relative; 
+                height:0; 
+                top: 0;
+                width: 7vh; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        .down_arrow_area {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .down_arrow {
+            -webkit-animation: arrow_flicker 1.5s ease-in-out alternate infinite;
+            animation: arrow_flicker 1.5s ease-in-out alternate infinite;
+        }
+        @-webkit-keyframes arrow_flicker {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0.5; 
+                transform: scale(0.8);
+            } 
+        }
+        @keyframes arrow_flicker {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0.5; 
+                transform: scale(0.8);
+            } 
+        }
+
+        p {
+            line-height: 1.5rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="global_part hide_unit">
+
+            <figure>
+                <div class="menulist_icon_pos">
+                    <div class="scaling-menulist_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="menu_icon">
+                            <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 200 200" xml:space="preserve">
+                                <circle cx="100" cy="100" r="98"/>
+                                <g transform="scale(0.8) translate(60 60)">
+                                    <circle cx="24.879" cy="64" r="10.059" style="fill:#fff;"/>
+                                    <circle cx="24.878" cy="100.09" r="10.059" style="fill:#fff;"/>
+                                    <circle cx="24.879" cy="27.91" r="10.058" style="fill:#fff;"/>
+                                    <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="27.91" y2="27.91"/>
+                                    <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="64" y2="64"/>
+                                    <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="100.09" y2="100.09"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <div class="return_icon_pos">
+                    <div class="scaling-return_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <a href="main.html">
+                            <div id="return_icon">
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 50 50" xml:space="preserve">
+                                    <circle cx="25" cy="25" r="24" />
+                                    <polyline fill="#FFFFFF" transform="scale(0.8) translate(10 13)" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </figure>
+
+            <figure>
+                <div class="logo_icon_pos">
+                    <div class="scaling-logo_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div>
+                            <svg class="scaling-svg" viewBox="0 0 440 420">
+                                <g transform="translate(-630 -400)">
+                                    <path fill="#ffffff" d="M682.48,648.666c4.32,3.36,6.88,7.894,7.68,13.601h-6.32c-0.8-4.106-2.827-7.307-6.08-9.601
+		                                  c-3.094-2.132-6.88-3.2-11.36-3.2c-6.614,0-11.733,2.32-15.36,6.96c-3.36,4.32-5.04,10.028-5.04,17.12
+		                                  c0,7.2,1.652,12.854,4.96,16.96c3.52,4.428,8.613,6.641,15.28,6.641c4.532,0,8.4-1.2,11.6-3.601c3.413-2.612,5.68-6.372,6.8-11.279
+		                                  h6.32c-1.28,6.72-4.268,11.894-8.96,15.52c-4.427,3.468-9.68,5.2-15.76,5.2c-8.854,0-15.654-2.933-20.4-8.8
+		                                  c-4.267-5.227-6.4-12.106-6.4-20.641c0-8.532,2.187-15.492,6.56-20.88c4.746-6.026,11.573-9.04,20.48-9.04
+		                                  C672.826,643.625,678.16,645.306,682.48,648.666z" />
+                                    <path fill="#ffffff" d="M716.8,644.746h7.6l22.48,57.12h-7.12l-6.08-16h-26.24l-6.08,16h-7.04L716.8,644.746z M709.52,680.346
+		                                  h22.08l-10.8-28.561h-0.32L709.52,680.346z" />
+                                    <path fill="#ffffff" d="M752.64,644.746H776c13.12,0,19.68,5.601,19.68,16.8c0,11.308-6.587,16.96-19.76,16.96H759.2v23.36h-6.56
+		                                  V644.746z M759.2,650.425v22.4h16.4c4.532,0,7.946-0.933,10.24-2.8c2.187-1.866,3.28-4.692,3.28-8.48
+		                                  c0-3.893-1.12-6.666-3.36-8.319c-2.188-1.866-5.574-2.801-10.16-2.801H759.2z" />
+                                    <path fill="#ffffff" d="M838.399,648.026c3.786,3.04,5.972,7.573,6.56,13.6h-6.48c-0.694-4.106-2.294-7.172-4.8-9.2
+		                                  c-2.507-2.025-6.107-3.04-10.8-3.04c-4.32,0-7.627,0.694-9.92,2.08c-2.72,1.601-4.08,4.028-4.08,7.28c0,2.88,1.626,5.2,4.88,6.96
+		                                  c1.386,0.8,4.88,2,10.48,3.601c7.52,2.239,12.48,4.079,14.88,5.52c4.747,2.88,7.12,6.907,7.12,12.08c0,5.014-2,8.96-6,11.84
+		                                  c-4.054,2.827-9.44,4.24-16.16,4.24c-6.72,0-12-1.44-15.84-4.32c-4.48-3.466-6.96-8.692-7.44-15.68h6.48
+		                                  c0.586,4.96,2.32,8.613,5.2,10.96c2.72,2.134,6.586,3.2,11.6,3.2c4.693,0,8.48-0.88,11.36-2.641c2.88-1.76,4.32-4.159,4.32-7.199
+		                                  c0-3.573-1.894-6.373-5.68-8.4c-1.44-0.853-5.467-2.24-12.08-4.16c-6.72-2.026-11.094-3.572-13.12-4.64
+		                                  c-4.374-2.561-6.56-6.24-6.56-11.04c0-5.013,2.106-8.88,6.32-11.601c3.786-2.56,8.64-3.84,14.56-3.84
+		                                  C829.706,643.625,834.772,645.093,838.399,648.026z" />
+                                    <path fill="#ffffff" d="M850.159,644.746h46.8v5.68h-20.16v51.44h-6.48v-51.44h-20.159V644.746z" />
+                                    <path fill="#ffffff" d="M949.277,652.186c4.692,5.493,7.04,12.56,7.04,21.199c0,8.534-2.348,15.548-7.04,21.04
+		                                  c-4.96,5.708-11.733,8.561-20.32,8.561c-8.533,0-15.279-2.853-20.239-8.561c-4.694-5.386-7.04-12.399-7.04-21.04
+		                                  c0-8.692,2.346-15.732,7.04-21.119c4.96-5.761,11.732-8.641,20.319-8.641S944.37,646.479,949.277,652.186z M913.518,656.266
+		                                  c-3.521,4.319-5.28,10.027-5.28,17.119c0,7.04,1.76,12.721,5.28,17.04c3.68,4.48,8.826,6.721,15.439,6.721
+		                                  c6.561,0,11.707-2.187,15.44-6.561c3.572-4.372,5.36-10.106,5.36-17.2c0-7.199-1.788-12.985-5.36-17.359
+		                                  c-3.68-4.373-8.8-6.561-15.36-6.561C922.424,649.465,917.25,651.733,913.518,656.266z" />
+                                    <path fill="#ffffff" d="M965.438,644.746h6.88l32.32,46.48h0.24v-46.48h6.56v57.12h-6.72l-32.48-46.96h-0.239v46.96h-6.561V644.746
+		                                  z" />
+                                    <path fill="#ffffff" d="M1022.957,644.746h40.48v5.68h-33.92v19.12h32v5.681h-32v20.96h35.279v5.68h-41.84V644.746z" />
+                                </g>
+                                <g transform="translate(-630 -400)">
+                                    <defs>
+                                        <rect id="SVGID_1_" width="1695.118" height="1201.89" />
+                                    </defs>
+                                    <clipPath id="SVGID_2_">
+                                        <use xlink:href="#SVGID_1_" overflow="visible" />
+                                    </clipPath>
+                                    <path clip-path="url(#SVGID_2_)" fill="#ffffff" d="M734.678,416.056c1.32-2.413,4.649-4.387,7.399-4.387h227.39
+		                                  c2.75,0,6.128,1.947,7.506,4.327l19.388,33.47c1.378,2.38,1.372,6.27-0.015,8.645l-37.398,64.074
+		                                  c-1.386,2.375-3.647,2.371-5.025-0.008l-37.167-64.181c-1.378-2.38-4.755-4.327-7.505-4.327h-89.98
+		                                  c-2.75,0-3.872,1.947-2.493,4.327l62.777,108.347c1.379,2.379,4.757,4.326,7.507,4.326h38.422c2.75,0,3.909,1.968,2.575,4.373
+		                                  l-3.468,6.255c-1.334,2.405-4.675,4.372-7.425,4.372H793.704c-2.75,0-6.134-1.944-7.519-4.319l-70.705-121.269
+		                                  c-1.385-2.375-1.438-6.293-0.119-8.706L734.678,416.056z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <ul class="lang-switch">
+
+                <li class="">
+                    <a href="../en/aboutUs.html">EN</a>
+                </li>
+                <li>|</li>
+                <li class="">
+                    <a href="../cn/aboutUs.html">简体中文</a>
+                </li>
+            </ul>
+            <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
+            <!--
+                <a href="http://bcainfo.miitbeian.gov.cn/"><div class="registNumber">京ICP备 XXXXXXXXXX号</div></a>
+            -->            
+        </div>
+
+        <div id="about_main">
+            <figure>
+                <div class="about_penta_pos hide_unit">
+                    <div class="scaling-svg-about-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <svg class="scaling-svg-about" viewBox="0 0 1200 1200">
+                            <path transform="translate(-45, -15) translate(1570, 650) scale(4.5) rotate(180)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                        </svg>
+                    </div>
+                </div>
+            </figure>
+
+            <div id="about_content" class="hide_unit">
+                <div id="aboutus_main_header">
+                    <div class="aboutus_header_wrap hide_unit">
+                        <h1>ABOUT US</h1>
+                        <h2 id="aboutus_subtitle">关于我们</h2>
+                    </div>
+                </div>
+                <div id="aboutus_data">
+                    <p>北京拱顶石科技有限公司，成立于2013年，致力于打造全球最具影响力的手机游戏公司，以足球文化为中心，为广大体育爱好者开发并运营模拟竞技型手机游戏，为球迷奉上各种类型足球游戏。公司推崇团结、友爱、拼搏、进取的快乐足球精神，倡导健康向上、共同进步的足球宗旨理念。我们相信，通过不断的推出高品质的原创手游，未来必将像我们公司名字一样，成为中国手游庞大市场体系中，那颗不可撼动的拱顶之石。</p>
+                </div>
+                <div class="down_arrow_area_wrap">
+                    <div class="down_arrow_area">
+                        <a href="development.html">
+                            <div class="down_arrow_wrap">
+                                <figure>
+                                    <div class="scaling-down_arrow-container"
+                                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                                        <svg class="scaling-svg down_arrow" viewBox="0 0 48 48">
+                                            <circle cx="24" cy="24" r="22" fill="#96b432"></circle>
+                                            <polyline transform="scale(0.8) translate(12, 14)" fill="#ffffff" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                                        </svg>
+                                    </div>
+                                </figure>
+                            </div>
+                            <p>更多介绍</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--menu window-->
+    <div id="menu_window" hidden>
+        <figure>
+            <div class="penta_menuback_pos">
+                <div class="scaling-menuback-container"
+                     style="padding-bottom: 92% /* 100% * 55/60 */">
+                    <div>
+                        <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 540 540" xml:space="preserve">
+                            <g id="menu_back" class="rotate_show">
+                            <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </figure>
+
+        <div id="menu_content">
+            <figure>
+                <div class="closeicon_pos" hidden>
+                    <div class="scaling-closeicon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="close_menu">
+                            <svg class="scaling-svg" viewBox="0 0 512 512">
+                                <g>
+                                    <circle cx="256" cy="256" r="253.44" />
+                                    <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
+                                        c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
+                                        C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
+                                    <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
+                                        c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
+                                        C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <div id="nav_menu" class="js-nav-active">
+                <ul class="nav-main">
+                    <li>
+                        <a href="main.html">
+                            HOME
+                            <span class="nav_cn">首页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="parent" href="product.html">
+                            PRODUCT
+                            <span class="nav_cn">产品中心</span>
+                        </a>
+                        <div class="nav_description">
+                            <a href="product.html#product01">中超风云</a> |
+                            <a href="product.html#product02">モバサカChampionManager</a> |
+                            <a href="product.html#product03">中国队勇夺世界杯</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">
+                            ABOUT US
+                            <span class="nav_cn">关于我们</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contactUs.html">
+                            CONTACT US
+                            <span class="nav_cn">联系我们</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact_info" hidden>
+                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
+                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-2.2.2.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            var patt = /(Chrome\/)[0-9]+/i;
+            var result = patt.exec(navigator.userAgent);
+            if (result[0] != null) {
+                var str = result[0];
+                var arr = str.split("/");
+                var ver = parseInt(arr[1]);
+                if ((ver >= 45) && (($(window).width() <= 499) || ($(window).height() <= 499))) {
+                    width = parseInt($("#aboutus_data p").css("width"));
+                    width = width + width * 0.25;
+                    var new_width = Math.round(width) + '';
+                    $("#aboutus_data p").css({
+                        "font-size": "10px",
+                        "-webkit-transform": "scale(0.8)",
+                        "-webkit-transform-origin": "0 0",
+                        "width": new_width
+                    });
+                }
+            }
+        });
+
+        $("#menu_icon").click(function () {
+            $("#menu_window").prop("hidden", false);
+            $(".hide_unit").addClass("back_hide");
+
+            window.setTimeout(contact_show, 1000);
+        });
+
+        function contact_show() {
+            $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
+        }
+
+        $("#close_menu").click(function () {
+            $("#close_menu").addClass("move_hide");
+            $("#nav_menu").addClass("move_hide");
+            $("#menu_back").addClass("rotate_hide");
+
+            $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
+
+            window.setTimeout(next, 1000);
+
+            $(".hide_unit").removeClass("back_hide");
+        });
+
+        function next() {
+            $("#menu_window").prop("hidden", true);
+            $("#close_menu").removeClass("move_hide");
+            $("#nav_menu").removeClass("move_hide");
+            $("#menu_back").removeClass("rotate_hide");
+        }
+
+    </script>
+</body>
+</html>

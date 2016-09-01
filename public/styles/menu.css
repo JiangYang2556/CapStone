@@ -33,6 +33,10 @@ nav {
     color: #000;
 }
 
+.contact_info span {
+    margin-right: 2vw;
+}
+
 .global_part, .menuicon_pos, .menulist_icon_pos, .return_icon_pos, .logo_icon_pos, .lang-switch, .copyright, .registNumber{
     z-index: 998;
 }
@@ -72,7 +76,7 @@ nav {
     .contact_info {
         position: fixed;
         top: 3vh;
-        right: 15vw;
+        right: 5vw;
     }
 }
 @media all and (orientation:landscape) and (max-height:499px) {
@@ -86,7 +90,7 @@ nav {
     .contact_info {
         position: fixed;
         top: 8vh;
-        right: 22vw;
+        right: 32vw;
     }
 }
 
@@ -371,6 +375,14 @@ nav {
     -webkit-animation: back_show 0.7s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
     animation: back_show 0.7s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
 }
+
+@media all and (orientation:portrait) {
+    .rotate_show {
+        -webkit-animation: back_show 0.5s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+        animation: back_show 0.5s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+    }
+}
+
 @-webkit-keyframes back_show {
     from {
         transform: scale(0.8) translate(-50vw, -50vh) rotate(-180deg);
@@ -455,8 +467,8 @@ nav {
 }
 
 .move_hide {
-    -webkit-animation: menu_text_hide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 1;
-    animation: menu_text_hide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 1;
+    -webkit-animation: menu_text_hide 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1;
+    animation: menu_text_hide 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 1;
 }
 @-webkit-keyframes menu_text_hide {
     from {
@@ -538,7 +550,9 @@ nav {
 }
 
 #menu_window #nav_menu {
-    margin-top: 18vh;
+    position: fixed;
+    top: 20%;
+    left: 0;
     text-decoration: none;
 }
 
@@ -567,7 +581,9 @@ nav {
 
 @media all and (orientation:portrait) {
     #menu_window #nav_menu {
-        margin-top: 28vh;
+        position: fixed;
+        top: 28%;
+        left: 0;
         text-decoration: none;
     }
 

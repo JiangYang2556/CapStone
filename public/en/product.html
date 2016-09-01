@@ -1,10 +1,13 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html  lang="zh-cn">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="wap-font-scale" content="no">
+
     <title>Products</title>
+    
     <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
     <link rel="stylesheet" type="text/css" href="../styles/menu.css">
@@ -58,10 +61,12 @@
         .right_arrow_pos {
             position: fixed;
             cursor: pointer;
+            z-index: 999;
         }
         .left_arrow_pos {
             position: fixed;
             cursor: pointer;
+            z-index: 999;
         }
 
         @media all and (orientation:portrait) {
@@ -71,15 +76,15 @@
                 left: 10vw;
 
                 height: 50vh;
-                top: 28vh;
+                top: 28%;
             }
             .right_arrow_pos {
                 left: 77vw;
-                top: 54vh;
+                top: 50%;
             }
             .left_arrow_pos {
                 left: 3vw;
-                top: 54vh;
+                top: 50%;
             }
             .productVideo {
                 position: relative;
@@ -88,17 +93,28 @@
                 overflow: hidden;
             }
         }
+        @media screen and (max-width:349px) and (orientation:portrait) {
+            .productVideo {
+                position: relative;
+                width: 60vw;
+                height: 36.5625vw;
+                overflow: hidden;
+            }
+            .right_arrow_pos {
+                left: 72vw;
+            }
+        }
         @media all and (orientation:landscape) and (max-height: 499px) {
             .product_main {
                 position: fixed;
                 left: 16vw;
-                top: 5.5vh;
+                top: 5.5%;
 
                 width: 48vw;
                 height: 50vw;
             }
             .right_arrow_pos {
-                left: calc(16vw + 78vh + 1.5vw);
+                left: calc(16vw + 78vh + 1.8vw);
                 top: calc(22vw + 3vh);
             }
             .left_arrow_pos {
@@ -117,7 +133,7 @@
             .product_main {
                 position: fixed;
                 left: 13vw;
-                top: 8vh;
+                top: 8%;
 
                 width: 48vw;
                 height: 50vw;
@@ -137,6 +153,11 @@
                 overflow: hidden;
             }
        }
+
+        .product_main {
+            -webkit-transition: 1s opacity; 
+            transition: 1s opacity; 
+        }
 
          p {
             line-height: 1.5rem;
@@ -193,16 +214,16 @@
             left: 0;
         }
 
-        #product02_side {
+        .side_item:nth-of-type(2) {
             position: absolute;
-            left: 40px;
+            left: 36px;
             top: 60px;
             width: 18vw;
         }
 
-        #product03_side {
+        .side_item:nth-of-type(3) {
             position: absolute;
-            left: 78px;
+            left: 76px;
             top: 125px;
             width: 16vw;
         }
@@ -212,14 +233,14 @@
                 width: 11vh; 
             }
             .download_pos {
-                margin-top: 5vh;
+                margin-top: 10px;
                 margin-bottom: -1vh;
                 margin-right: 3vh;
                 cursor: pointer;
             }
             .product_sidemenu {
                 top: 12vh;
-                right: calc(10vw + 9vh);
+                right: calc(10vw + 9vh - 3px);
                 height: 30vw;
             }
             .product_name {
@@ -324,315 +345,211 @@
             height: 100%;
         }
 
-        @media all and (orientation:landscape) and (max-height: 499px) {
-            .img_left_show {
-                -webkit-animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-            }
+        .img_left_show {
+            -webkit-animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+            animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+        }
+        .img_left_hide {
+            -webkit-animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+            animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+        }
+        .img_right_show {
+            -webkit-animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+            animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+        }
+        .img_right_hide {
+            -webkit-animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+            animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+        }
 
+        @media all and (orientation:landscape) and (max-height: 499px) {
             @-webkit-keyframes img_left_show_ani {
                 from {
                     transform: translateX(78vh);
                 }
-
                 to {
                     transform: translateX(0);
                 }
             }
-
             @keyframes img_left_show_ani {
                 from {
                     transform: translateX(78vh);
                 }
-
                 to {
                     transform: translateX(0);
                 }
             }
-
-            .img_left_hide {
-                -webkit-animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-            }
-
             @-webkit-keyframes img_left_hide_ani {
                 from {
                     transform: translateX(0);
                 }
-
                 to {
                     transform: translateX(-78vh);
                 }
             }
-
             @keyframes img_left_hide_ani {
                 from {
                     transform: translateX(0);
                 }
-
                 to {
                     transform: translateX(-78vh);
                 }
             }
-
-            .img_right_show {
-                -webkit-animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-            }
-
             @-webkit-keyframes img_right_show_ani {
                 from {
                     transform: translateX(-78vh);
                 }
-
                 to {
                     transform: translateX(0);
                 }
             }
-
             @keyframes img_right_show_ani {
                 from {
                     transform: translateX(-78vh);
                 }
-
                 to {
                     transform: translateX(0);
                 }
             }
-
-            .img_right_hide {
-                -webkit-animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-            }
-
             @-webkit-keyframes img_right_hide_ani {
                 from {
                     transform: translateX(0);
                 }
-
                 to {
                     transform: translateX(78vh);
                 }
             }
-
             @keyframes img_right_hide_ani {
                 from {
                     transform: translateX(0);
                 }
-
                 to {
                     transform: translateX(78vh);
                 }
             }
         }
         @media all and (orientation:landscape) and (min-height: 500px) {
-            .img_left_show {
-                -webkit-animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-            }
-
             @-webkit-keyframes img_left_show_ani {
-                from {
-                    transform: translateX(48vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
+                from {transform: translateX(48vw);}
+                to {transform: translateX(0);}
             }
-
             @keyframes img_left_show_ani {
-                from {
-                    transform: translateX(48vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
-            }
-
-            .img_left_hide {
-                -webkit-animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+                from {transform: translateX(48vw);}
+                to {transform: translateX(0);}
             }
 
             @-webkit-keyframes img_left_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(-48vw);
-                }
+                from {transform: translateX(0);}
+                to {transform: translateX(-48vw);}
             }
-
             @keyframes img_left_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(-48vw);
-                }
-            }
-
-            .img_right_show {
-                -webkit-animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+                from {transform: translateX(0);}
+                to {transform: translateX(-48vw);}
             }
 
             @-webkit-keyframes img_right_show_ani {
-                from {
-                    transform: translateX(-48vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
+                from {transform: translateX(-48vw);}
+                to {transform: translateX(0);}
             }
-
             @keyframes img_right_show_ani {
-                from {
-                    transform: translateX(-48vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
-            }
-
-            .img_right_hide {
-                -webkit-animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+                from {transform: translateX(-48vw);}
+                to {transform: translateX(0);}
             }
 
             @-webkit-keyframes img_right_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(48vw);
-                }
+                from {transform: translateX(0);}
+                to {transform: translateX(48vw);}
             }
-
             @keyframes img_right_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(48vw);
-                }
+                from {transform: translateX(0);}
+                to {transform: translateX(48vw);}
             }
         }
 
         @media all and (orientation:portrait) {
-            .img_left_show {
-                -webkit-animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_left_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-            }
-
             @-webkit-keyframes img_left_show_ani {
-                from {
-                    transform: translateX(65vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
+                from {transform: translateX(65vw);}
+                to {transform: translateX(0);}
             }
-
             @keyframes img_left_show_ani {
-                from {
-                    transform: translateX(65vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
-            }
-
-            .img_left_hide {
-                -webkit-animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_left_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+                from {transform: translateX(65vw);}
+                to {transform: translateX(0);}
             }
 
             @-webkit-keyframes img_left_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(-65vw);
-                }
+                from {transform: translateX(0);}
+                to {transform: translateX(-65vw);}
             }
-
             @keyframes img_left_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(-65vw);
-                }
-            }
-
-            .img_right_show {
-                -webkit-animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_right_show_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+                from {transform: translateX(0);}
+                to {transform: translateX(-65vw);}
             }
 
             @-webkit-keyframes img_right_show_ani {
-                from {
-                    transform: translateX(-65vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
+                from {transform: translateX(-65vw);}
+                to {transform: translateX(0);}
             }
-
             @keyframes img_right_show_ani {
-                from {
-                    transform: translateX(-65vw);
-                }
-
-                to {
-                    transform: translateX(0);
-                }
-            }
-
-            .img_right_hide {
-                -webkit-animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
-                animation: img_right_hide_ani 1s cubic-bezier(0.22, 0.43, 0.17, 1.00) forwards 1;
+                from {transform: translateX(-65vw);}
+                to {transform: translateX(0);}
             }
 
             @-webkit-keyframes img_right_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(65vw);
-                }
+                from {transform: translateX(0);}
+                to {transform: translateX(65vw);}
             }
-
             @keyframes img_right_hide_ani {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(65vw);
-                }
+                from {transform: translateX(0);}
+                to {transform: translateX(65vw);}
             }
+        }
+        @media screen and (max-width:349px) and (orientation:portrait) {
+            @-webkit-keyframes img_left_show_ani {
+                from {transform: translateX(60vw);}
+                to {transform: translateX(0);}
+            }
+            @keyframes img_left_show_ani {
+                from {transform: translateX(60vw);}
+                to {transform: translateX(0);}
+            }
+
+            @-webkit-keyframes img_left_hide_ani {
+                from {transform: translateX(0);}
+                to {transform: translateX(-60vw);}
+            }
+            @keyframes img_left_hide_ani {
+                from {transform: translateX(0);}
+                to {transform: translateX(-60vw);}
+            }
+
+            @-webkit-keyframes img_right_show_ani {
+                from {transform: translateX(-60vw);}
+                to {transform: translateX(0);}
+            }
+            @keyframes img_right_show_ani {
+                from {transform: translateX(-60vw);}
+                to {transform: translateX(0);}
+            }
+
+            @-webkit-keyframes img_right_hide_ani {
+                from {transform: translateX(0);}
+                to {transform: translateX(60vw);}
+            }
+            @keyframes img_right_hide_ani {
+                from {transform: translateX(0);}
+                to {transform: translateX(60vw);}
+            }
+        }
+
+        #pro1_img_1 {
+            background-color: #000;
         }
 
     </style>
 </head>
 <body>
     <div id="main">
+        <div class="fontsize"></div>
         <div class="global_part hide_unit">
 
             <figure>
@@ -725,11 +642,11 @@
             <ul class="lang-switch">
 
                 <li class="">
-                    <a href="../en/main.html">EN</a>
+                    <a href="../en/product.html">EN</a>
                 </li>
                 <li>|</li>
                 <li class="">
-                    <a href="../cn/main.html">简体中文</a>
+                    <a href="../cn/product.html">简体中文</a>
                 </li>
             </ul>
             <div class="copyright">Copyright &copy; 2013 - 2016 | CAPSTONE</div>
@@ -755,7 +672,7 @@
             </figure>
 
             <div class="product_content">
-                <div id="product01" class="product_main hide_unit page_show">
+                <div id="product01" class="product_main hide_unit page_show" style="opacity: 1">
                     <div class="product_header">
                         <div class="products">
                             <h1>PRODUCTS</h1>
@@ -778,12 +695,12 @@
                         <div id="product01_img" class="productVideo hide_unit">
                             <video id="pro1_img_1" class="pro_img" controls >
                                 <source src="../videos/intro.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
+                                Your browser does not support the video tag11.
                             </video>
-                            <img id="pro1_img_2" class="pro_img" src="../images/product01/中超图片展示1.jpg" hidden/>
-                            <img id="pro1_img_3" class="pro_img" src="../images/product01/中超图片展示2.jpg" hidden/>
-                            <img id="pro1_img_4" class="pro_img" src="../images/product01/中超图片展示3.jpg" hidden/>
-                            <img id="pro1_img_5" class="pro_img" src="../images/product01/中超图片展示4.jpg" hidden/>
+                            <img id="pro1_img_2" class="pro_img" src="../images/product01/1.jpg" hidden/>
+                            <img id="pro1_img_3" class="pro_img" src="../images/product01/2.jpg" hidden/>
+                            <img id="pro1_img_4" class="pro_img" src="../images/product01/3.jpg" hidden/>
+                            <img id="pro1_img_5" class="pro_img" src="../images/product01/4.jpg" hidden/>
                         </div>
                     </div>
                     <h2 class="product_name">中超风云</h2>
@@ -791,26 +708,28 @@
                         <p>《中超风云》是由拱顶石游戏历时两年打造的全新3D国民足球手游。高度还原的数百位中超球星，16支中超球队以及经典球队球迷横幅标语完美还原，震撼3D比赛特效，领先的动作捕捉技术，全力真实还原球员技术动作，让玩家体验亲临比赛现场般的操作感受!是一款真正为中国足球爱好者量身定制的高品质足球手游。</p>
                     </div>
 
-                    <div class="right_arrow_pos" data-pro-id="product03">
-                        <div class="scaling-arrow-container"
-                             style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
-                            </svg>
+                    <div class="arrow_part">
+                        <div class="right_arrow_pos" data-pro-id="product03">
+                            <div class="scaling-arrow-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                    <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="left_arrow_pos" data-pro-id="product03" hidden>
-                        <div class="scaling-arrow-container"
-                             style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
-                            </svg>
+                        <div class="left_arrow_pos" data-pro-id="product03" hidden>
+                            <div class="scaling-arrow-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                    <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div id="product02" class="product_main hide_unit page_show" hidden>
+                <div id="product02" class="product_main hide_unit" style="opacity: 0">
                     <div class="product_header">
                         <div class="products">
                             <h1>PRODUCTS</h1>
@@ -842,31 +761,33 @@
                             <img id="pro2_img_9" class="pro_img" src="../images/product02/9.jpg" hidden/>
                         </div>
                     </div>
-                    <h2 class="product_name">Mobasaka Champion Manager</h2>
+                    <h2 class="product_name">モバサカ Champion Manager</h2>
                     <div>
-                        <p>The company specializes in designing modern projects in all segments of the real estate market with a significant unique component: architeture, design, state-of-the-art innovative building technologies.</p>
+                        <p></p>
                     </div>
 
-                    <div class="right_arrow_pos" data-pro-id="product02">
-                        <div class="scaling-arrow-container"
-                             style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
-                            </svg>
+                    <div class="arrow_part" hidden>
+                        <div class="right_arrow_pos" data-pro-id="product02">
+                            <div class="scaling-arrow-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                    <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="left_arrow_pos" data-pro-id="product02" hidden>
-                        <div class="scaling-arrow-container"
-                             style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
-                            </svg>
+                        <div class="left_arrow_pos" data-pro-id="product02" hidden>
+                            <div class="scaling-arrow-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                    <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div id="product03" class="product_main hide_unit page_show" hidden>
+                <div id="product03" class="product_main hide_unit" style="opacity: 0">
                     <div class="product_header">
                         <div class="products">
                             <h1>PRODUCTS</h1>
@@ -903,23 +824,25 @@
                     </div>
                     <h2 class="product_name">中国队勇夺世界杯</h2>
                     <div>
-                        <p>The company specializes in designing modern projects in all segments of the real estate market with a significant unique component: architeture, design, state-of-the-art innovative building technologies.</p>
+                        <p></p>
                     </div>
 
-                    <div class="right_arrow_pos" data-pro-id="product03">
-                        <div class="scaling-arrow-container"
-                             style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
-                            </svg>
+                    <div class="arrow_part" hidden>
+                        <div class="right_arrow_pos" data-pro-id="product03">
+                            <div class="scaling-arrow-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                    <polyline fill="#FFFFFF" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="left_arrow_pos" data-pro-id="product03" hidden>
-                        <div class="scaling-arrow-container"
-                                style="padding-bottom: 92% /* 100% * 55/60 */">
-                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
-                                <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
-                            </svg>
+                        <div class="left_arrow_pos" data-pro-id="product03" hidden>
+                            <div class="scaling-arrow-container"
+                                 style="padding-bottom: 92% /* 100% * 55/60 */">
+                                <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                    <polyline fill="#FFFFFF" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
@@ -933,7 +856,7 @@
                         <span>&#x26AB;</span>  <span>中超风云</span>
                     </div>
                     <div id="product02_side" class="side_item" data-pro-id="product02">
-                        <span>&#x26AB;</span>  <span>Mobasaka Champion Manager</span>
+                        <span>&#x26AB;</span>  <span>モバサカ Champion Manager</span>
                     </div>
                     <div id="product03_side" class="side_item" data-pro-id="product03">
                         <span>&#x26AB;</span>  <span>中国队勇夺世界杯</span>
@@ -1027,8 +950,8 @@
                         </a>
                         <div class="nav_description">
                             <a href="product.html#product01" class="pro_menu_item">中超风云</a> |
-                            <a href="product.html#product02" class="pro_menu_item">五大联赛日文版</a> |
-                            <a href="product.html#product03" class="pro_menu_item">勇夺世界杯</a>
+                            <a href="product.html#product02" class="pro_menu_item">モバサカChampionManager</a> |
+                            <a href="product.html#product03" class="pro_menu_item">中国队勇夺世界杯</a>
                         </div>
                     </li>
                     <li>
@@ -1046,6 +969,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
+                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
                 <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
@@ -1056,6 +980,7 @@
     <script src="../js/jquery-ui.min.js"></script>
     <script>
 
+        var selectedProductNo = 1;
         var pro01_img_selected, pro01_img_num;
         var pro02_img_selected, pro02_img_num;
         var pro03_img_selected, pro03_img_num;
@@ -1083,7 +1008,7 @@
             $("#dialog").dialog("close");
         });
 
-        $("#product01").children(".left_arrow_pos").click(function () {
+        $("#product01").find(".left_arrow_pos").click(function () {
             if (doingAniFlag == true)
                 return;
             doingAniFlag = true;
@@ -1092,7 +1017,7 @@
 
             pro01_img_selected -= 1;
             if (pro01_img_selected == pro01_img_num - 1)
-                $("#product01").children(".right_arrow_pos").prop("hidden", false);
+                $("#product01").find(".right_arrow_pos").prop("hidden", false);
 
             $("#product01_img").find("#pro1_img_" + pro01_img_selected).addClass("img_right_show");
             $("#product01_img").find("#pro1_img_" + pro01_img_selected).prop("hidden", false);
@@ -1109,22 +1034,22 @@
             }, 1000);
 
             if (pro01_img_selected == 1)
-                $("#product01").children(".left_arrow_pos").prop("hidden", true);
+                $("#product01").find(".left_arrow_pos").prop("hidden", true);
         });
-        $("#product01").children(".right_arrow_pos").click(function () {
+        $("#product01").find(".right_arrow_pos").click(function () {
             if (doingAniFlag == true)
                 return;
             doingAniFlag = true;
 
             if (pro01_img_selected == 1) {
-                $('video').trigger('pause');
+                $('#pro1_img_1').trigger('pause');
             }
 
             $("#product01_img").find("#pro1_img_" + pro01_img_selected).addClass("img_left_hide");
 
             pro01_img_selected += 1;
             if (pro01_img_selected == 2)
-                $("#product01").children(".left_arrow_pos").prop("hidden", false);
+                $("#product01").find(".left_arrow_pos").prop("hidden", false);
 
             $("#product01_img").find("#pro1_img_" + pro01_img_selected).addClass("img_left_show");
             $("#product01_img").find("#pro1_img_" + pro01_img_selected).prop("hidden", false);
@@ -1140,11 +1065,11 @@
             }, 1000);
 
             if (pro01_img_selected == pro01_img_num)
-                $("#product01").children(".right_arrow_pos").prop("hidden", true);
+                $("#product01").find(".right_arrow_pos").prop("hidden", true);
 
         });
 
-        $("#product02").children(".left_arrow_pos").click(function () {
+        $("#product02").find(".left_arrow_pos").click(function () {
             if (doingAniFlag == true)
                 return;
             doingAniFlag = true;
@@ -1153,7 +1078,7 @@
 
             pro02_img_selected -= 1;
             if (pro02_img_selected == pro02_img_num - 1)
-                $("#product02").children(".right_arrow_pos").prop("hidden", false);
+                $("#product02").find(".right_arrow_pos").prop("hidden", false);
 
             $("#product02_img").find("#pro2_img_" + pro02_img_selected).addClass("img_right_show");
             $("#product02_img").find("#pro2_img_" + pro02_img_selected).prop("hidden", false);
@@ -1170,9 +1095,9 @@
             }, 1000);
 
             if (pro02_img_selected == 1)
-                $("#product02").children(".left_arrow_pos").prop("hidden", true);
+                $("#product02").find(".left_arrow_pos").prop("hidden", true);
         });
-        $("#product02").children(".right_arrow_pos").click(function () {
+        $("#product02").find(".right_arrow_pos").click(function () {
             if (doingAniFlag == true)
                 return;
             doingAniFlag = true;
@@ -1182,7 +1107,7 @@
 
             pro02_img_selected += 1;
             if (pro02_img_selected == 2)
-                $("#product02").children(".left_arrow_pos").prop("hidden", false);
+                $("#product02").find(".left_arrow_pos").prop("hidden", false);
 
             $("#product02_img").find("#pro2_img_" + pro02_img_selected).addClass("img_left_show");
             $("#product02_img").find("#pro2_img_" + pro02_img_selected).prop("hidden", false);
@@ -1198,9 +1123,9 @@
             }, 1000);
 
             if (pro02_img_selected == pro02_img_num)
-                $("#product02").children(".right_arrow_pos").prop("hidden", true);
+                $("#product02").find(".right_arrow_pos").prop("hidden", true);
         });
-        $("#product03").children(".left_arrow_pos").click(function () {
+        $("#product03").find(".left_arrow_pos").click(function () {
             if (doingAniFlag == true)
                 return;
             doingAniFlag = true;
@@ -1209,7 +1134,7 @@
 
             pro03_img_selected -= 1;
             if (pro03_img_selected == pro03_img_num - 1)
-                $("#product03").children(".right_arrow_pos").prop("hidden", false);
+                $("#product03").find(".right_arrow_pos").prop("hidden", false);
 
             $("#product03_img").find("#pro3_img_" + pro03_img_selected).addClass("img_right_show");
             $("#product03_img").find("#pro3_img_" + pro03_img_selected).prop("hidden", false);
@@ -1225,9 +1150,9 @@
             }, 1000);
 
             if (pro03_img_selected == 1)
-                $("#product03").children(".left_arrow_pos").prop("hidden", true);
+                $("#product03").find(".left_arrow_pos").prop("hidden", true);
         });
-        $("#product03").children(".right_arrow_pos").click(function () {
+        $("#product03").find(".right_arrow_pos").click(function () {
             if (doingAniFlag == true)
                 return;
             doingAniFlag = true;
@@ -1236,7 +1161,7 @@
 
             pro03_img_selected += 1;
             if (pro03_img_selected == 2)
-                $("#product03").children(".left_arrow_pos").prop("hidden", false);
+                $("#product03").find(".left_arrow_pos").prop("hidden", false);
 
             $("#product03_img").find("#pro3_img_" + pro03_img_selected).addClass("img_left_show");
             $("#product03_img").find("#pro3_img_" + pro03_img_selected).prop("hidden", false);
@@ -1252,7 +1177,7 @@
             }, 1000);
 
             if (pro03_img_selected == pro03_img_num)
-                $("#product03").children(".right_arrow_pos").prop("hidden", true);
+                $("#product03").find(".right_arrow_pos").prop("hidden", true);
         });
 
         $(document).ready(function () {
@@ -1269,17 +1194,78 @@
             console.log(window.location.href);
             var url = window.location.href;
             var arr = url.split("#");
-            var selected = arr[1];
-            $("#" + selected + "_side").css("color", "#96B432");
-            $("#" + selected + "_side").css("fill", "#96B432");
-            $("#" + selected + "_side").siblings().css("color", "#000");
-            $("#" + selected + "_side").siblings().css("fill", "#000");
+            console.log("arr[1]: " + arr[1]);
+            if (arr[1] == undefined)
+                selectedProductNo = "product01";
+            else
+                selectedProductNo = arr[1];
 
-            $("#" + selected).prop("hidden", false);
-            $("#" + selected).siblings().prop("hidden", true);
+            $("#" + selectedProductNo + "_side").css("color", "#96B432");
+            $("#" + selectedProductNo + "_side").css("fill", "#96B432");
+            $("#" + selectedProductNo + "_side").siblings().css("color", "#000");
+            $("#" + selectedProductNo + "_side").siblings().css("fill", "#000");
 
-            window.setTimeout(delete_show, 2000);
+            $("#" + selectedProductNo).siblings().css("opacity", "0");
+            $("#" + selectedProductNo).siblings().css("z-index", "0");
+            $("#" + selectedProductNo).css("opacity", "1");
+            $("#" + selectedProductNo).css("z-index", "1");
+
+            $("#" + selectedProductNo).siblings().find(".arrow_part").prop("hidden", true);
+            $("#" + selectedProductNo).find(".arrow_part").prop("hidden", false);
+
+            $("#" + selectedProductNo).siblings().removeClass("page_show");
+            $("#" + selectedProductNo).addClass("page_show");
+
+            window.setTimeout(delete_show, 1500);
+
+            changeFontSize();
+            $(window).resize(function () {
+                changeFontSize();
+            });
+            function changeFontSize() {
+                if (navigator.userAgent.search(/(Android)/i) != -1) {
+                    if (($(window).width() <= 499) || ($(window).height() <= 499)) {
+                        $("#product01 p").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(".product_main").css("width"));
+                                width = width + width * 0.25;
+                                var new_width = Math.round(width) + '';
+                                $(this).css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.8)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                    }
+                }
+            }
         });
+        /*
+                var patt = /(Chrome\/)[0-9]+/i;
+                var result = patt.exec(navigator.userAgent);
+                if (result[0] != null) {
+                    var str = result[0];
+                    var arr = str.split("/");
+                    var ver = parseInt(arr[1]);
+                    if (((ver >= 50) || (ver == 45)) && (($(window).width() <= 499) || ($(window).height() <= 499))) {
+                        $("#product01 p").each(function (index, value) {
+                            width = parseInt($(".product_main").css("width"));
+                            width = width + width * 0.25;
+                            var new_width = Math.round(width) + '';
+                            $(".fontsize").html(parseInt($(this).css("font-size")));
+                            $(this).css({
+                                "font-size": "10px",
+                                "-webkit-transform": "scale(0.8)",
+                                "-webkit-transform-origin": "0 0",
+                                "width": new_width
+                            });
+                        });
+                    }
+                }
+*/
 
         function delete_show() {
             $(".page_show").removeClass("page_show");
@@ -1295,7 +1281,7 @@
 
         $(".side_item").click(function () {
             if (pro01_img_selected == 1) {
-                $('video').trigger('pause');
+                $('#pro1_img_1').trigger('pause');
             }
 
             $(this).css("color", "#96B432");
@@ -1303,21 +1289,21 @@
             $(this).siblings().css("color", "#000");
             $(this).siblings().css("fill", "#000");
 
-            var str = $(this).data("pro-id");
-            $("#" + str).prop("hidden", false);
-            $("#" + str).siblings().prop("hidden", true);
-            /*
-            $("#binary_download").attr("href", "../downloads/" + str + "_binary.txt");
-            $("#ios_download").attr("href", "../downloads/" + str + "_ios.txt");
-            $("#android_download").attr("href", "../downloads/" + str + "_android.txt");
-            $("#mobile_ios_download").attr("href", "../downloads/" + str + "_ios.txt");
-            $("#mobile_android_download").attr("href", "../downloads/" + str + "_android.txt");
-            */
+            selectedProductNo = $(this).data("pro-id");
+
+            $("#" + selectedProductNo).siblings().css("opacity", "0");
+            $("#" + selectedProductNo).siblings().css("z-index", "0");
+            $("#" + selectedProductNo).css("opacity", "1");
+            $("#" + selectedProductNo).css("z-index", "1");
+
+            $("#" + selectedProductNo).siblings().find(".arrow_part").prop("hidden", true);
+            $("#" + selectedProductNo).find(".arrow_part").prop("hidden", false);
         });
+
 
         $("#menu_icon").click(function () {
             if (pro01_img_selected == 1) {
-                $('video').trigger('pause');
+                $('#pro1_img_1').trigger('pause');
                 $('#pro1_img_1').remove();
             }
 
@@ -1354,6 +1340,12 @@
             $("#nav_menu").removeClass("move_hide");
             $("#menu_back").removeClass("rotate_hide");
         }
+
+        var vid = document.getElementById("pro1_img_1");
+        vid.onpause = function () {
+//            vid.style.opacity = "0";
+//            $("#pro1_img_1").prop("hidden", true);
+        };
 
     </script>
 </body>

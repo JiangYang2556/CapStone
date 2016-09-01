@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <title>Team Introduction</title>
     <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
@@ -30,50 +32,32 @@
             overflow-y: scroll;
         }
 
-        @media only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx) {
+        @media screen and (min-width: 350px) and (max-width:499px) and (orientation:portrait) {
             html {
-                font-size: 100%;
-            }
-
-            #menu_window #nav_menu ul li, h1 {
-                font-size: 3.3rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-        }
-        @media only screen and (min-resolution: 192dpi) and (orientation:portrait), 
-            only screen and (min-resolution: 2dppx) and (orientation:portrait) {
-            html {
-                font-size: 120%;
+                font-size: 45%;
             }
             #menu_window #nav_menu ul li {
-                font-size: 5rem;
+                font-size: 4rem;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 1.2rem;
             }
         }
-        @media only screen and (min-resolution: 192dpi) and (orientation:landscape), only screen and (min-resolution: 2dppx) and (orientation:landscape) {
-            .scaling-closeicon-container {
-                width: 60px; 
+        @media screen and (max-width:349px) and (orientation:portrait) {
+            html {
+                font-size: 45%;
             }
-            .scaling-menulist_icon-container {
-                width: 60px; 
+            h1 {
+                font-size: 2.5rem;
             }
-            .scaling-return_icon-container {
-                width: 60px; 
+            #menu_window #nav_menu ul li {
+                font-size: 3.5rem;
             }
-            .return_icon_pos {
-                left: 90px;
-            }
-            .penta_menuback_pos {
-                position: fixed;
-                left: -18vw;
-                top: -20vw;
-            }
-            .scaling-menuback-container {
-                width: 160vw; 
+            h2 {
+                font-size: 1.2rem;
             }
         }
 
@@ -132,7 +116,7 @@
         }
 
         .down_arrow_wrap {
-            display: none;
+            z-index: 990;
             position: absolute;
             top: 98vh;
             width: 100%;
@@ -155,6 +139,7 @@
             cursor: pointer;
             color: #808080;
             font-size: 1.1rem;
+            z-index: 999;
         }
         .founder_item:hover {
             color: #000 !important;
@@ -204,7 +189,7 @@
                 background-position: center;
                 background-size: cover;
                 animation: large_small 8s ease-in-out alternate infinite;
-                -webkit-animation: large_small 8s linear ease-in-out infinite;
+                -webkit-animation: large_small 8s ease-in-out alternate infinite;
             }
             .founder_item:nth-of-type(1) {
                 position: absolute;
@@ -262,11 +247,12 @@
                 background-position: center;
                 background-size: cover;
                 animation: large_small 8s ease-in-out alternate infinite;
-                -webkit-animation: large_small 8s linear ease-in-out infinite;
+                -webkit-animation: large_small 8s ease-in-out alternate infinite;
+
             }
             .founder_item:nth-of-type(1) {
                 position: absolute;
-                left: 68vw;
+                left: 67vw;
                 bottom: 50vw;
             }
             .founder_item:nth-of-type(2) {
@@ -388,13 +374,34 @@
             justify-content: flex-start;
 
         }
-        .staff_photo div {
-            margin-bottom: 8px;
+        @media all and (orientation: portrait)
+        {
+            .name {
+                margin-top: 3px;
+            }
         }
+        @media all and (orientation: landscape) and (max-width: 999px)
+        {
+            .name {
+                margin-top: 4px;
+            }
+        }
+        @media all and (orientation: landscape) and (min-width: 1000px)
+        {
+            .name {
+                margin-top: 10px;
+            }
+        }
+
         .black_and_white { 
             filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-            filter: gray; /* IE6-9 */
+
             -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray; /* IE6-9 */
         }
         .photo {
             width: 5.8vw;
@@ -402,7 +409,7 @@
             border-radius: 100%;
 
             background-position: center;
-            background-size: cover;
+            background-size: 5.8vw;
             transform-origin: 50% 50%;
             -webkit-transform-origin: 50% 50%;
             -ms-transform-origin: 50% 50%;
@@ -467,6 +474,7 @@
             .photo {
                 width: 12vw !important;
                 height: 12vw !important;
+                background-size: 12vw !important;
             }
             .scaling-left-arrow-container {
               position: relative; 
@@ -506,7 +514,7 @@
         }
         .team_item {
             font-size: 1rem;
-            z-index: 1;
+            z-index: 999;
             overflow-wrap: break-word;
             list-style: none;
             cursor: pointer;
@@ -683,13 +691,18 @@
             font-size: 1rem;
             margin-bottom: 5px;
         }
+        @media screen and (orientation:portrait) and (max-width: 499px){
+            .value_item_title {
+                margin-bottom: 0;
+            }
+        }
         @media screen and (orientation:landscape) and (max-width:1200px) {
           .value_item:nth-of-type(1) {
                 top: 0vw !important;
                 left: 49vw !important;
             }
             .value_item:nth-of-type(2) {
-                top: 13vw !important;
+                top: 11vw !important;
                 left: 69vw !important;
             }
             .value_item:nth-of-type(3) {
@@ -708,8 +721,8 @@
                 left: 49vw !important;
             }
             .value_item:nth-of-type(2) {
-                top: 14vw !important;
-                left: 69vw !important;
+                top: 10vw !important;
+                left: 72vw !important;
             }
             .value_item:nth-of-type(3) {
                 top: 35vw !important;
@@ -798,14 +811,18 @@
 
         #section4 .flex-item, 
         #section5 .flex-item {
-            width: 14vw;
-            height: 14vw;
+            width: 15vw;
+            height: 15vw;
             border-radius: 50%;
             border: 1px solid #808080;
 
             background-position: center;
-            background-size: 13vw;
+            background-size: 14vw;
             background-repeat: no-repeat;
+        }
+
+        #section4 .flex-item:nth-of-type(1) {
+            background-size: 17vw;
         }
 
         #section4 .flex-item:nth-of-type(3),
@@ -917,9 +934,13 @@
             line-height: 160%;
         }
 
-        .team_photo {
+        .team_photo, .image_trasition {
             -webkit-transition: 1s all; 
             transition: 1s all; 
+        }
+
+        #firstpage_down_arrow {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -952,7 +973,7 @@
                 <div class="return_icon_pos">
                     <div class="scaling-return_icon-container"
                          style="padding-bottom: 92% /* 100% * 55/60 */">
-                        <a href="aboutUs.html">
+                        <a href="development.html">
                             <div id="return_icon">
                                 <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      viewBox="0 0 50 50" xml:space="preserve">
@@ -992,7 +1013,7 @@
                         </p>
                         <p id="partner_intro"  hidden>
                             崔汉青  合伙人。
-                            崔汉青，全栈工程师。本科时期两次代表武汉大学参加ACM/ICPC世界总决赛。曾就职于微软必应新闻团队，任研发主管。现致力于高效技术团队建设和足球游戏核心玩法研发。
+                            全栈工程师。本科时期两次代表武汉大学参加ACM/ICPC世界总决赛。曾就职于微软必应新闻团队，任研发主管。现致力于高效技术团队建设和足球游戏核心玩法研发。
                         </p>
                     </div>
                 </div>
@@ -1015,10 +1036,10 @@
 
                 <div class="img_container">
                     <div class="img_position">
-                        <div class="founders_photo" style="background-color: #96b432;opacity:1;"></div>
-                        <div id="ceo" class="founders_photo" style="background-image:url(../images/founders/王高楠.jpg); opacity:0;"></div>
-                        <div id="cto" class="founders_photo" style="background-image:url(../images/founders/张煦.jpg); opacity:0;"></div>
-                        <div id="partner" class="founders_photo" style="background-image:url(../images/founders/崔汉青.jpg); opacity:0;"></div>
+                        <div class="founders_photo image_trasition" style="background-color: #96b432;opacity:1;"></div>
+                        <div id="ceo" class="founders_photo image_trasition" style="background-image:url(../images/founders/wanggaonan.jpg); opacity:0;"></div>
+                        <div id="cto" class="founders_photo image_trasition" style="background-image:url(../images/founders/zhangxu.jpg); opacity:0;"></div>
+                        <div id="partner" class="founders_photo image_trasition" style="background-image:url(../images/founders/cuihanqing.jpg); opacity:0;"></div>
                     </div>
                 </div>
                 <!--
@@ -1046,7 +1067,7 @@
                 </figure>
                 -->
                 <div>
-                    <div class="founder_item" data-founder="ceo">
+                    <div id="founder_item_ceo" class="founder_item" data-founder="ceo">
                         <div>CEO</div><div>王高楠</div>
                     </div>
                     <div class="founder_item" data-founder="cto">
@@ -1058,7 +1079,7 @@
                 </div>
 
                 <div class="down_arrow_wrap">
-                    <svg id="down_arrow" width="40px" height="40px">
+                    <svg id="firstpage_down_arrow" width="40px" height="40px">
                         <polyline transform="scale(0.8)" fill="#d0d0d0" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
                     </svg>
                 </div>
@@ -1081,11 +1102,11 @@
                                     </clipPath>
                                 </defs>
                                 <g class="working_img"  clip-path="url(#working_mask)">
-                                    <image id="scenario_img" class="team_photo" xlink:href='../images/team_staff/策划组.JPG' width="450" height="450" opacity="0"/>
-                                    <image id="technicians_img" class="team_photo"  xlink:href='../images/team_staff/技术组.jpg' width="450" height="450" />
-                                    <image id="art_img" class="team_photo" xlink:href='../images/team_staff/美术组.JPG' width="450" height="450" opacity="0"/>
-                                    <image id="business_img" class="team_photo" xlink:href='../images/team_staff/商务运营.jpg' width="450" height="450" opacity="0"/>
-                                    <image id="function_img" class="team_photo" xlink:href='../images/team_staff/职能组.png' width="450" height="450" opacity="0"/>
+                                    <image id="scenario_img" class="team_photo" xlink:href='../images/team_staff/scenario.JPG' width="450" height="450" opacity="0"/>
+                                    <image id="technicians_img" class="team_photo"  xlink:href='../images/team_staff/technicians.jpg' width="450" height="450" />
+                                    <image id="art_img" class="team_photo" xlink:href='../images/team_staff/art.JPG' width="450" height="450" opacity="0"/>
+                                    <image id="business_img" class="team_photo" xlink:href='../images/team_staff/business.jpg' width="450" height="450" opacity="0"/>
+                                    <image id="function_img" class="team_photo" xlink:href='../images/team_staff/function.png' width="450" height="450" opacity="0"/>
                                 </g>
                             </svg>
                         </div>
@@ -1096,69 +1117,69 @@
                     <li class="team_item" data-team-type="scenario">
                         <b>策划部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="赵渐博" data-img-name="1赵渐博.jpg"></li>
-                            <li data-staff-name="佛祖" data-img-name="2佛祖（孟祥楠）.jpg"></li>
-                            <li data-staff-name="韩聪" data-img-name="3韩聪.jpg"></li>
-                            <li data-staff-name="刘舒洋" data-img-name="4刘舒洋.jpg"></li>
+                            <li data-staff-name="赵渐博" data-img-name="1zhaojianbo.jpg"></li>
+                            <li data-staff-name="佛祖" data-img-name="2fozu_mengxiangnan.jpg"></li>
+                            <li data-staff-name="韩聪" data-img-name="3hancong.jpg"></li>
+                            <li data-staff-name="刘舒洋" data-img-name="4liushuyang.jpg"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="technicians">
                         <b>技术研发部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="张煦" data-img-name="1张煦.jpg"></li>
-                            <li data-staff-name="崔汉青" data-img-name="2崔汉青.jpg"></li>
-                            <li data-staff-name="无情" data-img-name="3无情（吴清）.jpg"></li>
-                            <li data-staff-name="吕辰" data-img-name="4吕辰.jpg"></li>
-                            <li data-staff-name="老司机" data-img-name="5老司机.jpg"></li>
-                            <li data-staff-name="闪电" data-img-name="6闪电（章敏）.jpg"></li>
-                            <li data-staff-name="陈永涛" data-img-name="7陈永涛.jpg"></li>
-                            <li data-staff-name="顾明" data-img-name="8顾明.png"></li>
-                            <li data-staff-name="朱鹏宇" data-img-name="9朱鹏宇.jpg"></li>
-                            <li data-staff-name="三里屯德罗西" data-img-name="10三里屯德罗西（王坤亮）.jpg"></li>
-                            <li data-staff-name="海涛" data-img-name="11海涛（王鹏然）.jpg"></li>
-                            <li data-staff-name="王玮" data-img-name="12王玮.jpg"></li>
-                            <li data-staff-name="金毅" data-img-name="13金毅.jpg"></li>
-                            <li data-staff-name="杨毓华" data-img-name="14杨毓华.jpg"></li>
-                            <li data-staff-name="向磊" data-img-name="15向磊.jpg"></li>
-                            <li data-staff-name="徐勇" data-img-name="16徐勇.jpg"></li>
-                            <li data-staff-name="侯玉霜" data-img-name="17侯玉霜.jpg"></li>
-                            <li data-staff-name="陈亚光" data-img-name="18陈亚光.png"></li>
-                            <li data-staff-name="王卫军" data-img-name="19王卫军.jpg"></li>
-                            <li data-staff-name="王彬" data-img-name="20王彬.jpg"></li>
-                            <li data-staff-name="孙金成" data-img-name="21孙金成.jpg"></li>
+                            <li data-staff-name="张煦" data-img-name="1zhangxu.jpg"></li>
+                            <li data-staff-name="崔汉青" data-img-name="2cuihanqing.jpg"></li>
+                            <li data-staff-name="无情" data-img-name="3wuqing.jpg"></li>
+                            <li data-staff-name="吕辰" data-img-name="4lvchen.jpg"></li>
+                            <li data-staff-name="老司机" data-img-name="5laoshiji.jpg"></li>
+                            <li data-staff-name="闪电" data-img-name="6shandian_zhangmin.jpg"></li>
+                            <li data-staff-name="陈永涛" data-img-name="7chenyongtao.jpg"></li>
+                            <li data-staff-name="顾明" data-img-name="8guming.png"></li>
+                            <li data-staff-name="朱鹏宇" data-img-name="9zhupengyu.jpg"></li>
+                            <li data-staff-name="三里屯德罗西" data-img-name="10sanlitundeluoxi_wangkunliang.jpg"></li>
+                            <li data-staff-name="海涛" data-img-name="11haitao_wangpengran.jpg"></li>
+                            <li data-staff-name="王玮" data-img-name="12wangwei.jpg"></li>
+                            <li data-staff-name="金毅" data-img-name="13quanyi.jpg"></li>
+                            <li data-staff-name="杨毓华" data-img-name="14yangyuhua.jpg"></li>
+                            <li data-staff-name="向磊" data-img-name="15xianglei.jpg"></li>
+                            <li data-staff-name="徐勇" data-img-name="16xuyong.jpg"></li>
+                            <li data-staff-name="侯玉霜" data-img-name="17houyuxiang.jpg"></li>
+                            <li data-staff-name="陈亚光" data-img-name="18chenyaguang.png"></li>
+                            <li data-staff-name="王卫军" data-img-name="19wangweijun.jpg"></li>
+                            <li data-staff-name="王彬" data-img-name="20wangbin.jpg"></li>
+                            <li data-staff-name="孙金成" data-img-name="21sunjincheng.jpg"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="art">
                         <b>美术部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="李晶晶" data-img-name="1李晶晶.png"></li>
-                            <li data-staff-name="宣扬" data-img-name="2宣扬.jpg"></li>
-                            <li data-staff-name="钱老板" data-img-name="3钱老板（阿斯汉）.jpg"></li>
-                            <li data-staff-name="梨子兔" data-img-name="4梨子兔（李雪）.jpg"></li>
-                            <li data-staff-name="安明飞" data-img-name="5安明飞.jpg"></li>
-                            <li data-staff-name="夏尔" data-img-name="6夏尔（张鹤）.jpg"></li>
-                            <li data-staff-name="刘奕扬" data-img-name="7刘奕扬.jpg"></li>
-                            <li data-staff-name="jill" data-img-name="8jill（嵇志勤）.jpg"></li>
-                            <li data-staff-name="王岩" data-img-name="9王岩.png"></li>
+                            <li data-staff-name="李晶晶" data-img-name="1lijingjing.png"></li>
+                            <li data-staff-name="宣扬" data-img-name="2xuanyang.jpg"></li>
+                            <li data-staff-name="钱老板" data-img-name="3qianlaoban_asihan.jpg"></li>
+                            <li data-staff-name="梨子兔" data-img-name="4lizitu_lixue.jpg"></li>
+                            <li data-staff-name="安明飞" data-img-name="5anmingfei.jpg"></li>
+                            <li data-staff-name="夏尔" data-img-name="6xiaer_zhanghe.jpg"></li>
+                            <li data-staff-name="刘奕扬" data-img-name="7liuyiyang.jpg"></li>
+                            <li data-staff-name="jill" data-img-name="8jill_jizhiqin.jpg"></li>
+                            <li data-staff-name="王岩" data-img-name="9wangyan.png"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="business">
                         <b>商务运营部</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="黄菁菁" data-img-name="1黄菁菁.jpg"></li>
-                            <li data-staff-name="刘寅" data-img-name="2刘寅.jpg"></li>
-                            <li data-staff-name="长门" data-img-name="3长门（吴昊）.jpg"></li>
-                            <li data-staff-name="张大锤" data-img-name="4张大锤（张宇）.jpg"></li>
-                            <li data-staff-name="王宝剑" data-img-name="5王宝剑（王迎亚）.jpg"></li>
-                            <li data-staff-name="郑文杰" data-img-name="6郑文杰.jpg"></li>
+                            <li data-staff-name="黄菁菁" data-img-name="1huangjingjing.jpg"></li>
+                            <li data-staff-name="刘寅" data-img-name="2liuyin.jpg"></li>
+                            <li data-staff-name="长门" data-img-name="3changmen_wuhao.jpg"></li>
+                            <li data-staff-name="张大锤" data-img-name="4zhangdachui_zhangyu.jpg"></li>
+                            <li data-staff-name="王宝剑" data-img-name="5wangbaojian_wangyingya.jpg"></li>
+                            <li data-staff-name="郑文杰" data-img-name="6zhengwenjie.jpg"></li>
                         </ul>
                     </li>
                     <li class="team_item" data-team-type="function">
                         <b>职能部门</b>
                         <ul class="staff_photos" hidden>
-                            <li data-staff-name="黄吉平" data-img-name="1黄吉平.jpg"></li>
-                            <li data-staff-name="王威" data-img-name="2王威.jpg"></li>
-                            <li data-staff-name="小新" data-img-name="3小新（程亚鑫）.jpg"></li>
+                            <li data-staff-name="黄吉平" data-img-name="1huangjiping.jpg"></li>
+                            <li data-staff-name="王威" data-img-name="2wangwei.jpg"></li>
+                            <li data-staff-name="小新" data-img-name="3xiaoxin_chengyaxin.jpg"></li>
                         </ul>
                     </li>
                 </ul>
@@ -1166,16 +1187,16 @@
                 <div class="staff_photo_landscape_area">
                     <div class="staff_photo_area">
                         <div class="staff_row">
-                            <div class="staff_photo black_and_white"></div>
-                            <div class="staff_photo black_and_white"></div>
-                            <div class="staff_photo black_and_white"></div>
-                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
                         </div>
                         <div class="staff_row">
-                            <div class="staff_photo black_and_white"></div>
-                            <div class="staff_photo black_and_white"></div>
-                            <div class="staff_photo black_and_white"></div>
-                            <div class="staff_photo black_and_white"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
                         </div>
                     </div>
 
@@ -1222,10 +1243,10 @@
                         </div>
                     </div>
                     <div class="staff_row">
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
-                        <div class="staff_photo black_and_white"></div>
+                        <div class="staff_photo"></div>
+                        <div class="staff_photo"></div>
+                        <div class="staff_photo"></div>
+                        <div class="staff_photo"></div>
                     </div>
                     <div class="right_arrow_pos">
                         <div class="scaling-right-arrow-container"
@@ -1303,9 +1324,9 @@
                     </header>
                 </div>
                 <div class="flex-container">
-                    <div class="flex-item" style="background-image: url(../images/logos/胡莱.png)"></div>
-                    <div class="flex-item" style="background-image: url(../images/logos/体育之窗logo.png)"></div>
-                    <div class="flex-item" style="background-image: url(../images/logos/中超logo.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/hulailogo3.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/tiyuzhichuanglogo.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/zhongchaologo.png)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/mobcast.png)"></div>
                     <div class="flex-item" style="background-image: url(../images/logos/fifpro.png)"></div>
                 </div>
@@ -1320,10 +1341,10 @@
                     </header>
                 </div>
                 <div class="flex-container">
-                    <div class="flex-item" style="background-image: url(../images/logos/微影.jpg)"></div>
-                    <div class="flex-item" style="background-image: url(../images/logos/红杉资本.png)"></div>
-                    <div class="flex-item" style="background-image: url(../images/logos/亚杰商会.png)"></div>
-                    <div class="flex-item" style="background-image: url(../images/logos/优格.jpg)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/weiying.jpg)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/hongshanziben.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/yajieshanghui.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/youge.jpg)"></div>
                 </div>
 
                 <figure>
@@ -1431,8 +1452,8 @@
                             </a>
                             <div class="nav_description">
                                 <a href="product.html#product01">中超风云</a> |
-                                <a href="product.html#product02">五大联赛日文版</a> |
-                                <a href="product.html#product03">勇夺世界杯</a>
+                                <a href="product.html#product02">モバサカChampionManager</a> |
+                                <a href="product.html#product03">中国队勇夺世界杯</a>
                             </div>
                         </li>
                         <li>
@@ -1450,6 +1471,7 @@
                     </ul>
                 </div>
                 <div class="contact_info" hidden>
+                    <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
                     <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
                 </div>
             </div>
@@ -1479,19 +1501,23 @@
         });
         */
         $(window).scroll(function () {
-            $("#down_arrow").css("opacity", "0");
+
+            $("#firstpage_down_arrow").css("opacity", "0");
+            $("#firstpage_down_arrow").css("z-index", "-1");
             if ($(window).scrollTop() == 0)
-                $("#down_arrow").css("opacity", "1");
+            {
+                $("#firstpage_down_arrow").css("opacity", "1");
+                $("#firstpage_down_arrow").css("z-index", "999");
+            }
+        });
+
+        $("#firstpage_down_arrow").click(function () {
+            $('html, body').animate({ scrollTop: $("#section2").offset().top }, 300);
         });
 
         $(document).ready(function () {
-            /*
-            var move_x = Math.round($(window).width() / 100 * 45.5);
-            var move_y = Math.round($(window).width() / 100 * 10.25);
+            $("#founder_item_ceo").trigger("click");
 
-            var newattr = "scale(1.11) translate(-5, -12) translate(" + move_x + "," + move_y + ")";
-            $("#animation_path").attr("transform", newattr);
-            */
             down_arrow_pos = $(window).height() - 35;
             $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
             detectOrientation();
@@ -1504,7 +1530,8 @@
 
             $(".teams .team_item:nth-child(2)").trigger("click");
 
-            window.addEventListener("resize", function () {
+            changeFontSize();
+            $(window).resize(function () {
                 down_arrow_pos = $(window).height() - 35;
                 $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
 
@@ -1517,7 +1544,166 @@
                         $(".staff_photo_landscape_area").prop("hidden", false);
                     }
                 }
+
+                changeFontSize();
             });
+
+            function changeFontSize() {
+                if (navigator.userAgent.search(/(Android)/i) != -1) {
+
+                    if ($(window).height() <= 499) {
+                        $(".text").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                            /*var patt = /(Chrome\/)[0-9]+/i;
+                            var result = patt.exec(navigator.userAgent);
+                            if (result[0] != null) {
+                                var str = result[0];
+                                var arr = str.split("/");
+                                var ver = parseInt(arr[1]);
+                                if ((ver >= 50) || (ver == 45)) {
+                                    width = parseInt($(this).css("width"));
+                                    width = width + width * 0.66;
+                                    var new_width = Math.round(width) + '';
+                                    $(this).find('p').css({
+                                        "font-size": "10px",
+                                        "-webkit-transform": "scale(0.6)",
+                                        "-webkit-transform-origin": "0 0",
+                                        "width": new_width
+                                    });
+                                }
+                            }*/
+                        });
+                        $(".value_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                            /*
+                            var patt = /(Chrome\/)[0-9]+/i;
+                            var result = patt.exec(navigator.userAgent);
+                            if (result[0] != null) {
+                                var str = result[0];
+                                var arr = str.split("/");
+                                var ver = parseInt(arr[1]);
+                                if ((ver >= 50) || (ver == 45)) {
+                                    width = parseInt($(this).css("width"));
+                                    width = width + width * 0.66;
+                                    var new_width = Math.round(width) + '';
+                                    $(this).find('p').css({
+                                        "font-size": "10px",
+                                        "-webkit-transform": "scale(0.6)",
+                                        "-webkit-transform-origin": "0 0",
+                                        "width": new_width
+                                    });
+                                }
+                            }*/
+                        });
+                    }
+
+                    if ($(window).width() <= 499) {
+                        $(".text").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                        $(".value_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                        $(".founder_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                $(this).css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.8)"
+                                });
+                                if (index == 0) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 100%"
+                                    });
+                                }
+                                if (index == 1) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "120% 0"
+                                    });
+                                }
+                                if (index == 2) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 0"
+                                    });
+                                }
+                            }
+                        });
+
+                        $(".team_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.25;
+                                var new_width = Math.round(width) + '';
+                                if (index == 4) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "100% 0"
+                                    });
+                                } else if (index == 3) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 100%"
+                                    });
+                                } else {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 0"
+                                    });
+                                }
+
+                                $(this).css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.8)",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+
         });
 
         function detectOrientation() {
@@ -1621,7 +1807,7 @@
             var i = 8 * showingGroupNo;
             $(".staff_photo_area").find(".staff_photo").each(function () {
                 if (i < staffPhotos.length)
-                    text = "<div class='photo' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
+                    text = "<div class='photo black_and_white' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
                 else
                     text = '';
                 $(this).html(text);
@@ -1646,7 +1832,7 @@
             var i = 4 * portShowingGroupNo;
             $(".staff_photo_portrait_area").find(".staff_photo").each(function () {
                 if (i < staffPhotos.length)
-                    text = "<div class='photo' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
+                    text = "<div class='photo black_and_white' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
                 else
                     text = '';
                 $(this).html(text);
@@ -1756,12 +1942,13 @@
         }
         
         */
+
         $(".staff_photo")
             .mouseover(function () {
-                $(this).removeClass("black_and_white", false);
+                $(this).find(".photo").removeClass("black_and_white", false);
             })
             .mouseout(function () {
-                $(this).addClass("black_and_white", false);
+                $(this).find(".photo").addClass("black_and_white", false);
             });
 
         $("#menu_icon").click(function () {

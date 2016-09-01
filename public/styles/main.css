@@ -4,46 +4,24 @@
     margin: 0;
 }
 html {
+
     overflow: hidden;
-    font-family: PingFang SC Regular, PingFang SC Bold, PingFang SC Medium, PingFang SC Heavy, PingFang SC ExtraLight, 黑体, SimHei, Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'PingFang SC Regular', 'PingFang SC Bold', 'PingFang SC Medium', 'PingFang SC Heavy', 'PingFang SC ExtraLight', 黑体, SimHei, Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
-@media screen and (min-width:1600px) and (max-width:1799px) {
-    html {
-        font-size: 120%;
-    }
-    #menu_window #nav_menu ul li, h1 {
-        font-size: 2.8rem;
-    }
-    h2 {
-        font-size: 1.6rem;
-    }
-}
-
-@media screen and (min-width:499px) and (max-width:959px) {
-    html {
-        font-size: 70%;
-    }
-    #menu_window #nav_menu ul li, h1 {
-        font-size: 3.3rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
-}
 @media all and (max-width:499px) {
     html {
         font-size: 60%;
     }
     #menu_window #nav_menu ul li, h1 {
-        font-size: 3.6rem;
+        font-size: 3rem;
     }
     h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     p {
-        font-size: 1.2rem;
+        font-size: 10px;
     }
 }
 
@@ -59,9 +37,21 @@ html {
     }
 }
 
-@media screen and (min-width:959px) and (max-width:1600px) {
+@media screen and (min-width:499px) and (max-width:699px) {
     html {
-        font-size: 100%;
+        font-size: 60%;
+    }
+    #menu_window #nav_menu ul li, h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:959px) {
+    html {
+        font-size: 70%;
     }
     #menu_window #nav_menu ul li, h1 {
         font-size: 3.3rem;
@@ -70,6 +60,31 @@ html {
         font-size: 1.5rem;
     }
 }
+
+@media screen and (min-width:959px) and (max-width:1600px) {
+    html {
+        font-size: 100%;
+    }
+    #menu_window #nav_menu ul li, h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width:1600px) and (max-width:1799px) {
+    html {
+        font-size: 120%;
+    }
+    #menu_window #nav_menu ul li, h1 {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
 
 @media screen and (min-width:1800px) {
     html {
@@ -84,10 +99,21 @@ html {
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
+@media screen and (max-width:349px) and (orientation:portrait) {
+    html {
+        font-size: 45%;
+    }
+    #menu_window #nav_menu ul li {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}
 
 p {
     font-size: 0.8rem;

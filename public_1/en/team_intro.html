@@ -1,0 +1,1987 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Team Introduction</title>
+    <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/menu.css">
+
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        section {
+            position: relative;
+            width: 100vw;
+        }
+        .screen, body {
+            min-height: 56vw;
+        }
+
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            overflow-y: scroll;
+        }
+
+        @media screen and (min-width: 350px) and (max-width:499px) and (orientation:portrait) {
+            html {
+                font-size: 45%;
+            }
+            #menu_window #nav_menu ul li {
+                font-size: 4rem;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+        @media screen and (max-width:349px) and (orientation:portrait) {
+            html {
+                font-size: 45%;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            #menu_window #nav_menu ul li {
+                font-size: 3.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        article {
+            display: block;
+        }
+
+        header {
+            margin-bottom: 2vw;
+        }
+
+        #section1 .text {
+            position: absolute;
+            overflow-wrap: break-word;
+            float:left;
+            z-index: 3;
+        }
+
+        @media screen and (orientation:portrait) {
+            #section1 .text {
+                top: 29vw;
+                left: 13vw !important;
+                width: 35vw !important;
+            }
+        }
+
+        @media screen and (orientation:landscape) and (max-height: 599px) {
+            #section1 .text {
+                top: 18vw;
+                left: 13vw;
+                width: 32vw;
+            }
+        }
+
+        @media screen and (orientation:landscape) and (min-height: 600px) {
+            #section1 .text {
+                top: 29vw;
+                left: 13vw;
+                width: 32vw;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #section1 {
+            position: relative;
+            width: 100vw;
+            height: 56vw;
+        }
+        @media screen and (orientation:portrait) {
+            #section1 {
+                height: 65vw;
+            }
+        }
+
+        .down_arrow_wrap {
+            z-index: 990;
+            position: absolute;
+            top: 98vh;
+            width: 100%;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .penta_pos {
+            position: absolute;
+            right: 22vw;
+            top: 11.3vw;
+        }
+
+        .founder_item {
+            text-align: center;
+            cursor: pointer;
+            color: #808080;
+            font-size: 1.1rem;
+            z-index: 999;
+        }
+        .founder_item:hover {
+            color: #000 !important;
+        }
+
+        @media screen and (orientation:landscape) {
+            .clip_pos {
+                z-index: 0;
+                position: absolute;
+                top: -7vw;
+                right: 3.4vw;
+            }
+
+            .scaling-clip-container {
+                position: relative;
+                height: 0;
+                width: 71vw;
+                padding: 0;
+                padding-bottom: 100%;
+                /* over-ride this inline for aspect ratio other than square */
+            }
+
+            .img_container {
+                z-index: -1;
+                position: absolute;
+                right: 22vw;
+                top: 10.5vw;
+                height: 33vw;
+                width: 33vw;
+            }
+
+            .img_position {
+                display: block;
+                position: relative;
+                top: 0;
+                left: 0;
+                height: 33vw;
+                width: 33vw;
+            }
+            .founders_photo {
+                position: absolute;
+                z-index: 1;
+                padding: 0;
+                height:33vw; 
+                width: 33vw; 
+                padding-bottom: 100%; 
+                background-position: center;
+                background-size: cover;
+                animation: large_small 8s ease-in-out alternate infinite;
+                -webkit-animation: large_small 8s ease-in-out alternate infinite;
+            }
+            .founder_item:nth-of-type(1) {
+                position: absolute;
+                left: 59.5vw;
+                bottom: 46.5vw;
+            }
+            .founder_item:nth-of-type(2) {
+                position: absolute;
+                left: 79vw;
+                top: 22vw;
+            }
+            .founder_item:nth-of-type(3) {
+                position: absolute;
+                left: 73vw;
+                top: 41vw;
+            }
+        }
+        @media screen and (orientation:portrait) {
+            .clip_pos {
+                z-index: 0;
+                position: absolute;
+                top: -7vw;
+                right: -16vw;
+            }
+            .scaling-clip-container {
+                position: relative; 
+                height:0; 
+                width: 92vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .img_container {
+                z-index: -1;
+                position: absolute;
+                right: 8vw;
+                top: 15vw;
+                height:43vw; 
+                width: 43vw; 
+            }
+            .img_position {
+                position: relative;
+                top: 0;
+                left: 0;
+                height:43vw; 
+                width: 43vw; 
+            }
+            .founders_photo {
+                position: absolute;
+                z-index: 1;
+                padding: 0;
+                height:43vw; 
+                width: 43vw; 
+                padding-bottom: 100%; 
+                background-position: center;
+                background-size: cover;
+                animation: large_small 8s ease-in-out alternate infinite;
+                -webkit-animation: large_small 8s ease-in-out alternate infinite;
+
+            }
+            .founder_item:nth-of-type(1) {
+                position: absolute;
+                left: 67vw;
+                bottom: 50vw;
+            }
+            .founder_item:nth-of-type(2) {
+                position: absolute;
+                right: 3vw;
+                top: 30vw;
+            }
+            .founder_item:nth-of-type(3) {
+                position: absolute;
+                left: 84vw;
+                top: 57vw;
+            }
+        }
+
+
+        @keyframes large_small {
+            from {
+            -webkit-transform: scale(1);
+                    transform: scale(1); 
+            }
+            to {
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+            } 
+        }
+        @-webkit-keyframes large_small {
+            from {
+            -webkit-transform: scale(1);
+                    transform: scale(1); 
+            }
+            to {
+            -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+            } 
+        }
+
+
+        #section2 {
+            position: relative;
+            width: 100vw;
+            height: 56vw;
+        }
+
+
+        @media screen and (orientation:portrait) {
+            .scaling-svg-working-container {
+                position: relative; 
+                height:0; 
+                width: 45vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .working_penta_pos {
+                position: absolute;
+                left: 11.5vw;
+                top: 8vw;
+            }
+        }
+        @media screen and (orientation:landscape) {
+            .scaling-svg-working-container {
+                position: relative;
+                height: 0;
+                width: 27.5vw;
+                padding: 0;
+                padding-bottom: 100%;
+                /* over-ride this inline for aspect ratio other than square */
+            }
+            .working_penta_pos {
+                position: absolute;
+                left: 11.5vw;
+                top: 15vw;
+            }
+        }
+
+
+        .staff_photo_area {
+            position: absolute;
+            top: 8.4375vw;
+            left: 50vw;
+            width: 40vw;
+            height: 20vw;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+        .staff_row {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        .staff_photo {
+            display: block;
+            width: 10vw;
+
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+
+        }
+        @media all and (orientation: portrait)
+        {
+            .name {
+                margin-top: 3px;
+            }
+        }
+        @media all and (orientation: landscape) and (max-width: 999px)
+        {
+            .name {
+                margin-top: 4px;
+            }
+        }
+        @media all and (orientation: landscape) and (min-width: 1000px)
+        {
+            .name {
+                margin-top: 10px;
+            }
+        }
+
+        .black_and_white { 
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+
+            -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray; /* IE6-9 */
+        }
+        .photo {
+            width: 5.8vw;
+            height: 5.8vw;
+            border-radius: 100%;
+
+            background-position: center;
+            background-size: 5.8vw;
+            transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transition: transform 1s ease-in-out;
+        }
+            .photo:hover {
+                transform: scale(1.1);
+            }
+
+        .name, .photo {
+            align-self:center;
+        }
+
+        .arrow_area {
+            position: absolute;
+            top: 29vw;
+            left: 52vw;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+            -ms-flex-pack: justify;
+        }
+
+        @media screen and (orientation:portrait) {
+            .up_arrow + .down_arrow {
+                margin-left: 20px;
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            .staff_row {
+                position: absolute;
+                top: 58vw;
+                left: 10vw;
+                width: 80vw;
+                height: 22vw;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+            }
+            .left_arrow_pos {
+                position: absolute;
+                top: 62vw;
+                left: 5vw;
+            }
+            .right_arrow_pos {
+                position: absolute;
+                top: 61vw;
+                right: 5vw;
+            }
+            .staff_photo {
+                width: 20vw !important;
+                height: 22vw !important;
+            }
+            .photo {
+                width: 12vw !important;
+                height: 12vw !important;
+                background-size: 12vw !important;
+            }
+            .scaling-left-arrow-container {
+              position: relative; 
+              width: 6vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .scaling-right-arrow-container {
+              position: relative; 
+              width: 6vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+            .arrow_area {
+                top: 95vw !important;
+                left: 15vw !important;
+            }
+            #section2 .text {
+                top: 20vw !important;
+                left: 64vw !important;
+                width: 40vw !important;
+            }
+        }
+
+
+        #section2 .text {
+            position: absolute;
+            top: 36vw;
+            left: 52vw;
+            width: 40vw;
+            overflow-wrap: break-word;
+        }
+        #section2 header {
+            margin-bottom: 2vw;
+        }
+        .team_item {
+            font-size: 1rem;
+            z-index: 999;
+            overflow-wrap: break-word;
+            list-style: none;
+            cursor: pointer;
+        }
+        .team_item:nth-of-type(1) {
+            position: absolute;
+            bottom: 42vw;
+            left: 21vw;
+        }
+        .team_item:nth-of-type(2) {
+            position: absolute;
+            top: 20vw;
+            left: 38vw;
+        }
+        .team_item:nth-of-type(3) {
+            position: absolute;
+            top: 37vw;
+            left: 36.5vw;
+        }
+        .team_item:nth-of-type(4) {
+            position: absolute;
+            top: 41.5vw;
+            left: 19vw;
+        }
+        .team_item:nth-of-type(5) {
+            position: absolute;
+            top: 26.5vw;
+            right: 88.5vw;
+            text-align: right;
+        }
+        @media screen and (orientation:portrait) {
+            #section2 {
+                overflow: hidden !important;
+                height: 100vw !important;
+            }
+            .team_item:nth-of-type(1) {
+                bottom: 93vw;
+                left: 25vw;
+            }
+            .team_item:nth-of-type(2) {
+                position: absolute;
+                top: 16vw;
+                left: 55vw;
+            }
+            .team_item:nth-of-type(3) {
+                position: absolute;
+                top: 40vw;
+                left: 54vw;
+            }
+            .team_item:nth-of-type(4) {
+                position: absolute;
+                top: 50vw;
+                left: 24vw;
+            }
+            .team_item:nth-of-type(5) {
+                position: absolute;
+                top: 26.5vw;
+                right: 88.5vw;
+                text-align: right;
+            }
+        }
+        .team_item:hover {
+            color: #96B432 !important;
+        }
+        .inactivate {
+            pointer-events: none;
+        }
+
+
+        #section3 {
+            position: relative;
+            width: 100vw;
+            height: 56vw;
+        }
+        #section3 header {
+            margin-bottom: 1vw;
+        }
+        #section3 .text {
+            position: absolute;
+            top: 15vw;
+            left: 13vw;
+            width: 30vw;
+            overflow-wrap: break-word;
+        }
+        @media screen and (orientation:portrait) {
+            #section3 .text {
+                position: absolute !important;
+                top: 18vw !important;
+                left: 13vw !important;
+                width: 40vw !important;
+            }
+            #section3 {
+                height: 90vw !important;
+            }
+        }
+        @media all and (orientation:portrait) {
+            .value_penta_pos {
+                position: absolute;
+                left: -9vw;
+                top: -22.5vw;
+                z-index: -1;
+            }
+            .scaling-svg-value-container {
+              position: relative; 
+              height:0; 
+              width: 120vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) and (max-width:1200px) {
+            .value_penta_pos {
+                position: absolute;
+                left: -2vw;
+                top: -20vw;
+                z-index: -1;
+            }
+            .scaling-svg-value-container {
+                position: relative; 
+                height:0; 
+                width: 106vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) and (min-width:1200px) {
+            .value_penta_pos {
+                position: absolute;
+                left: 2vw;
+                top: -18.5vw;
+                z-index: -1;
+            }
+            .scaling-svg-value-container {
+                position: relative; 
+                height:0; 
+                width: 100vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+
+        .value_item {
+            color: #fff;
+            z-index: 1;
+            width: 21vw;
+            overflow-wrap: break-word;
+            font-size: 0.8rem;
+        }
+        .value_item:nth-of-type(1) {
+            position: absolute;
+            top: 10vw;
+            left: 60vw;
+        }
+        .value_item:nth-of-type(2) {
+            position: absolute;
+            top: 22vw;
+            left: 68vw;
+        }
+        .value_item:nth-of-type(3) {
+            position: absolute;
+            top: 35vw;
+            left: 66vw;
+        }
+        .value_item:nth-of-type(4) {
+            position: absolute;
+            top: 45vw;
+            left: 55vw;
+        }
+        .value_item_title {
+            color: #000;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        @media screen and (orientation:portrait) and (max-width: 499px){
+            .value_item_title {
+                margin-bottom: 0;
+            }
+        }
+        @media screen and (orientation:landscape) and (max-width:1200px) {
+          .value_item:nth-of-type(1) {
+                top: 0vw !important;
+                left: 49vw !important;
+            }
+            .value_item:nth-of-type(2) {
+                top: 11vw !important;
+                left: 69vw !important;
+            }
+            .value_item:nth-of-type(3) {
+                top: 31vw !important;
+                left: 67vw !important;
+                width: 18vw  !important;
+            }
+            .value_item:nth-of-type(4) {
+                top: 48vw !important;
+                left: 43vw !important;
+            }
+        }
+        @media screen and (orientation:portrait) {
+          .value_item:nth-of-type(1) {
+                top: -4vw !important;
+                left: 49vw !important;
+            }
+            .value_item:nth-of-type(2) {
+                top: 10vw !important;
+                left: 72vw !important;
+            }
+            .value_item:nth-of-type(3) {
+                top: 35vw !important;
+                left: 70vw !important;
+                width: 18vw  !important;
+            }
+            .value_item:nth-of-type(4) {
+                top: 54vw !important;
+                left: 43vw !important;
+            }
+        }
+
+
+        #section4 {
+            position: relative;
+            width: 100vw;
+            height: 56vw;
+        }
+
+        #section4 .text {
+            position: absolute;
+            top: 13vw;
+            left: 13vw;
+            width: 60vw;
+            overflow-wrap: break-word;
+        }
+        @media screen and (orientation:portrait) {
+            #section4 .text {
+                position: absolute !important;
+                top: 5vw !important;
+                left: 13vw !important;
+                width: 80vw !important;
+                overflow-wrap: break-word !important;
+            }
+        }
+        #section5 {
+            position: relative;
+            width: 100vw;
+            height: 56vw;
+        }
+        #section5 .text {
+            position: absolute;
+            top: 13vw;
+            right: 15vw;
+            width: 60vw;
+
+            overflow-wrap: break-word;
+            text-align: right;
+        }
+        @media all and (orientation:portrait) {
+            #section5 {
+                height: 60vw !important;
+            }
+            #section5 .text {
+                top: 10vw !important;
+                width: 80vw !important;
+            }
+        }
+
+        .last_penta {
+            position: absolute;
+            top: 45vw;
+            left: 0;
+            transform: translate(-300px, -80px) rotate(-20deg);
+        }
+
+        #section4 .flex-container, 
+        #section5 .flex-container {
+            position: absolute;
+            left: 10vw;
+            top: 30vw;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            width: 80vw;
+        }
+
+        #section5 .flex-container {
+            width: 70vw;
+            left: 15vw;
+        }
+
+        #section4 .flex-item, 
+        #section5 .flex-item {
+            width: 15vw;
+            height: 15vw;
+            border-radius: 50%;
+            border: 1px solid #808080;
+
+            background-position: center;
+            background-size: 14vw;
+            background-repeat: no-repeat;
+        }
+
+        #section4 .flex-item:nth-of-type(1) {
+            background-size: 17vw;
+        }
+
+        #section4 .flex-item:nth-of-type(3),
+        #section5 .flex-item:nth-of-type(4) {
+            background-size: 10vw;
+        }
+
+        #section5 .flex-item:nth-of-type(1) {
+            background-size: 8vw;
+        }
+
+        .flex-item {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .small_penta_pos {
+            z-index: -1;
+            position: absolute;
+            left: 65vw;
+            top: -14vh;
+        }
+        @media all and (orientation:portrait) {
+            .small_penta_pos {
+                top: 0;
+            }
+            .scaling-small-container {
+              position: relative; 
+              height:0; 
+              width: 32vw; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-small-container {
+                position: relative; 
+                height:0; 
+                width: 32vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+
+        .mid_penta_pos {
+            z-index: -1;
+            position: absolute;
+            left: -36vw;
+            top: -40vh;
+        }
+        @media all and (orientation:portrait) {
+            .scaling-mid-container {
+              position: relative; 
+              height:0; 
+              width: 44vh; 
+              padding: 0;
+              padding-bottom: 100%; 
+              /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        @media all and (orientation:landscape) {
+            .scaling-mid-container {
+                position: relative; 
+                height:0; 
+                width: 55vw; 
+                padding: 0;
+                padding-bottom: 100%; 
+                /* over-ride this inline for aspect ratio other than square */
+            }
+        }
+        .last_penta_pos {
+            z-index: -1;
+            position: absolute;
+            left: 33vw;
+            bottom: 0;
+            overflow:hidden;
+        }
+        .scaling-last-container {
+            position: relative; 
+            height:0; 
+            width: 60vw; 
+            padding: 0;
+            padding-bottom: 100%; 
+            /* over-ride this inline for aspect ratio other than square */
+        }
+
+        #page_up_arrow {
+            position: absolute;
+            top: 3vh;
+            left: calc(50vw - 20px);
+        }
+
+        .up_arrow .activate, .down_arrow .activate{
+            cursor: pointer;
+        }
+
+        p {
+            line-height: 160%;
+        }
+
+        .team_photo, .image_trasition {
+            -webkit-transition: 1s all; 
+            transition: 1s all; 
+        }
+
+        #firstpage_down_arrow {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="global_part hide_unit">
+
+            <figure>
+                <div class="menulist_icon_pos">
+                    <div class="scaling-menulist_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div id="menu_icon">
+                            <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 200 200" xml:space="preserve">
+                            <circle cx="100" cy="100" r="98" />
+                            <g transform="scale(0.8) translate(60 60)">
+                            <circle cx="24.879" cy="64" r="10.059" style="fill:#fff;" />
+                            <circle cx="24.878" cy="100.09" r="10.059" style="fill:#fff;" />
+                            <circle cx="24.879" cy="27.91" r="10.058" style="fill:#fff;" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="27.91" y2="27.91" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="64" y2="64" />
+                            <line style="fill:none;stroke:#fff;stroke-width:14.3337;stroke-miterlimit:10;" x1="48.682" x2="113.183" y1="100.09" y2="100.09" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <div class="return_icon_pos">
+                    <div class="scaling-return_icon-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <a href="development.html">
+                            <div id="return_icon">
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 50 50" xml:space="preserve">
+                                <circle cx="25" cy="25" r="24" />
+                                <polyline fill="#FFFFFF" transform="scale(0.8) translate(10 13)" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </figure>
+
+        </div>
+
+        <article class="screen">
+            <section id="section1" class="hide_unit">
+
+                <a href="development.html">
+                    <svg id="page_up_arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="40px" height="40px" xml:space="preserve">
+                        <polyline transform="scale(0.8)" fill="#808080" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
+                    </svg>
+                </a>
+                <div class="text">
+                    <header>
+                        <h1>FOUNDERS</h1>
+                        <h2>创始人介绍</h2>
+                    </header>
+                    <div class="founder_intro">
+                        <p id="ceo_intro" hidden>
+                            王高楠  CEO。
+                            拱顶石游戏创始人，“资源型”创业家，清华大学工学学士，加州大学伯克利分校硕士。热爱体育，热爱军事，擅长平面设计，对移动互联网领域有自己独到的见解和丰富的游戏策划经验。AAMA亚杰商会摇篮计划第九期学员，创业邦评选为2015年30岁以下创业新贵族。
+                        </p>
+                        <p id="cto_intro"  hidden>
+                            张煦  CTO。
+                            技术大神，超级玩家，曾就职完美世界引擎组，获清华大学学士及硕士学位。
+                        </p>
+                        <p id="partner_intro"  hidden>
+                            崔汉青  合伙人。
+                            全栈工程师。本科时期两次代表武汉大学参加ACM/ICPC世界总决赛。曾就职于微软必应新闻团队，任研发主管。现致力于高效技术团队建设和足球游戏核心玩法研发。
+                        </p>
+                    </div>
+                </div>
+
+                <figure>
+                    <div class="clip_pos">
+                        <div class="scaling-clip-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 800 800">
+                                <g>
+                                    <path fill="#fff" d="M50,50 l0,700 l700,0 l0,-700z
+                                          M 304.681, 599.999 c -14, 0 -28.993 -10.925 -33.32 -24.277 L 208.437, 381.5
+	                                    c-4.326 -13.353, 1.401 -31.029, 12.727 -39.282 L 385.905, 222.184 c11.325 -8.252, 29.859 -8.252, 41.184, 0 l 164.741, 120.035
+	                                    c 11.327, 8.252, 17.054, 25.929, 12.727, 39.283 l -62.925, 194.221 C 537.306, 589.075, 522.312, 600, 508.312, 600 L 304.681, 599.999z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </figure>
+
+                <div class="img_container">
+                    <div class="img_position">
+                        <div class="founders_photo image_trasition" style="background-color: #96b432;opacity:1;"></div>
+                        <div id="ceo" class="founders_photo image_trasition" style="background-image:url(../images/founders/wanggaonan.jpg); opacity:0;"></div>
+                        <div id="cto" class="founders_photo image_trasition" style="background-image:url(../images/founders/zhangxu.jpg); opacity:0;"></div>
+                        <div id="partner" class="founders_photo image_trasition" style="background-image:url(../images/founders/cuihanqing.jpg); opacity:0;"></div>
+                    </div>
+                </div>
+                <!--
+               <figure>
+                    <div class="penta_pos">
+                        <div class="scaling-svg-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 430 430">
+                                <defs>
+                                    <clipPath id="pentagon_mask">
+                                        <path id="clip_path" transform="scale(1.11) translate(-5, -15)" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                    c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                    c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#pentagon_mask)">
+                                    <rect fill="#96b432" x="0" y="0" width="450" height="450" />
+                                    <image id="ceo" class="founders_photo" xlink:href="../images/founders/王高楠.jpg" x="0" y="0" width="450" height="450" opacity="0" />
+                                    <image id="cto" class="founders_photo" xlink:href="../images/founders/张煦.jpg" x="0" y="0" width="450" height="450" opacity="0" />
+                                    <image id="partner" class="founders_photo" xlink:href="../images/founders/崔汉青.jpg" x="0" y="0" width="450" height="450" opacity="0" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </figure>
+                -->
+                <div>
+                    <div class="founder_item" data-founder="ceo">
+                        <div>CEO</div><div>王高楠</div>
+                    </div>
+                    <div class="founder_item" data-founder="cto">
+                        <div>CTO</div><div>张煦</div>
+                    </div>
+                    <div class="founder_item" data-founder="partner">
+                        <div>PARTNER</div><div>崔汉青</div>
+                    </div>
+                </div>
+
+                <div class="down_arrow_wrap">
+                    <svg id="firstpage_down_arrow" width="40px" height="40px">
+                        <polyline transform="scale(0.8)" fill="#d0d0d0" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                    </svg>
+                </div>
+            </section>
+
+            <section id="section2" class="hide_unit">
+                <figure>
+                    <div class="working_penta_pos">
+                        <div class="scaling-svg-working-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 426 426">
+                                <path transform="translate(-44, 48) scale(1.03) rotate(-15)" stroke="#96B432" stroke-width="14" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                <defs>
+                                    <clipPath id="working_mask" class="section2_clippos">
+                                        <path transform="translate(-36, 53) rotate(-15)" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                    </clipPath>
+                                </defs>
+                                <g class="working_img"  clip-path="url(#working_mask)">
+                                    <image id="scenario_img" class="team_photo" xlink:href='../images/team_staff/scenario.JPG' width="450" height="450" opacity="0"/>
+                                    <image id="technicians_img" class="team_photo"  xlink:href='../images/team_staff/technicians.jpg' width="450" height="450" />
+                                    <image id="art_img" class="team_photo" xlink:href='../images/team_staff/art.JPG' width="450" height="450" opacity="0"/>
+                                    <image id="business_img" class="team_photo" xlink:href='../images/team_staff/business.jpg' width="450" height="450" opacity="0"/>
+                                    <image id="function_img" class="team_photo" xlink:href='../images/team_staff/function.png' width="450" height="450" opacity="0"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </figure>
+
+                <ul class="teams">
+                    <li class="team_item" data-team-type="scenario">
+                        <b>策划部</b>
+                        <ul class="staff_photos" hidden>
+                            <li data-staff-name="赵渐博" data-img-name="1zhaojianbo.jpg"></li>
+                            <li data-staff-name="佛祖" data-img-name="2fozu_mengxiangnan.jpg"></li>
+                            <li data-staff-name="韩聪" data-img-name="3hancong.jpg"></li>
+                            <li data-staff-name="刘舒洋" data-img-name="4liushuyang.jpg"></li>
+                        </ul>
+                    </li>
+                    <li class="team_item" data-team-type="technicians">
+                        <b>技术研发部</b>
+                        <ul class="staff_photos" hidden>
+                            <li data-staff-name="张煦" data-img-name="1zhangxu.jpg"></li>
+                            <li data-staff-name="崔汉青" data-img-name="2cuihanqing.jpg"></li>
+                            <li data-staff-name="无情" data-img-name="3wuqing.jpg"></li>
+                            <li data-staff-name="吕辰" data-img-name="4lvchen.jpg"></li>
+                            <li data-staff-name="老司机" data-img-name="5laoshiji.jpg"></li>
+                            <li data-staff-name="闪电" data-img-name="6shandian_zhangmin.jpg"></li>
+                            <li data-staff-name="陈永涛" data-img-name="7chenyongtao.jpg"></li>
+                            <li data-staff-name="顾明" data-img-name="8guming.png"></li>
+                            <li data-staff-name="朱鹏宇" data-img-name="9zhupengyu.jpg"></li>
+                            <li data-staff-name="三里屯德罗西" data-img-name="10sanlitundeluoxi_wangkunliang.jpg"></li>
+                            <li data-staff-name="海涛" data-img-name="11haitao_wangpengran.jpg"></li>
+                            <li data-staff-name="王玮" data-img-name="12wangwei.jpg"></li>
+                            <li data-staff-name="金毅" data-img-name="13quanyi.jpg"></li>
+                            <li data-staff-name="杨毓华" data-img-name="14yangyuhua.jpg"></li>
+                            <li data-staff-name="向磊" data-img-name="15xianglei.jpg"></li>
+                            <li data-staff-name="徐勇" data-img-name="16xuyong.jpg"></li>
+                            <li data-staff-name="侯玉霜" data-img-name="17houyuxiang.jpg"></li>
+                            <li data-staff-name="陈亚光" data-img-name="18chenyaguang.png"></li>
+                            <li data-staff-name="王卫军" data-img-name="19wangweijun.jpg"></li>
+                            <li data-staff-name="王彬" data-img-name="20wangbin.jpg"></li>
+                            <li data-staff-name="孙金成" data-img-name="21sunjincheng.jpg"></li>
+                        </ul>
+                    </li>
+                    <li class="team_item" data-team-type="art">
+                        <b>美术部</b>
+                        <ul class="staff_photos" hidden>
+                            <li data-staff-name="李晶晶" data-img-name="1lijingjing.png"></li>
+                            <li data-staff-name="宣扬" data-img-name="2xuanyang.jpg"></li>
+                            <li data-staff-name="钱老板" data-img-name="3qianlaoban_asihan.jpg"></li>
+                            <li data-staff-name="梨子兔" data-img-name="4lizitu_lixue.jpg"></li>
+                            <li data-staff-name="安明飞" data-img-name="5anmingfei.jpg"></li>
+                            <li data-staff-name="夏尔" data-img-name="6xiaer_zhanghe.jpg"></li>
+                            <li data-staff-name="刘奕扬" data-img-name="7liuyiyang.jpg"></li>
+                            <li data-staff-name="jill" data-img-name="8jill_jizhiqin.jpg"></li>
+                            <li data-staff-name="王岩" data-img-name="9wangyan.png"></li>
+                        </ul>
+                    </li>
+                    <li class="team_item" data-team-type="business">
+                        <b>商务运营部</b>
+                        <ul class="staff_photos" hidden>
+                            <li data-staff-name="黄菁菁" data-img-name="1huangjingjing.jpg"></li>
+                            <li data-staff-name="刘寅" data-img-name="2liuyin.jpg"></li>
+                            <li data-staff-name="长门" data-img-name="3changmen_wuhao.jpg"></li>
+                            <li data-staff-name="张大锤" data-img-name="4zhangdachui_zhangyu.jpg"></li>
+                            <li data-staff-name="王宝剑" data-img-name="5wangbaojian_wangyingya.jpg"></li>
+                            <li data-staff-name="郑文杰" data-img-name="6zhengwenjie.jpg"></li>
+                        </ul>
+                    </li>
+                    <li class="team_item" data-team-type="function">
+                        <b>职能部门</b>
+                        <ul class="staff_photos" hidden>
+                            <li data-staff-name="黄吉平" data-img-name="1huangjiping.jpg"></li>
+                            <li data-staff-name="王威" data-img-name="2wangwei.jpg"></li>
+                            <li data-staff-name="小新" data-img-name="3xiaoxin_chengyaxin.jpg"></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="staff_photo_landscape_area">
+                    <div class="staff_photo_area">
+                        <div class="staff_row">
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                        </div>
+                        <div class="staff_row">
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                            <div class="staff_photo"></div>
+                        </div>
+                    </div>
+
+                    <div class="arrow_area">
+                        <div class="up_arrow">
+                            <div class="activate" hidden>
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#96B432" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 8)" fill="#96B432" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
+                        </svg>
+                            </div>
+                            <div class="inactivate">
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#d0d0d0" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 8)" fill="#d0d0d0" points="7.665,28.666 18.497,18.026 29.166,28.666 34.996,23.347 18.497,7.333 1.999,22.833 " />
+                        </svg>
+                            </div>
+                        </div>
+
+                        <div class="down_arrow">
+                            <div class="activate" hidden>
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#96B432" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 12)" fill="#96B432" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                        </svg>
+                            </div>
+                            <div class="inactivate">
+                                <svg version="1.0" x="0px" y="0px" width="42px" height="42px" xml:space="preserve">
+                                <circle cx="22" cy="22" r="18" stroke-width="2px" stroke="#d0d0d0" fill="#fff" />
+                                <polyline transform="scale(0.8) translate(9.5, 12)" fill="#d0d0d0" points="29.331,7.333 18.499,17.973 7.83,7.333 2,12.653 18.499,28.667 34.997,13.167 " />
+                        </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="staff_photo_portrait_area" hidden>
+                    <div class="left_arrow_pos">
+                        <div class="scaling-left-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#96b432" points="29.165,28.832 18.525,18 29.165,7.332 23.845,1.501 7.832,18 23.332,34.498 " />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="staff_row">
+                        <div class="staff_photo"></div>
+                        <div class="staff_photo"></div>
+                        <div class="staff_photo"></div>
+                        <div class="staff_photo"></div>
+                    </div>
+                    <div class="right_arrow_pos">
+                        <div class="scaling-right-arrow-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 37 36.333">
+                                <polyline fill="#96b432" points="10.528,7.168 21.167,18 10.528,28.668 15.847,34.498 31.861,18 16.361,1.502 " />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                                                 
+                                                 
+                <div class="text">               
+                    <header>                     
+                        <h1>STAFFS</h1>
+                        <h2>企业成员介绍</h2>
+                    </header>
+                    <div class="staff_intro">
+                        <p id="scenario_txt">逻辑缜密，脑洞无限。</p>
+                        <p id="technicians_txt" hidden>单纯朴实有智慧，聪明健谈有激情。</p>
+                        <p id="art_txt" hidden>用心创作，成就完美品质。</p>
+                        <p id="business_txt" hidden>运筹帷幄，决胜千里。</p>
+                        <p id="function_txt" hidden>严谨认真，博文约礼。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section3" class="hide_unit">
+
+                <figure>
+                    <div class="value_penta_pos">
+                        <div class="scaling-svg-value-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <svg class="scaling-svg" viewBox="0 0 1345 1345">
+                                <path transform="scale(3.2) translate(13, -20) rotate(4.5)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                <path fill="#ffffff" transform="translate(319, 440) scale(1.3) rotate(-10)" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                        c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                        c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                            </svg>
+                        </div>
+                    </div>
+                </figure>
+
+                <div class="text">
+                    <header>
+                        <h1>VALUES</h1>
+                        <h2>企业价值阐述</h2>
+                    </header>
+                    <p></p>
+                </div>
+                <ul class="value_items">
+                    <li class="value_item">
+                        <div><div class="value_item_title"><b>01</b> 价值要点</div> <p>拱顶石是一家专业的手游开发公司，公司始终致力于足球游戏的开发与推广。</p></div>
+                    </li>
+                    <li class="value_item">
+                        <div><div class="value_item_title"><b>02</b> 价值要点</div><p>《中超风云》是国内首款拥有中超官方授权的足球手游，15年11月上线后月流水愈千万，活跃玩家数量稳步增长</p></div>
+                    </li>
+                    <li class="value_item">
+                        <div><div class="value_item_title"><b>03</b> 价值要点</div><p>公司最新开发的游戏将与世界著名手游公司合作，拥有世界最著名的2000余位球星的肖像使用权。至此公司已成为国内唯一同时拥有中超及五大联赛球星授权的游戏开发公司。</p></div>
+                    </li>
+                    <li class="value_item">
+                        <div><div class="value_item_title"><b>04</b> 价值要点</div><p>公司拥有自己的体育信息渠道，与众多体育公司有着密切的合作，并邀请了当红球星为公司新游戏代言。</p></div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="section4"  class="hide_unit">
+                <div class="text">
+                    <header>
+                        <h1>COORPERATIONS</h1>
+                        <h2>合作伙伴</h2>
+                    </header>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-item" style="background-image: url(../images/logos/hulailogo3.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/tiyuzhichuanglogo.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/zhongchaologo.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/mobcast.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/fifpro.png)"></div>
+                </div>
+
+            </section>
+
+            <section id="section5"  class="hide_unit">
+                <div class="text">
+                    <header>
+                        <h1>INVESTMENTS</h1>
+                        <h2>投资者关系</h2>
+                    </header>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-item" style="background-image: url(../images/logos/weiying.jpg)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/hongshanziben.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/yajieshanghui.png)"></div>
+                    <div class="flex-item" style="background-image: url(../images/logos/youge.jpg)"></div>
+                </div>
+
+                <figure>
+                    <div class="small_penta_pos">
+                        <div class="scaling-small-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <div>
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 400 400" xml:space="preserve">
+                                <path transform="rotate(30) translate(46 -148)" fill="#96b432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <div class="mid_penta_pos">
+                        <div class="scaling-mid-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <div>
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 400 400" xml:space="preserve">
+                                <path transform="rotate(26) translate(38 -128)" fill="#96b432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <div class="last_penta_pos">
+                        <div class="scaling-last-container"
+                             style="padding-bottom: 32% /* 100% * 55/60 */">
+                            <div>
+                                <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 350 0.1" xml:space="preserve">
+                                <path transform="rotate(20) translate(38 -100)" fill="#96b432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                            c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                            c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                               </svg>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+
+
+            </section>
+        </article>
+
+        <div id="menu_window" hidden>
+            <figure>
+                <div class="penta_menuback_pos">
+                    <div class="scaling-menuback-container"
+                         style="padding-bottom: 92% /* 100% * 55/60 */">
+                        <div>
+                            <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 540 540" xml:space="preserve">
+                                <g id="menu_back" class="rotate_show">
+                                <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                                                c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
+                                                c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <div id="menu_content">
+                <figure>
+                    <div class="closeicon_pos" hidden>
+                        <div class="scaling-closeicon-container"
+                             style="padding-bottom: 92% /* 100% * 55/60 */">
+                            <div id="close_menu">
+                                <svg class="scaling-svg" viewBox="0 0 512 512">
+                                    <g>
+                                        <circle cx="256" cy="256" r="253.44" />
+                                        <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
+                                        c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
+                                        C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
+                                        <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
+                                        c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
+                                        C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <div id="nav_menu" class="js-nav-active">
+                    <ul class="nav-main">
+                        <li>
+                            <a href="main.html">
+                                HOME
+                                <span class="nav_cn">首页</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product.html#product01">
+                                PRODUCT
+                                <span class="nav_cn">产品中心</span>
+                            </a>
+                            <div class="nav_description">
+                                <a href="product.html#product01">中超风云</a> |
+                                <a href="product.html#product02">モバサカChampionManager</a> |
+                                <a href="product.html#product03">中国队勇夺世界杯</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="aboutUs.html">
+                                ABOUT US
+                                <span class="nav_cn">关于我们</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactUs.html">
+                                CONTACT US
+                                <span class="nav_cn">联系我们</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact_info" hidden>
+                    <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
+                    <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../js/jquery-2.2.2.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+
+    <script>
+        var staffNumber, teamName, curTeamNo;
+        var staffNames = [];
+        var staffPhotos = [];
+        var showingGroupNo, portShowingGroupNo;
+        var groupNumber, portGroupNumber;
+        var curOrientation;
+        var down_arrow_pos;
+
+        /*
+        $(window).resize(function () {
+            var move_x = Math.round($(window).width() / 100 * 45.5);
+            var move_y = Math.round($(window).width() / 100 * 10.25);
+
+            var newattr = "scale(1.11) translate(-5, -12) translate(" + move_x + "," + move_y + ")";
+            $("#animation_path").attr("transform", newattr);
+        });
+        */
+        $(window).scroll(function () {
+
+            $("#firstpage_down_arrow").css("opacity", "0");
+            $("#firstpage_down_arrow").css("z-index", "-1");
+            if ($(window).scrollTop() == 0)
+            {
+                $("#firstpage_down_arrow").css("opacity", "1");
+                $("#firstpage_down_arrow").css("z-index", "999");
+            }
+        });
+
+        $("#firstpage_down_arrow").click(function () {
+            $('html, body').animate({ scrollTop: $("#section2").offset().top }, 300);
+        });
+
+        $(document).ready(function () {
+            down_arrow_pos = $(window).height() - 35;
+            $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
+            detectOrientation();
+
+            if (curOrientation == "portrait")
+            {
+                $(".staff_photo_portrait_area").prop("hidden", false);
+                $(".staff_photo_landscape_area").prop("hidden", true);
+            }
+
+            $(".teams .team_item:nth-child(2)").trigger("click");
+
+            changeFontSize();
+            $(window).resize(function () {
+                down_arrow_pos = $(window).height() - 35;
+                $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
+
+                if (detectOrientationChange()) {
+                    if (curOrientation == 'portrait') {
+                        $(".staff_photo_portrait_area").prop("hidden", false);
+                        $(".staff_photo_landscape_area").prop("hidden", true);
+                    } else {
+                        $(".staff_photo_portrait_area").prop("hidden", true);
+                        $(".staff_photo_landscape_area").prop("hidden", false);
+                    }
+                }
+
+                changeFontSize();
+            });
+
+            function changeFontSize() {
+                if (navigator.userAgent.search(/(Android)/i) != -1) {
+
+                    if ($(window).height() <= 499) {
+                        $(".text").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                            /*var patt = /(Chrome\/)[0-9]+/i;
+                            var result = patt.exec(navigator.userAgent);
+                            if (result[0] != null) {
+                                var str = result[0];
+                                var arr = str.split("/");
+                                var ver = parseInt(arr[1]);
+                                if ((ver >= 50) || (ver == 45)) {
+                                    width = parseInt($(this).css("width"));
+                                    width = width + width * 0.66;
+                                    var new_width = Math.round(width) + '';
+                                    $(this).find('p').css({
+                                        "font-size": "10px",
+                                        "-webkit-transform": "scale(0.6)",
+                                        "-webkit-transform-origin": "0 0",
+                                        "width": new_width
+                                    });
+                                }
+                            }*/
+                        });
+                        $(".value_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                            /*
+                            var patt = /(Chrome\/)[0-9]+/i;
+                            var result = patt.exec(navigator.userAgent);
+                            if (result[0] != null) {
+                                var str = result[0];
+                                var arr = str.split("/");
+                                var ver = parseInt(arr[1]);
+                                if ((ver >= 50) || (ver == 45)) {
+                                    width = parseInt($(this).css("width"));
+                                    width = width + width * 0.66;
+                                    var new_width = Math.round(width) + '';
+                                    $(this).find('p').css({
+                                        "font-size": "10px",
+                                        "-webkit-transform": "scale(0.6)",
+                                        "-webkit-transform-origin": "0 0",
+                                        "width": new_width
+                                    });
+                                }
+                            }*/
+                        });
+                    }
+
+                    if ($(window).width() <= 499) {
+                        $(".text").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                        $(".value_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.66;
+                                var new_width = Math.round(width) + '';
+                                $(this).find('p').css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.6)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                        $(".founder_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                $(this).css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.8)"
+                                });
+                                if (index == 0) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 100%"
+                                    });
+                                }
+                                if (index == 1) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "120% 0"
+                                    });
+                                }
+                                if (index == 2) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 0"
+                                    });
+                                }
+                            }
+                        });
+
+                        $(".team_item").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(this).css("width"));
+                                width = width + width * 0.25;
+                                var new_width = Math.round(width) + '';
+                                if (index == 4) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "100% 0"
+                                    });
+                                } else if (index == 3) {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 100%"
+                                    });
+                                } else {
+                                    $(this).css({
+                                        "-webkit-transform-origin": "0 0"
+                                    });
+                                }
+
+                                $(this).css({
+                                    "font-size": "10px",
+                                    "-webkit-transform": "scale(0.8)",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+
+        });
+
+        function detectOrientation() {
+           /*
+            if ($(window).width() <= $(window).height())
+            {
+                curOrientation = "portrait";
+                return;
+            }
+            curOrientation = "landscape";
+            return;
+            */
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                curOrientation = "portrait";
+                return;
+            }
+            curOrientation = "landscape";
+            return;
+        }
+
+        function detectOrientationChange() {
+            var preOrientation = curOrientation;
+            detectOrientation();
+            if (preOrientation != curOrientation)
+                return true;
+            return false;
+        }
+
+        function getTeamNo() {
+            if (teamName == "scenario")
+                curTeamNo = 1;
+            if (teamName == "technicians")
+                curTeamNo = 2;
+            if (teamName == "art")
+                curTeamNo = 3;
+            if (teamName == "business")
+                curTeamNo = 4;
+            if (teamName == "function")
+                curTeamNo = 5;
+            return;
+        }
+
+        $(".team_item").click(function () {
+            $(this).css("color", "#96b432");
+            $(this).siblings().css("color", "#000");
+            teamName = $(this).attr("data-team-type");
+
+            var imgid = "#" + teamName + "_img";
+//            $(".working_img").find(imgid).attr("transform", "scale(1)");
+//            $(".working_img").find(imgid).siblings().attr("transform", "scale(0.1)");
+            $(".working_img").find(imgid).css("opacity", "1");
+            $(".working_img").find(imgid).siblings().css("opacity", "0");
+
+            var txtid = "#" + teamName + "_txt";
+            $(".staff_intro").find(txtid).prop("hidden", false);
+            $(".staff_intro").find(txtid).siblings().prop("hidden", true);
+
+            staffNumber = $(this).find(".staff_photos li").length;
+
+            staffNames = [];
+            staffPhotos = [];
+            $(this).find(".staff_photos li").each(function () {
+                staffNames.push($(this).data("staff-name"));
+                staffPhotos.push($(this).data('img-name'));
+            });
+            groupNumber = 1;
+            if (staffNumber > 8) {
+                groupNumber = Math.ceil(staffNumber / 8);
+            }
+
+            portGroupNumber = 1;
+            if (staffNumber > 4) {
+                portGroupNumber = Math.ceil(staffNumber / 4);
+            }
+
+            showingGroupNo = 0;
+            portShowingGroupNo = 0;
+
+            console.log(groupNumber);
+            AddShowData();
+            SetArrow();
+
+            AddPortShowData();
+            PortSetArrow();
+        });
+
+        $(".up_arrow .activate").click(function () {
+            showingGroupNo -= 1;
+            AddShowData();
+            SetArrow();
+        });
+
+        $(".down_arrow .activate").click(function () {
+            showingGroupNo += 1;
+            AddShowData();
+            SetArrow();
+        });
+
+        function AddShowData() {
+            var text = '';
+            var i = 8 * showingGroupNo;
+            $(".staff_photo_area").find(".staff_photo").each(function () {
+                if (i < staffPhotos.length)
+                    text = "<div class='photo black_and_white' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
+                else
+                    text = '';
+                $(this).html(text);
+                i++;
+            });
+        }
+
+        $(".left_arrow_pos").click(function () {
+            portShowingGroupNo -= 1;
+            AddPortShowData();
+            PortSetArrow();
+        });
+
+        $(".right_arrow_pos").click(function () {
+            portShowingGroupNo += 1;
+            AddPortShowData();
+            PortSetArrow();
+        });
+
+        function AddPortShowData() {
+            var text = '';
+            var i = 4 * portShowingGroupNo;
+            $(".staff_photo_portrait_area").find(".staff_photo").each(function () {
+                if (i < staffPhotos.length)
+                    text = "<div class='photo black_and_white' style='background-image:url(../images/staffs/" + teamName + "/" + staffPhotos[i] + ")'></div><div class='name'>" + staffNames[i] + "</div></div>";
+                else
+                    text = '';
+                $(this).html(text);
+                i++;
+            });
+        }
+
+        function SetArrow() {
+            var upArrowActive = false;
+            var downArrowActive = false;
+            if (showingGroupNo > 0)
+                upArrowActive = true;
+            if (showingGroupNo < groupNumber - 1)
+                downArrowActive = true;
+
+            if (upArrowActive == true) {
+                $(".up_arrow .activate").prop("hidden", false);
+                $(".up_arrow .inactivate").prop("hidden", true);
+            } else {
+                $(".up_arrow .activate").prop("hidden", true);
+                $(".up_arrow .inactivate").prop("hidden", false);
+            }
+            if (downArrowActive == true) {
+                $(".down_arrow .activate").prop("hidden", false);
+                $(".down_arrow .inactivate").prop("hidden", true);
+            } else {
+                $(".down_arrow .activate").prop("hidden", true);
+                $(".down_arrow .inactivate").prop("hidden", false);
+            }
+        }
+
+        function PortSetArrow() {
+            var leftArrowActive = false;
+            var rightArrowActive = false;
+            if (portShowingGroupNo > 0)
+                leftArrowActive = true;
+            if (portShowingGroupNo < portGroupNumber - 1)
+                rightArrowActive = true;
+
+            if (leftArrowActive == true) {
+                $(".left_arrow_pos").prop("hidden", false);
+            } else {
+                $(".left_arrow_pos").prop("hidden", true);
+            }
+            if (rightArrowActive == true) {
+                $(".right_arrow_pos").prop("hidden", false);
+            } else {
+                $(".right_arrow_pos").prop("hidden", true);
+            }
+        }
+
+        $(".founder_item")
+            .click(function () {
+                $(this).css("color", "#000");
+                $(this).siblings().css("color", "#808080");
+
+                var str = $(this).data('founder');
+                $("#" + str).css("opacity", "1");
+                $("#" + str).siblings().css("opacity", "0");
+                $("#" + str + "_intro").prop("hidden", false);
+                $("#" + str + "_intro").siblings().prop("hidden", true);
+            });
+
+        console.log(window.navigator.userAgent);
+        /*
+        if (navigator.userAgent.search(/(MSIE|Trident)/i) != -1)
+        {
+            var elements = document.getElementsByClassName("founders_photo");
+            var width = parseInt(elements[0].getAttribute("width"));
+            var i = 1;
+            var id = setInterval(frame, 100);
+            function frame() {
+                if (i > 1.2) {
+                    clearInterval(id);
+                    var id_1 = setInterval(frame_1, 100);
+                } else {
+                    i += 0.001;
+                    //                var x = (-(width * (i - 1) / 2)).toFixed(4);
+                    //                var y = (-(width * (i - 1) / 2)).toFixed(4);
+                    for (var j = 0; j < elements.length; j++)
+                    {
+                        //                    elements[j].setAttribute("x", x);
+                        //                    elements[j].setAttribute("y", y);
+                        //                    elements[j].setAttribute("transform", "scale(" + i + ")" + "translate(" + x + "," + y + ")" );
+                        elements[j].setAttribute("transform", "scale(" + i + ")");
+                    }
+                }
+                function frame_1() {
+                    if (i <= 1) {
+                        clearInterval(id_1);
+                        id = setInterval(frame, 100);
+                    }
+                    i -= 0.001;
+                    //                var x = (-(width * (i - 1) / 2)).toFixed(4);
+                    //                var y = (-(width * (i - 1) / 2)).toFixed(4);
+                    for (var j = 0; j < elements.length; j++) {
+                        //                    elements[j].setAttribute("x", x);
+                        //                    elements[j].setAttribute("y", y);
+                        //                    elements[j].setAttribute("transform", "scale(" + i + ")");
+                        //                    elements[j].setAttribute("transform", "scale(" + i + ")" + "translate(" + x + "," + y + ")");
+                        elements[j].setAttribute("transform", "scale(" + i + ")");
+                    }
+                }
+            }
+        } else if (navigator.userAgent.search(/(Chrome)/i) != -1) {
+            $(".founders_photo").css("-webkit-transform-origin", "50% 50%");
+        }
+        
+        */
+
+        $(".staff_photo")
+            .mouseover(function () {
+                $(this).find(".photo").removeClass("black_and_white", false);
+            })
+            .mouseout(function () {
+                $(this).find(".photo").addClass("black_and_white", false);
+            });
+
+        $("#menu_icon").click(function () {
+            $("#menu_window").prop("hidden", false);
+            $(".hide_unit").addClass("back_hide");
+
+            window.setTimeout(contact_show, 1000);
+        });
+
+        function contact_show() {
+            $(".contact_info").prop("hidden", false);
+            $(".closeicon_pos").prop("hidden", false);
+        }
+
+        $("#close_menu").click(function () {
+            $("#close_menu").addClass("move_hide");
+            $("#nav_menu").addClass("move_hide");
+            $("#menu_back").addClass("rotate_hide");
+
+            $(".contact_info").prop("hidden", true);
+            $(".closeicon_pos").prop("hidden", true);
+
+            window.setTimeout(next, 1000);
+            $(".hide_unit").removeClass("back_hide");
+        });
+
+        function next() {
+            $("#menu_window").prop("hidden", true);
+            $("#close_menu").removeClass("move_hide");
+            $("#nav_menu").removeClass("move_hide");
+            $("#menu_back").removeClass("rotate_hide");
+        }
+
+    </script>
+
+</body>
+</html>
+

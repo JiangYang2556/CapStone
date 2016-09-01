@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Main Page</title>
     <link rel="stylesheet" type="text/css" href="../styles/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
@@ -24,15 +25,24 @@
             -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center;
-            height: 100vh;
-            width: 100vw;
+            height: 100%;
+            width: 100%;
             overflow-wrap: break-word;
         }
+
+        .scaling-main-svg {
+            position: absolute; 
+            height: 100%; 
+            width: 100%; 
+            left: 0; 
+            top:0;
+        }
+
         @media all and (orientation:portrait) {
             .scaling-svg-container {
               position: relative; 
               height:0; 
-              width: 66vw; 
+              width: 64vw; 
               padding: 0;
               padding-bottom: 100%; 
               /* over-ride this inline for aspect ratio other than square */
@@ -49,13 +59,13 @@
             }
             #product1 {
                 position: fixed;
-                bottom: calc(50% + 33.5vh);
+                bottom: calc(50% + 32.5vh);
                 left: 50%;
             }
             #product2 {
                 position: fixed;
                 top: calc(50% - 9vh);
-                left: calc(50% + 36vh);
+                left: calc(50% + 35vh);
             }
             #product3 {
                 position: fixed;
@@ -65,7 +75,7 @@
             #product4 {
                 position: fixed;
                 top: calc(50% - 9vh);
-                right: calc(50% + 36vh);
+                right: calc(50% + 35vh);
                 text-align: right;
             }
             .peta_edge:nth-of-type(2) {
@@ -112,23 +122,23 @@
         @media all and (orientation:portrait) {
             #product1 {
                 position: fixed;
-                bottom: calc(50% + 32.5vw);
+                bottom: calc(50% + 31.5vw);
                 left: 50%;
             }
             #product2 {
                 position: fixed;
                 top: calc(50% - 9vw);
-                left: calc(50% + 35vw);
+                left: calc(50% + 33.5vw);
             }
             #product3 {
                 position: fixed;
-                top: calc(50% + 32vw);
-                left: calc(50% + 20vw);
+                top: calc(50% + 31vw);
+                left: calc(50% + 19.5vw);
             }
             #product4 {
                 position: fixed;
                 top: calc(50% - 9vw);
-                right: calc(50% + 34.5vw);
+                right: calc(50% + 33.5vw);
                 text-align: right;
             }
         }
@@ -136,11 +146,11 @@
 
 
         .penta_product {
-            color: #a0a0a0;
+            color: #000;
             font-size: 0.8rem;
         }
         .penta_name {
-            color: #808080;
+            color: #000;
             font-size: 1.2rem;
             font-weight: 700;
         }
@@ -189,14 +199,14 @@
             .sub_description {
                 width: 58vw;
                 height: 32vw;
-                top: 62vh;
+                top: 62%;
                 left: 2vw;
             }
         }
 
         .banner {
             position: relative;
-            top: 2.5vw;
+            top: 2vw;
             left: 2vw;
             bottom: 2vw;
             right: 2vw;
@@ -224,8 +234,17 @@
             display: flex;
             -webkit-flex-direction: column;
             flex-direction: column;
+            justify-content: center;
+            -webkit-justify-content: center;
         }
         .banner_header .banner_num{
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            justify-content: center;
+            -webkit-justify-content: center;
+
             float: left;
             color: #96B432;
             font-size: 3rem;
@@ -237,7 +256,7 @@
             color: #96B432;
         }
         .banner_productname {
-            font-size:1.8rem;
+            font-size:1.5rem;
         }
         .banner_body {
             text-align: left;
@@ -266,8 +285,8 @@
             position: fixed;
             bottom: 13vh;
             left: 15vw;
-            font-size: 1.2rem;
-            color: #000;
+            font-size: 1.1rem;
+            color: #909090;
             z-index: -1;
         }
 
@@ -280,11 +299,11 @@
             }
         }
 
-
     </style>
 </head>
 <body>
     <div id="main">
+        <div class="agent"></div>
         <div class="global_part hide_unit">
 
             <figure>
@@ -299,7 +318,7 @@
                                 </g>
                                 <g id="menu_icon_inner">
                                     <circle cx="28" cy="28" r="20" fill="#96B432" />
-                                    <path transform="translate(9.5, 16) scale(0.021)" clip-path="url(#SVGID_2_)" fill="#ffffff" d="M304.615,194.604c6.264-11.452,22.063-20.818,35.114-20.818H1418.87
+                                    <path transform="translate(9.5, 16.7) scale(0.021)" clip-path="url(#SVGID_2_)" fill="#ffffff" d="M304.615,194.604c6.264-11.452,22.063-20.818,35.114-20.818H1418.87
 		                                c13.051,0,29.082,9.239,35.621,20.533l92.015,158.842c6.539,11.294,6.512,29.756-0.074,41.027l-177.48,304.08
 		                                c-6.576,11.271-17.314,11.253-23.854-0.037l-176.387-304.59c-6.539-11.294-22.565-20.533-35.616-20.533H706.069
 		                                c-13.051,0-18.376,9.239-11.83,20.533l297.922,514.192c6.549,11.289,22.58,20.53,35.631,20.53h182.342
@@ -390,9 +409,8 @@
 
             <figure>
                 <div class="penta_pos hide_unit">
-                    <div class="scaling-svg-container"
-                         style="padding-bottom: 92% /* 100% * 55/60 */">
-                        <svg class="scaling-svg" viewBox="0 0 484 466">
+                    <div class="scaling-svg-container">
+                        <svg class="scaling-main-svg" viewBox="0 0 484 466">
                             <path transform="scale(1.15) translate(5, -5)" fill="#96B43C" stroke-width="15" stroke="#96B43C" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
                             c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
                             c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
@@ -404,6 +422,7 @@
                                 </clipPath>
                             </defs>
                             <g>
+                                <image id="product_img" class="pro_img" clip-path="url(#pentagon_mask)" xlink:href='../images/home/zhongchao.png' width='484' height='466' opacity="1" />
                                 <image id="product01_img" class="pro_img" clip-path="url(#pentagon_mask)" xlink:href='../images/home/zhongchao.png' width='484' height='466' opacity="0" />
                                 <image id="product02_img" class="pro_img" clip-path="url(#pentagon_mask)" xlink:href='../images/home/mosbaka.jpg' width='484' height='466' opacity="0" />
                                 <image id="product03_img" class="pro_img" clip-path="url(#pentagon_mask)" xlink:href='../images/home/yongduo.jpg' width='484' height='466' opacity="0" />
@@ -422,7 +441,7 @@
                 <div id="product2" class="peta_edge select_pro_item hide_unit" data-pro-id="product02">
                     <div class="penta_no">02</div>
                     <div class="penta_product">PRODUCT2</div>
-                    <div class="penta_name">Mobasaka Champion Manager</div>
+                    <div class="penta_name">モバサカ Champion Manager</div>
                 </div>
                 <div id="product3" class="peta_edge select_pro_item hide_unit" data-pro-id="product03">
                     <div class="penta_no">03</div>
@@ -460,10 +479,10 @@
                                     <div class="banner_num">02</div>
                                     <div class="banner_title">
                                         <div class="banner_product">PRODUCT2</div>
-                                        <div class="banner_productname">五大联赛</div>
+                                        <div class="banner_productname">モバサカChampion Manager</div>
                                     </div>
                                 </div>
-                                <div class="banner_body"><p>14321, MOSCOW REGION, KRASNGORSK DISTRICT, 9TH OF THE 14321, MOSCOW REGION, KRASNGORSK DISTRICT, 9TH OF THE </p></div>
+                                <div class="banner_body"><p></p></div>
                             </div>
                         </div>
                     </a>
@@ -476,17 +495,17 @@
                                     <div class="banner_num">03</div>
                                     <div class="banner_title">
                                         <div class="banner_product">PRODUCT3</div>
-                                        <div class="banner_productname">勇夺世界杯</div>
+                                        <div class="banner_productname">中国队勇夺世界杯</div>
                                     </div>
                                 </div>
-                                <div class="banner_body"><p>14321, MOSCOW REGION, KRASNGORSK DISTRICT, 9TH OF THE 14321, MOSCOW REGION, KRASNGORSK DISTRICT, 9TH OF THE </p></div>
+                                <div class="banner_body"><p></p></div>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <div class="point_text hide_unit">点去屏幕要点以查看更多</div>
+            <div class="point_text hide_unit">点击屏幕要点以查看更多</div>
         </div>
     </div>
 
@@ -546,8 +565,8 @@
                         </a>
                         <div class="nav_description">
                             <a href="product.html#product01">中超风云</a> |
-                            <a href="product.html#product02">五大联赛日文版</a> |
-                            <a href="product.html#product03">勇夺世界杯</a>
+                            <a href="product.html#product02">モバサカChampionManager</a> |
+                            <a href="product.html#product03">中国队勇夺世界杯</a>
                         </div>
                     </li>
                     <li>
@@ -565,6 +584,7 @@
                 </ul>
             </div>
             <div class="contact_info" hidden>
+                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
                 <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
             </div>
         </div>
@@ -576,6 +596,68 @@
     <script>
 
         var selected_item = '';
+
+        $(document).ready(function () {
+//            $(".agent").html(navigator.userAgent);
+//            $("#product1").trigger("click");
+
+            changeFontSize();
+            $(window).resize(function () {
+                changeFontSize();
+            });
+            function changeFontSize() {
+                if (navigator.userAgent.search(/(Android)/i) != -1)
+                {
+                    if (($(window).width() <= 499) || ($(window).height() <= 499)) {
+                        $(".banner_body p").each(function (index, value) {
+                            var p_size = parseInt($(this).css("font-size"));
+                            if (p_size >= 12) {
+                                width = parseInt($(".sub_description").css("width"));
+                                width = width + width * 0.15;
+                                var new_width = Math.round(width) + '';
+                                $(this).css({
+                                    "-webkit-transform": "scale(0.82)",
+                                    "-webkit-transform-origin": "0 0",
+                                    "width": new_width
+                                });
+                            }
+                        });
+                    }
+                }
+/*
+                if (($(window).width() >= 500) && ($(window).height() >= 500)) {
+                    $(".banner_body p").each(function (index, value) {
+                        width = parseInt($(".sub_description").css("width"));
+                        var new_width = Math.round(width * 0.9) + '';
+                        $(this).css({
+                            "-webkit-transform": "scale(1)",
+                            "width": new_width
+                        });
+                    });
+                }*/
+                /*
+                var patt = /(Chrome\/)[0-9]+/i;
+                var result = patt.exec(navigator.userAgent);
+                if (result[0] != null) {
+                    var str = result[0];
+                    var arr = str.split("/");
+                    var ver = parseInt(arr[1]);
+                    if (((ver >= 50) || (ver == 45)) && (($(window).width() <= 499) || ($(window).height() <= 499))) {
+                        $(".banner_body p").each(function (index, value) {
+                            width = parseInt($(".sub_description").css("width"));
+                            width = width + width * 0.15;
+                            var new_width = Math.round(width) + '';
+                            $(this).css({
+                                "font-size": "10px",
+                                "-webkit-transform": "scale(0.8)",
+                                "-webkit-transform-origin": "0 0",
+                                "width": new_width
+                            });
+                        });
+                    }
+                }*/
+            }
+        });
 
         $(".select_pro_item").click(function(){
             $(this).children().addClass("selected");
