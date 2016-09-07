@@ -413,7 +413,7 @@
                         $("#aboutus_data p").each(function (index, value) {
                             var p_size = parseInt($(this).css("font-size"));
                             if (p_size >= 12) {
-                                width = parseInt($(this).css("width"));
+                                width = parseInt($("#aboutus_data").css("width"));
                                 width = width + width * 0.25;
                                 var new_width = Math.round(width) + '';
                                 $(this).css({

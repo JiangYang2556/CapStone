@@ -1067,7 +1067,7 @@
                 </figure>
                 -->
                 <div>
-                    <div class="founder_item" data-founder="ceo">
+                    <div id="founder_item_ceo" class="founder_item" data-founder="ceo">
                         <div>CEO</div><div>王高楠</div>
                     </div>
                     <div class="founder_item" data-founder="cto">
@@ -1516,6 +1516,8 @@
         });
 
         $(document).ready(function () {
+            $("#founder_item_ceo").trigger("click");
+
             down_arrow_pos = $(window).height() - 35;
             $(".down_arrow_wrap").css("top", down_arrow_pos + "px");
             detectOrientation();

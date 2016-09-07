@@ -123,15 +123,9 @@
             }
         }
         
-        #development .peta_edge {
-            position: fixed;
-            color: #000;
-        }
-        #team .peta_edge {
-            position: fixed;
-            color: #000;
-        }
         .peta_edge {
+            position: fixed;
+
             width: 35vw;
             height: 4.5vw;
             display: -webkit-flex;
@@ -492,7 +486,7 @@
 
             <div class="page_content">
                 <div id="development" class="penta_node" >
-                    <div class="peta_edge hide_unit " data-img-id="dev_img">
+                    <div id="development_peta_edge" class="peta_edge hide_unit " data-img-id="dev_img">
                         <div class="peta_edge_text">
                             <div class="penta_no">01</div>
                             <div class="penta_item">公司发展</div>
@@ -500,7 +494,7 @@
                         </div>
                         <div class="penta_circle">
                             <div class="selected">
-                                <svg height="28" width="28"><circle cx="14" cy="14" r="14" fill="#000" /></svg>
+                                <svg height="28" width="28"><circle cx="14" cy="14" r="14" fill="#ffffff" /></svg>
                             </div>
                             <div class="deselected" hidden>
                                 <svg height="28" width="28"><circle cx="14" cy="14" r="9" fill="#000" /></svg>
@@ -519,7 +513,7 @@
                     </div>
                 </div>
                 <div id="team" class="penta_node">
-                    <div class="peta_edge hide_unit page_show" data-img-id="team_img">
+                    <div id="team_peta_edge" class="peta_edge hide_unit page_show" data-img-id="team_img">
                         <div class="peta_edge_text">
                             <div class="penta_no">02</div>
                             <div class="penta_item">团队介绍</div>
@@ -527,7 +521,7 @@
                         </div>
                         <div class="penta_circle">
                             <div class="selected" hidden>
-                                <svg height="28" width="28"><circle cx="14" cy="14" r="13" fill="#000" /></svg>
+                                <svg height="28" width="28"><circle cx="14" cy="14" r="13" fill="#ffffff" /></svg>
                             </div>
                             <div class="deselected">
                                 <svg height="28" width="28"><circle cx="14" cy="14" r="9" fill="#000" /></svg>
@@ -633,14 +627,35 @@
     <script src="../js/jquery-2.2.2.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <script>
+        var peta_edge_color = "#ffffff";
+        var selected_item = "development";
+
         $(document).ready(function () {
             window.setTimeout(delete_show, 2000);
 
             changeFontSize();
+            $("#development_peta_edge").trigger("click");
+
             $(window).resize(function () {
                 changeFontSize();
             });
+
+
             function changeFontSize() {
+                if ($(window).width() <= 600) {
+                    if (peta_edge_color == "#ffffff")
+                    {
+                        peta_edge_color = "#000";
+                        $("#" + selected_item + "_peta_edge").trigger("click");
+                    }
+                } else {
+                    if (peta_edge_color == "#000")
+                    {
+                        peta_edge_color = "#ffffff";
+                        $("#" + selected_item + "_peta_edge").trigger("click");
+                    }
+                }
+
                 if (navigator.userAgent.search(/(Android)/i) != -1) {
 
                     if (($(window).width() <= 499) || ($(window).height() <= 499)) {
@@ -692,14 +707,16 @@
             var str = $(this).data('img-id');
             if (str == "dev_img")
             {
+                selected_item = "development";
                 $("#dev_img").css("opacity", "1");
                 $("#team_img").css("opacity", "0");
             } else {
+                selected_item = "team";
                 $("#team_img").css("opacity", "1");
                 $("#dev_img").css("opacity", "0");
             }
 
-            $(this).find(".peta_edge_text").css("color", "#000");
+            $(this).find(".peta_edge_text").css("color", peta_edge_color);
             $(this).find(".deselected").prop("hidden", true);
             $(this).find(".selected").prop("hidden", false);
             $(this).siblings(".intro_content").prop("hidden", false);

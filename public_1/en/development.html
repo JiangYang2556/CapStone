@@ -123,15 +123,9 @@
             }
         }
         
-        #development .peta_edge {
-            position: fixed;
-            color: #ffffff;
-        }
-        #team .peta_edge {
-            position: fixed;
-            color: #000;
-        }
         .peta_edge {
+            position: fixed;
+
             width: 35vw;
             height: 4.5vw;
             display: -webkit-flex;
@@ -140,10 +134,6 @@
             justify-content: flex-end;
             cursor: pointer;
             z-index: 990;
-        }
-        .peta_edge:hover {
-            color: #ffffff;
-            fill: #ffffff;
         }
         .peta_edge_text {
             text-align: right;
@@ -496,7 +486,7 @@
 
             <div class="page_content">
                 <div id="development" class="penta_node" >
-                    <div class="peta_edge hide_unit " data-img-id="dev_img">
+                    <div id="development_peta_edge" class="peta_edge hide_unit " data-img-id="dev_img">
                         <div class="peta_edge_text">
                             <div class="penta_no">01</div>
                             <div class="penta_item">公司发展</div>
@@ -523,7 +513,7 @@
                     </div>
                 </div>
                 <div id="team" class="penta_node">
-                    <div class="peta_edge hide_unit page_show" data-img-id="team_img">
+                    <div id="team_peta_edge" class="peta_edge hide_unit page_show" data-img-id="team_img">
                         <div class="peta_edge_text">
                             <div class="penta_no">02</div>
                             <div class="penta_item">团队介绍</div>
@@ -637,19 +627,34 @@
     <script src="../js/jquery-2.2.2.min.js"></script>
     <script src="../js/jquery-ui.min.js"></script>
     <script>
+        var peta_edge_color = "#ffffff";
+        var selected_item = "development";
+
         $(document).ready(function () {
             window.setTimeout(delete_show, 2000);
 
             changeFontSize();
+            $("#development_peta_edge").trigger("click");
+
             $(window).resize(function () {
                 changeFontSize();
             });
 
-            $("#development_penta_edge").trigger("click");
 
             function changeFontSize() {
-                if ($(window).width() <= 499)
-                    peta_edge_color = "#000";
+                if ($(window).width() <= 600) {
+                    if (peta_edge_color == "#ffffff")
+                    {
+                        peta_edge_color = "#000";
+                        $("#" + selected_item + "_peta_edge").trigger("click");
+                    }
+                } else {
+                    if (peta_edge_color == "#000")
+                    {
+                        peta_edge_color = "#ffffff";
+                        $("#" + selected_item + "_peta_edge").trigger("click");
+                    }
+                }
 
                 if (navigator.userAgent.search(/(Android)/i) != -1) {
 
@@ -697,15 +702,16 @@
         function delete_show() {
             $(".page_show").removeClass("page_show");
         }
-        var peta_edge_color = "#ffffff";
 
         $(".peta_edge").click(function () {
             var str = $(this).data('img-id');
             if (str == "dev_img")
             {
+                selected_item = "development";
                 $("#dev_img").css("opacity", "1");
                 $("#team_img").css("opacity", "0");
             } else {
+                selected_item = "team";
                 $("#team_img").css("opacity", "1");
                 $("#dev_img").css("opacity", "0");
             }

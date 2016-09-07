@@ -895,7 +895,7 @@
     </div>
 
     <!--menu window-->
-    <div id="menu_window" hidden>
+    <div id="menu_window" style="display: none;">
         <figure>
             <div class="penta_menuback_pos">
                 <div class="scaling-menuback-container"
@@ -914,66 +914,63 @@
             </div>
         </figure>
 
-        <div id="menu_content">
-            <figure>
-                <div class="closeicon_pos" hidden>
-                    <div class="scaling-closeicon-container"
-                         style="padding-bottom: 92% /* 100% * 55/60 */">
-                        <div id="close_menu">
-                            <svg class="scaling-svg" viewBox="0 0 512 512">
-                                <g>
-                                    <circle cx="256" cy="256" r="253.44" />
-                                    <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
-                                        c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
-                                        C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
-                                    <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
-                                        c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
-                                        C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
-                                </g>
-                            </svg>
-                        </div>
+        <figure>
+            <div class="closeicon_pos" hidden>
+                <div class="scaling-closeicon-container"
+                        style="padding-bottom: 92% /* 100% * 55/60 */">
+                    <div id="close_menu">
+                        <svg class="scaling-svg" viewBox="0 0 512 512">
+                            <g>
+                                <circle cx="256" cy="256" r="253.44" />
+                                <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
+                                    c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
+                                    C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
+                                <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
+                                    c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
+                                    C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
+                            </g>
+                        </svg>
                     </div>
                 </div>
-            </figure>
-            <div id="nav_menu" class="js-nav-active">
-                <ul class="nav-main">
-                    <li>
-                        <a href="main.html">
-                            HOME
-                            <span class="nav_cn">首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="parent" href="product.html">
-                            PRODUCT
-                            <span class="nav_cn">产品中心</span>
-                        </a>
-                        <div class="nav_description">
-                            <a href="product.html#product01" class="pro_menu_item">中超风云</a> |
-                            <a href="product.html#product02" class="pro_menu_item">モバサカChampionManager</a> |
-                            <a href="product.html#product03" class="pro_menu_item">中国队勇夺世界杯</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="aboutUs.html">
-                            ABOUT US
-                            <span class="nav_cn">关于我们</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contactUs.html">
-                            CONTACT US
-                            <span class="nav_cn">联系我们</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
-            <div class="contact_info" hidden>
-                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
-                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
-            </div>
+        </figure>
+        <div id="nav_menu" class="js-nav-active">
+            <ul class="nav-main">
+                <li>
+                    <a href="main.html">
+                        HOME
+                        <span class="nav_cn">首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="parent" href="product.html">
+                        PRODUCT
+                        <span class="nav_cn">产品中心</span>
+                    </a>
+                    <div class="nav_description">
+                        <a href="product.html#product01" class="pro_menu_item">中超风云</a> |
+                        <a href="product.html#product02" class="pro_menu_item">モバサカChampionManager</a> |
+                        <a href="product.html#product03" class="pro_menu_item">中国队勇夺世界杯</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="aboutUs.html">
+                        ABOUT US
+                        <span class="nav_cn">关于我们</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contactUs.html">
+                        CONTACT US
+                        <span class="nav_cn">联系我们</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-
+        <div class="contact_info" style="display:none;">
+            <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
+            <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
+        </div>
     </div>
 
     <script src="../js/jquery-2.2.2.min.js"></script>
@@ -1307,14 +1304,15 @@
                 $('#pro1_img_1').remove();
             }
 
-            $("#menu_window").prop("hidden", false);
+            $("#menu_window").show();
             $(".hide_unit").addClass("back_hide");
 
             window.setTimeout(contact_show, 1000);
         });
 
         function contact_show() {
-            $(".contact_info").prop("hidden", false);
+            //            $(".contact_info").prop("hidden", false);
+            $(".contact_info").show();
             $(".closeicon_pos").prop("hidden", false);
         }
 
@@ -1326,7 +1324,7 @@
             $("#nav_menu").addClass("move_hide");
             $("#menu_back").addClass("rotate_hide");
 
-            $(".contact_info").prop("hidden", true);
+            $(".contact_info").css("display", "none");
             $(".closeicon_pos").prop("hidden", true);
 
             window.setTimeout(next, 1000);
@@ -1335,7 +1333,7 @@
         });
 
         function next() {
-            $("#menu_window").prop("hidden", true);
+            $("#menu_window").css("display", "none");
             $("#close_menu").removeClass("move_hide");
             $("#nav_menu").removeClass("move_hide");
             $("#menu_back").removeClass("rotate_hide");
