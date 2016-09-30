@@ -543,7 +543,7 @@
     </div>
 
     <!--menu window-->
-    <div id="menu_window" hidden>
+    <div id="menu_window" style="display: none;">
         <figure>
             <div class="penta_menuback_pos">
                 <div class="scaling-menuback-container"
@@ -551,8 +551,8 @@
                     <div>
                         <svg class="scaling-svg" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="0 0 540 540" xml:space="preserve">
-                            <g id="menu_back" class="rotate_show">
-                            <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
+                        <g id="menu_back" class="rotate_show">
+                        <path transform="translate(70, -100) rotate(25)" fill="#96B432" d="M104.681,399.999c-14,0-28.993-10.925-33.32-24.277L8.437,181.5
                                             c-4.326-13.353,1.401-31.029,12.727-39.282L185.905,22.184c11.325-8.252,29.859-8.252,41.184,0l164.741,120.035
                                             c11.327,8.252,17.054,25.929,12.727,39.283l-62.925,194.221C337.306,389.075,322.312,400,308.312,400L104.681,399.999z" />
                             </g>
@@ -562,66 +562,63 @@
             </div>
         </figure>
 
-        <div id="menu_content">
-            <figure>
-                <div class="closeicon_pos" hidden>
-                    <div class="scaling-closeicon-container"
-                         style="padding-bottom: 92% /* 100% * 55/60 */">
-                        <div id="close_menu">
-                            <svg class="scaling-svg" viewBox="0 0 512 512">
-                                <g>
-                                    <circle cx="256" cy="256" r="253.44" />
-                                    <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
-                                        c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
-                                        C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
-                                    <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
-                                        c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
-                                        C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
-                                </g>
-                            </svg>
-                        </div>
+        <figure>
+            <div class="closeicon_pos" hidden>
+                <div class="scaling-closeicon-container"
+                     style="padding-bottom: 92% /* 100% * 55/60 */">
+                    <div id="close_menu">
+                        <svg class="scaling-svg" viewBox="0 0 512 512">
+                            <g>
+                                <circle cx="256" cy="256" r="253.44" />
+                                <path d="M350.019,144.066l17.521,17.522c6.047,6.047,6.047,15.852,0,21.9L183.607,367.419
+                                    c-6.047,6.048-15.852,6.047-21.9,0l-17.521-17.522c-6.047-6.047-6.047-15.852,0-21.9l183.932-183.933
+                                    C334.166,138.018,343.971,138.018,350.019,144.066z" style="fill:#FFFFFF;" />
+                                <path d="M367.54,349.899l-17.522,17.522c-6.047,6.047-15.852,6.047-21.9,0L144.186,183.488
+                                    c-6.047-6.047-6.047-15.852,0-21.9l17.522-17.522c6.047-6.047,15.852-6.047,21.9,0L367.54,327.999
+                                    C373.588,334.047,373.588,343.852,367.54,349.899z" style="fill:#FFFFFF;" />
+                            </g>
+                        </svg>
                     </div>
                 </div>
-            </figure>
-            <div id="nav_menu" class="js-nav-active">
-                <ul class="nav-main">
-                    <li>
-                        <a href="main.html">
-                            HOME
-                            <span class="nav_cn">首页</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="parent" href="product.html#product01">
-                            PRODUCT
-                            <span class="nav_cn">产品中心</span>
-                        </a>
-                        <div class="nav_description">
-                            <a href="product.html#product01">中超风云</a> |
-                            <a href="product.html#product02">モバサカChampionManager</a> |
-                            <a href="product.html#product03">中国队勇夺世界杯</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="aboutUs.html">
-                            ABOUT US
-                            <span class="nav_cn">关于我们</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contactUs.html">
-                            CONTACT US
-                            <span class="nav_cn">联系我们</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
-            <div class="contact_info" hidden>
-                <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
-                <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
-            </div>
+        </figure>
+        <div id="nav_menu" class="js-nav-active">
+            <ul class="nav-main">
+                <li>
+                    <a href="main.html">
+                        HOME
+                        <span class="nav_cn">首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="parent" href="product.html#product01">
+                        PRODUCT
+                        <span class="nav_cn">产品中心</span>
+                    </a>
+                    <div class="nav_description">
+                        <a href="product.html#product01">中超风云</a> |
+                        <a href="product.html#product02">モバサカChampionManager</a> |
+                        <a href="product.html#product03">中国队勇夺世界杯</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="aboutUs.html">
+                        ABOUT US
+                        <span class="nav_cn">关于我们</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contactUs.html">
+                        CONTACT US
+                        <span class="nav_cn">联系我们</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-
+        <div class="contact_info" style="display:none;">
+            <span><a href="mailto:w@capstonegaming.com">&#9993; w@capstonegaming.com</a></span>
+            <span><a href="tel:01057170710">&#9743; 010-57170710</a></span>
+        </div>
     </div>
 
     <script src="../js/jquery-2.2.2.min.js"></script>
@@ -728,14 +725,15 @@
         });
 
         $("#menu_icon").click(function () {
-            $("#menu_window").prop("hidden", false);
+            $("#menu_window").show();
             $(".hide_unit").addClass("back_hide");
 
             window.setTimeout(contact_show, 1000);
         });
 
         function contact_show() {
-            $(".contact_info").prop("hidden", false);
+            //            $(".contact_info").prop("hidden", false);
+            $(".contact_info").show();
             $(".closeicon_pos").prop("hidden", false);
         }
 
@@ -744,7 +742,7 @@
             $("#nav_menu").addClass("move_hide");
             $("#menu_back").addClass("rotate_hide");
 
-            $(".contact_info").prop("hidden", true);
+            $(".contact_info").css("display", "none");
             $(".closeicon_pos").prop("hidden", true);
 
             window.setTimeout(next, 1000);
@@ -753,7 +751,7 @@
         });
 
         function next() {
-            $("#menu_window").prop("hidden", true);
+            $("#menu_window").css("display", "none");
             $("#close_menu").removeClass("move_hide");
             $("#nav_menu").removeClass("move_hide");
             $("#menu_back").removeClass("rotate_hide");
